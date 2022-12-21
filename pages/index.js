@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import HomePage from '../src/components/home/homePage';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
 
 export default function Home(props) {
   const data = props.data;
