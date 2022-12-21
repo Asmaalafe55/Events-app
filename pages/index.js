@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
+export default function Home(props) {
+  const data = props.data;
   return (
     <div className={styles.container}>
       <Head>
@@ -13,52 +15,25 @@ export default function Home() {
       <header>
         <nav>
           <img />
-          <a href="/">Home </a>
-          <a href="/aboutUs">About Us </a>
-          <a href="/events">Events</a>
+          <Link href="/">Home </Link>
+          <Link href="/aboutUs">About Us </Link>
+          <Link href="/events">Events</Link>
         </nav>
       </header>
 
       <main className={styles.main}>
-        <a href="">
-          <img />
-          <h2>Events in London</h2>
-          <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum."
-          </p>
-        </a>
-        <a href="">
-          <img />
-          <h2>Events in Francisco</h2>
-          <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum."
-          </p>
-        </a>
-        <a href="">
-          <img />
-          <h2>Events in Barcelona</h2>
-          <p>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum."
-          </p>
-        </a>
+        {data.map((event) => (
+          <Link key={event.id} href={`/events/${event.id}`}>
+            <Image
+              width={200}
+              height={200}
+              alt={event.title}
+              src={event.image}
+            />
+            <h2>{event.title}</h2>
+            <p>{event.description}</p>
+          </Link>
+        ))}
       </main>
 
       <footer className={styles.footer}>
@@ -66,4 +41,19 @@ export default function Home() {
       </footer>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const data = await import('/data/data.json');
+
+  // const res = await fetch('URL');
+  // const data1 = await res.json();
+
+  // console.log(data.events_categories);
+
+  return {
+    props: {
+      data: data.events_categories,
+    },
+  };
 }
