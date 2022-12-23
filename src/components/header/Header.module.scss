@@ -13,7 +13,7 @@
   z-index: 2;
 }
 
-.app__navbar-logo {
+.app__navbar_logo {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -29,7 +29,7 @@
   }
 }
 
-.app__navbar-links {
+.app__navbar_links {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -155,21 +155,5 @@
   }
   @media screen and (min-width: 900px) {
     display: none;
-  }
-}
-
-.app__flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.p-text {
-  font-size: 0.8rem;
-  text-align: left;
-  color: var(--gray-color);
-  line-height: 1.5;
-
-  @media screen and (min-width: 2000px) {
-    font-size: 1.75rem;
   }
 }

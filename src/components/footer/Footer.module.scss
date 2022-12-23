@@ -1,0 +1,24 @@
+.footer {
+  display: flex-col;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+  background-color: #d9d9d9;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.footer_cards {
+  display: flex;
+
+  .footer_card {
+    background-color: white;
+  }
+}
