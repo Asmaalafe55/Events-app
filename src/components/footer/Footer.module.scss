@@ -6,6 +6,21 @@
   justify-content: space-evenly;
   align-items: flex-start;
   background-color: #d9d9d9;
+  border-top: 2px solid #d9d9d0;
+  
+  @media screen and (max-width: 768px) {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: auto auto;
+    font-size: smaller;
+    div {
+      justify-content: flex-start;
+
+      div{
+        margin-bottom: 1rem;
+      }
+    }
+  }
 
   div {
     display: flex;
@@ -25,20 +40,22 @@
       justify-content: start;
       align-items: flex-start;
       flex-grow: 1;
-      margin-top: 0.1rem;
-      margin-bottom: 0.1rem;
+      margin: 0.1rem 0 0.1rem 0 ;
     }
   }
 }
 .buttom_footer {
   display: flex;
   justify-content: space-between;
-  background-color: #d9d9d9;
+  background-color: #957070;
   padding: 1rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  border-top: 2px solid rgb(135, 133, 133);
-  border-radius: 10px;
+
+  @media screen and (max-width: 768px) {
+    font-size: smaller;
+  }
+
   div {
     img {
       height: inherit;

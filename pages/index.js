@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import HomePage from '../src/components/home/homePage';
+import HomePage from '../src/components/home/HomePage';
 import styles from '../styles/Home.module.scss';
 
 export default function Home(props) {

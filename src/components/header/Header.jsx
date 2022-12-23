@@ -10,7 +10,7 @@ const Header = () => {
         <div className={styles.app__navbar_logo}>
           <Image
             alt="logo"
-            src={'/images/logo_black.png'}
+            src=''
             width={50}
             height={50}
           />

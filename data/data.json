@@ -157,5 +157,23 @@
       "image": "https://images.unsplash.com/photo-1591115765373-5207764f72e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
       "emails_registered": ["alicia@gmail.com", "monica@gmail.com"]
     }
-  ]
+  ],
+  "images":[
+    {
+      "id": "logo",
+      "title": "Logo",
+      "image": "https://user-images.githubusercontent.com/92914100/209411120-ef0f2c27-5b86-41e9-87ec-21804c375011.png"
+    },
+    {
+      "id": "logo2",
+      "title": "Logo2",
+      "image": "https://user-images.githubusercontent.com/92914100/209411509-32834fa5-6c7b-4462-b7c4-7f4145ea5ea3.png"
+    }
+    ,
+    {
+      "id": "bg",
+      "title": "Bg",
+      "image": "https://user-images.githubusercontent.com/92914100/209411472-2c807491-d7d8-4ef6-bf16-7ff338ac5985.png"
+    }
+    ]
 }
