@@ -9,6 +9,15 @@ a {
   color: inherit;
   text-decoration: none;
 }
+:root {
+  --primary-color: #edf2f8;
+  --secondary-color: #83070f;
+  --black-color: #030303;
+  --lightGray-color: #e4e4e4;
+  --gray-color: #6b7688;
+  --brown-color: #46364a;
+  --white-color: #ffffff;
+}
 
 * {
   box-sizing: border-box;
@@ -187,7 +196,7 @@ a {
 
   padding: 1rem;
 
-  .app__navigation-dot {
+  .app__navigation_dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;

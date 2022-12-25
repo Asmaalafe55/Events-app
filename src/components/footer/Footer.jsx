@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './Footer.module.scss';
+import { CiFacebook, CiInstagram, CiTwitter } from 'react-icons/ci';
 
 import logoPic from '../../images/logo.png';
 
@@ -32,9 +33,18 @@ const Footer = () => {
         </div>
         <div>
           <div>social media</div>
-          <a href="">Facebook</a>
-          <a href="">Instagram</a>
-          <a href="">Twitter</a>
+          <a href="">
+            <CiFacebook />
+            Facebook
+          </a>
+          <a href="">
+            <CiInstagram />
+            Instagram
+          </a>
+          <a href="">
+            <CiTwitter />
+            Twitter
+          </a>
         </div>
       </div>
       <div className={styles.buttom_footer}>
