@@ -2,13 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import styles from './Header.module.scss';
+import styles from './Navbar.module.scss';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 
 import logoPic from '../../images/logo.png';
 
-const Header = () => {
+const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   return (
     <header>
@@ -54,4 +54,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;
