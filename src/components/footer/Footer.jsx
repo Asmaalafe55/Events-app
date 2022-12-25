@@ -2,6 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './Footer.module.scss';
 
+import logoPic from '../../images/logo.png';
+
 const Footer = () => {
   return (
     <footer>
@@ -37,10 +39,10 @@ const Footer = () => {
       </div>
       <div className={styles.buttom_footer}>
         <div>
-          <Image width={50} height={50} alt="logo" src="" />
-          <div className="p_text">App Name</div>
+          <Image width={50} height={50} alt="logo" src={logoPic} />
+          <div className="p_text">Events</div>
         </div>
-        <div>
+        <div className="copyright">
           <p className="p_text">@2022 ASMAA</p>
           <p className="p_text">All rights reserved</p>
         </div>

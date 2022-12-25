@@ -3,17 +3,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Header.module.scss';
 
+import logoPic from '../../images/logo.png';
+
 const Header = () => {
   return (
     <header>
       <nav className={styles.app__navbar}>
         <div className={styles.app__navbar_logo}>
-          <Image
-            alt="logo"
-            src=''
-            width={50}
-            height={50}
-          />
+          <Image alt="logo" src={logoPic} width={50} height={50} />
         </div>
         <ul className={styles.app__navbar_links}>
           <li className={(styles.app__flex, styles.p_text)}>
