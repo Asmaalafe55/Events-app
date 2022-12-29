@@ -6,6 +6,13 @@
 
   padding: 6rem 2rem 0;
 
+  div {
+    display: flex;
+    img {
+      border-radius: 50%;
+    }
+  }
+
   @media screen and (min-width: 2000px) {
     padding-top: 8rem;
   }

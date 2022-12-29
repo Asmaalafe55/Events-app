@@ -3,12 +3,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--primary-color);
+  font-size: larger;
 
   padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: var(--black-color);
   position: fixed;
   z-index: 2;
 }
@@ -27,13 +26,20 @@
       height: 100px;
     }
   }
+  div {
+    text-align: center;
+    font-size: x-large;
+  }
 }
 
 .app__navbar_links {
   flex: 1;
   display: flex;
-  justify-content: center;
+  width: auto;
+  justify-content: flex-end;
   align-items: center;
+  // background: var(--primary-color);
+  color: var(--black-color);
 
   list-style: none;
 
@@ -53,11 +59,11 @@
     }
 
     a {
-      color: var(--gray-color);
+      color: var(--primary-color);
       text-decoration: none;
       flex-direction: column;
 
-      text-transform: uppercase;
+      text-transform: capitalize;
       font-weight: 500;
       transition: all 0.3s ease-in-out;
 
@@ -80,13 +86,11 @@
 .app__navbar_menu {
   width: 35px;
   height: 35px;
-  border-radius: 50%;
   position: relative;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--secondary-color);
 
   svg {
     width: 70%;
