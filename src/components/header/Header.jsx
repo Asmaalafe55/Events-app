@@ -11,8 +11,15 @@ const Header = (props) => {
     <>
       <div className={(styles.app__header, styles.app__flex)}>
         <motion.div
-          animate={{ x: 100 }}
-          // transition={{ delay: 1 }}
+          animate={{ x: ['0px', '100px'] }}
+          transition={{
+            type: 'tween',
+            duration: 20,
+            delay: 1,
+            repeat: Infinity,
+            repeatType: 'reverse',
+          }}
+          initial={{ x: '-50px', opacity: 2 }}
         >
           {images.slice(0, 7).map((e) => (
             <Image width={100} height={100} src={e} alt={`event-${e}`} />

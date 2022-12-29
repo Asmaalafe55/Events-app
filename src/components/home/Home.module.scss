@@ -1,15 +1,4 @@
-#home {
+.home {
   position: relative;
-  background: url('../../images/bgIMG.png');
-  background-size: cover;
-  background-repeat: repeat;
-  background-position: center;
-
-  .app__wrapper {
-    padding: 0;
-
-    .copyright {
-      display: none;
-    }
-  }
+  padding-top: 100px;
 }

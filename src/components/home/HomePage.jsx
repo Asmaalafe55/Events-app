@@ -10,8 +10,8 @@ import styles from './Home.module.scss';
 const HomePage = ({ data }) => {
   const [search, setSearch] = useState('');
   return (
-    <main id="home">
-      <Header search={search} setSearch={setSearch} />
+    <main className={styles.home}>
+      <Header id="home" search={search} setSearch={setSearch} />
       {data.map((event) => (
         <Link key={event.id} href={`/events/${event.id}`}>
           <Image width={200} height={200} alt={event.title} src={event.image} />
