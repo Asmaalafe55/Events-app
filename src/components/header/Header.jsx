@@ -41,15 +41,19 @@ const Header = (props) => {
             }}
             initial={{ x: '-50px', opacity: 2 }}
           > */}
-            {images.slice(7, 14).map((e) => (
-              <Image width={100} height={100} src={e} alt={`event-${e}`} />
-            ))}
+            <div>
+              {images.slice(7, 14).map((e) => (
+                <Image width={100} height={100} src={e} alt={`event-${e}`} />
+              ))}
+            </div>
             {/* </motion.div> */}
 
             {/* <motion.div animate={{ x: 100 }} transition={{ delay: 1 }}> */}
-            {images.slice(14, 21).map((e) => (
-              <Image width={100} height={100} src={e} alt={`event-${e}`} />
-            ))}
+            <div>
+              {images.slice(14, 21).map((e) => (
+                <Image width={100} height={100} src={e} alt={`event-${e}`} />
+              ))}
+            </div>
             {/* </motion.div> */}
           </div>
           <div className={styles.header__right__side}>
