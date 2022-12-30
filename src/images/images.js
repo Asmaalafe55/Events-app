@@ -1,5 +1,3 @@
-// import logoPic from '../images/logo.png';
-// import logoPic1 from '../images/logo1.png';
 import e1 from '../images/pic/e1.jpg';
 import e2 from '../images/pic/e2.jpg';
 import e3 from '../images/pic/e3.jpg';
@@ -22,9 +20,10 @@ import e19 from '../images/pic/e19.jpg';
 import e20 from '../images/pic/e20.jpg';
 import e21 from '../images/pic/e21.jpg';
 
+import logoPic from '../images/logo.png';
+import logoPic1 from '../images/logo1.png';
+
 const images = [
-  // logoPic,
-  // logoPic1,
   e1,
   e2,
   e3,
@@ -46,6 +45,8 @@ const images = [
   e19,
   e20,
   e21,
+  logoPic,
+  logoPic1,
 ];
 
 export default images;
