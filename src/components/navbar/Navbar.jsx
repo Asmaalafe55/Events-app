@@ -10,6 +10,13 @@ import { logoImages } from '../../images/images';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const links = [
+    { link: '/', title: 'Home' },
+    { link: '/aboutUs', title: 'About Us' },
+    { link: '/events', title: 'Events' },
+    { link: '#contact', title: 'Contact' },
+  ];
+
   return (
     <header>
       <nav className={styles.app__navbar}>
@@ -39,14 +46,13 @@ const Navbar = () => {
               whileInView={{ x: [300, 0] }}
               transition={{ duration: 0.85, ease: 'easeOut' }}
             >
-              {/* i have problem here */}
               <HiX onClick={() => setToggle(false)} />
               <ul className={styles.app__navbar_links}>
-                {['home', 'about', 'events'].map((item) => (
-                  <li key={item}>
-                    <a href={`/${item}`} onClick={() => setToggle(false)}>
-                      {item}
-                    </a>
+                {links.map((item) => (
+                  <li key={item.title}>
+                    <Link href={item.link} onClick={() => setToggle(false)}>
+                      {item.title}
+                    </Link>
                   </li>
                 ))}
               </ul>

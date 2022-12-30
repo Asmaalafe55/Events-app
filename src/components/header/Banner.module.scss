@@ -1,0 +1,53 @@
+.inner {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+
+  img {
+    width: 150px;
+    height: 150px;
+
+    flex-wrap: nowrap;
+    border-radius: 50%;
+    margin: 0.5rem;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    filter: drop-shadow(4px 6px 4px rgba(0, 0, 0, 0.25));
+  }
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+
+  .move {
+    display: flex;
+    animation: swipe 25s linear infinite;
+  }
+
+  .move_reverse {
+    display: flex;
+    animation: swipe-reverse 25s linear infinite backwards;
+  }
+}
+
+@keyframes swipe {
+  0% {
+    transform: translate(0);
+  }
+
+  100% {
+    transform: translatex(-100%);
+  }
+}
+
+@keyframes swipe-reverse {
+  0% {
+    transform: translate(0);
+  }
+
+  100% {
+    transform: translatex(100%);
+  }
+}
