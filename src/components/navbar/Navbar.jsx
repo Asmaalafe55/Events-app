@@ -20,23 +20,18 @@ const Navbar = () => {
   return (
     <header>
       <nav className={styles.app__navbar}>
-        <div className={styles.app__navbar_logo}>
+        <Link href="/" className={styles.app__navbar_logo}>
           <Image alt="logo" src={logoImages.logoPic} width={50} height={50} />
           <div>AppName</div>
-        </div>
+        </Link>
         <ul className={styles.app__navbar_links}>
-          {/* <li className={(styles.app__flex, styles.p_text)}>
-            <Link href="/">Home </Link>
-          </li> */}
-          <li className={(styles.app__flex, styles.p_text)}>
-            <Link href="/aboutUs">About Us </Link>
-          </li>
-          <li className={(styles.app__flex, styles.p_text)}>
-            <Link href="/events">Events</Link>
-          </li>
-          <li className={(styles.app__flex, styles.p_text)}>
-            <Link href="">Contact</Link>
-          </li>
+          {links.splice(1, 4).map((item) => (
+            <li key={item.title}>
+              <Link href={item.link} onClick={() => setToggle(false)}>
+                {item.title}
+              </Link>
+            </li>
+          ))}
         </ul>
 
         <div className={styles.app__navbar_menu}>
