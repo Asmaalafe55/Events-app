@@ -45,8 +45,10 @@ const images = [
   e19,
   e20,
   e21,
+];
+export const logoImages = {
   logoPic,
   logoPic1,
-];
+};
 
 export default images;

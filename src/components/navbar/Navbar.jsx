@@ -6,7 +6,7 @@ import styles from './Navbar.module.scss';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 
-import images from '../../images/images';
+import { logoImages } from '../../images/images';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -14,7 +14,7 @@ const Navbar = () => {
     <header>
       <nav className={styles.app__navbar}>
         <div className={styles.app__navbar_logo}>
-          <Image alt="logo" src={images.logoPic} width={50} height={50} />
+          <Image alt="logo" src={logoImages.logoPic} width={50} height={50} />
           <div>AppName</div>
         </div>
         <ul className={styles.app__navbar_links}>
