@@ -57,13 +57,15 @@ const Header = (props) => {
             {/* </motion.div> */}
           </div>
           <div className={styles.header__right__side}>
-            <h2>Subscribe now to our newsletter</h2>
             <div>
+              <h2>Subscribe now to our newsletter</h2>
               <div>
-                <label>Email:</label>
-                <input type="search" placeholder="Please enter your email" />
+                <div>
+                  <label>Email:</label>
+                  <input type="search" placeholder="Please enter your email" />
+                </div>
+                <button>subscribe</button>
               </div>
-              <button>subscribe</button>
             </div>
           </div>
         </div>

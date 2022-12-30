@@ -18,9 +18,9 @@ const Navbar = () => {
           <div>AppName</div>
         </div>
         <ul className={styles.app__navbar_links}>
-          <li className={(styles.app__flex, styles.p_text)}>
+          {/* <li className={(styles.app__flex, styles.p_text)}>
             <Link href="/">Home </Link>
-          </li>
+          </li> */}
           <li className={(styles.app__flex, styles.p_text)}>
             <Link href="/aboutUs">About Us </Link>
           </li>
@@ -54,7 +54,6 @@ const Navbar = () => {
           )}
         </div>
       </nav>
-      {/* <div className={styles.white__bg}></div> */}
     </header>
   );
 };

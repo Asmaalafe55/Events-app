@@ -3,19 +3,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--primary-color);
-  font-size: larger;
 
-  padding: 1rem 2rem;
   background: var(--black-color);
   position: fixed;
   z-index: 2;
 }
 
 .app__navbar_logo {
+  width: 70%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  padding: 1rem 2rem;
+  font-weight: 400;
+  font-size: 25px;
+  color: var(--primary-color);
 
   img {
     width: 50px;
@@ -38,8 +40,13 @@
   width: auto;
   justify-content: flex-end;
   align-items: center;
-  // background: var(--primary-color);
   color: var(--black-color);
+  background-color: var(--primary-color);
+  padding: 2rem 0;
+  padding-right: 1rem;
+  font-weight: 400;
+  font-size: 25px;
+  font-family: 'Playfair Display';
 
   list-style: none;
 
@@ -160,10 +167,4 @@
   @media screen and (min-width: 900px) {
     display: none;
   }
-}
-
-.white__bg {
-  background-color: var(--primary-color);
-  width: 350px;
-  height: 60px;
 }
