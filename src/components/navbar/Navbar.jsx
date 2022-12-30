@@ -54,6 +54,7 @@ const Navbar = () => {
           )}
         </div>
       </nav>
+      {/* <div className={styles.white__bg}></div> */}
     </header>
   );
 };
