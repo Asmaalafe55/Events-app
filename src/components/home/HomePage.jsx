@@ -9,10 +9,10 @@ import Contact from '../contact/Contact';
 import styles from './Home.module.scss';
 
 const HomePage = ({ data }) => {
-  const [search, setSearch] = useState('');
+  const [subEmail, setSubEmail] = useState('');
   return (
     <main className={styles.home}>
-      <Header id="home" search={search} setSearch={setSearch} />
+      <Header id="home" subEmail={subEmail} setSubEmail={setSubEmail} />
 
       <div className={styles.app__home}>
         <div className={styles.title}>Top Events</div>

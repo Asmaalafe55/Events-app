@@ -3,7 +3,7 @@ import styles from './Header.module.scss';
 import { Banner } from './Banner';
 
 const Header = (props) => {
-  const { search, setSearch } = props;
+  const { subEmail, setSubEmail } = props;
   return (
     <>
       <div className={(styles.app__header, styles.app__flex)}>
@@ -19,7 +19,7 @@ const Header = (props) => {
               <div>
                 <div>
                   <label>Email:</label>
-                  <input type="search" placeholder="Please enter your email" />
+                  <input type="email" placeholder="Please enter your email" />
                 </div>
                 <button>subscribe</button>
               </div>
