@@ -33,21 +33,6 @@ const Footer = () => {
           <a href="">FAQ</a>
           <a href="">Contact</a>
         </div>
-        <div>
-          <div>social media</div>
-          <a href="">
-            <CiFacebook />
-            Facebook
-          </a>
-          <a href="">
-            <CiInstagram />
-            Instagram
-          </a>
-          <a href="">
-            <CiTwitter />
-            Twitter
-          </a>
-        </div>
       </div>
       <div className={styles.buttom_footer}>
         <Link href="/" className={styles.app__footer_logo}>
