@@ -24,6 +24,10 @@
   padding: 1rem 0;
   width: 70%;
   background-color: var(--black-color);
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
+  }
 }
 
 .header__right__side {
@@ -31,9 +35,11 @@
   width: 30%;
   padding: 4rem 2rem;
   display: flex;
+
   div {
     margin: auto;
     align-self: center;
+
     h2 {
       color: var(--black-color);
       font-weight: 800;
@@ -44,12 +50,14 @@
       text-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
       backdrop-filter: blur(50px);
     }
+
     div {
       display: flex;
       flex-direction: column;
       align-items: center;
       color: var(--black-color);
       padding: 2rem 1rem;
+
       div {
         display: flex;
         flex-direction: row;
@@ -65,6 +73,7 @@
           text-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
           backdrop-filter: blur(50px);
         }
+
         input {
           border-style: none;
           text-decoration: none;
@@ -73,6 +82,7 @@
           box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
           width: 250px;
           height: 60px;
+
           &::placeholder {
             color: var(--black-color);
             font-family: 'Playfair Display';
@@ -89,6 +99,7 @@
           }
         }
       }
+
       button {
         border-style: none;
         background-color: var(--secondary-color);
@@ -101,5 +112,9 @@
         box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
       }
     }
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
   }
 }

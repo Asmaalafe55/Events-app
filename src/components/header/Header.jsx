@@ -1,9 +1,6 @@
 import React from 'react';
 import styles from './Header.module.scss';
-import Image from 'next/image';
 import { Banner } from './Banner';
-
-import images from '../../images/images';
 
 const Header = (props) => {
   const { search, setSearch } = props;
