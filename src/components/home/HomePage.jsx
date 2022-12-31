@@ -14,23 +14,21 @@ const HomePage = ({ data }) => {
     <main className={styles.home}>
       <Header id="home" search={search} setSearch={setSearch} />
 
-      <div className={styles.app__home}></div>
-      <div className={styles.app__right}></div>
-      <div>
+      <div className={styles.app__home}>
         <div className={styles.title}>Top Events</div>
         {data.map((event) => (
-          <h2 className={styles.events__titles}>
-            <Link key={event.id} href={`/events/${event.id}`}>
-              <Image
-                width={200}
-                height={200}
-                alt={event.title}
-                src={event.image}
-              />
+          <Link key={event.id} href={`/events/${event.id}`}>
+            <Image
+              width={200}
+              height={200}
+              alt={event.title}
+              src={event.image}
+            />
+            <div>
               <h2>{event.title}</h2>
-            </Link>
-            <p>{event.description}</p>
-          </h2>
+              <p>{event.description}</p>
+            </div>
+          </Link>
         ))}
       </div>
 
