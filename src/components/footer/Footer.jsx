@@ -1,9 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import styles from './Footer.module.scss';
-import { CiFacebook, CiInstagram, CiTwitter } from 'react-icons/ci';
+import Link from 'next/link';
 
-import logoPic from '../../images/logo.png';
+import { logoImages } from '../../images/images';
+import styles from './Footer.module.scss';
+
+import { CiFacebook, CiInstagram, CiTwitter } from 'react-icons/ci';
 
 const Footer = () => {
   return (
@@ -48,13 +50,13 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.buttom_footer}>
-        <div>
-          <Image width={50} height={50} alt="logo" src={logoPic} />
-          <div className="p_text">Events</div>
-        </div>
-        <div className="copyright">
-          <p className="p_text">@2022 ASMAA</p>
-          <p className="p_text">All rights reserved</p>
+        <Link href="/" className={styles.app__footer_logo}>
+          <Image alt="logo" src={logoImages.logoPic} width={50} height={50} />
+          <div>AppName</div>
+        </Link>
+        <div className={styles.copyright}>
+          <p>created by Asmaa</p>
+          <p>all rights reserved</p>
         </div>
       </div>
     </footer>
