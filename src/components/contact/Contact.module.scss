@@ -1,0 +1,17 @@
+.app__contact {
+  background-color: var(--black-color);
+  position: relative;
+  display: flex;
+
+  .contact_left_side {
+    color: var(--primary-color);
+    width: 70%;
+    padding: 2rem 1rem;
+  }
+
+  .contact_right_side {
+    background-color: #ffffff;
+    color: var(--black-color);
+    width: 30%;
+  }
+}

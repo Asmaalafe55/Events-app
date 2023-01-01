@@ -3,7 +3,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import styles from './Navbar.module.scss';
-import { HiMenuAlt4, HiX } from 'react-icons/hi';
+import { HiX } from 'react-icons/hi';
+import { FiMenu } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
 import { logoImages } from '../../images/images';
@@ -35,7 +36,7 @@ const Navbar = () => {
         </ul>
 
         <div className={styles.app__navbar_menu}>
-          <HiMenuAlt4 onClick={() => setToggle(true)} />
+          <FiMenu onClick={() => setToggle(true)} />
           {toggle && (
             <motion.div
               whileInView={{ x: [300, 0] }}
