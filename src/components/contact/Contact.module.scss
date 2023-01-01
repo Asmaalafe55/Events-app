@@ -7,6 +7,64 @@
     color: var(--primary-color);
     width: 70%;
     padding: 4rem 2rem;
+    display: flex;
+    justify-content: space-evenly;
+
+    div {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      font-weight: 400;
+      font-size: 25px;
+
+      text-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(50px);
+
+      div {
+        padding: 0.5rem 0;
+
+        label {
+          padding: 0.5rem 0;
+        }
+
+        input {
+          border-style: none;
+          text-decoration: none;
+          border-radius: 20px;
+          background-color: var(--primary-color);
+          box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
+
+          width: 250px;
+          height: 60px;
+
+          &::placeholder {
+            font-family: 'Playfair Display';
+            font-weight: 400;
+            font-size: 18px;
+            padding-left: 0.7rem;
+
+            color: rgba(37, 37, 37, 0.57);
+          }
+        }
+        .custom_input {
+          height: 148px;
+        }
+      }
+    }
+  }
+  button {
+    font-family: 'Playfair Display';
+    border-style: none;
+    width: 120px;
+    height: 50px;
+    font-weight: 400;
+    font-size: 20px;
+    border-radius: 20px;
+    text-transform: capitalize;
+
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
   }
 
   .contact_right_side {
@@ -16,13 +74,16 @@
     width: 30%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 
     div {
       display: flex;
       font-weight: 400;
       font-size: 28px;
+      padding: 0.5rem 0;
+
       justify-content: space-evenly;
+      align-items: center;
 
       svg {
         width: 40;

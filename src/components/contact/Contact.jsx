@@ -10,18 +10,26 @@ const Contact = () => {
         {/* <div className={styles.left__right}> */}
         <div className={styles.contact_left_side}>
           <div>
-            <label>Full Name:</label>
-            <input type="name" placeholder="Please enter your full name" />
+            <div>
+              <label>Full Name:</label>
+              <input type="name" placeholder="Please enter your full name" />
+            </div>
+            <div>
+              <label>Email:</label>
+              <input type="email" placeholder="Please enter your email" />
+            </div>
           </div>
           <div>
-            <label>Email:</label>
-            <input type="email" placeholder="Please enter your email" />
+            <div>
+              <label>Message:</label>
+              <input
+                className={styles.custom_input}
+                type="message"
+                placeholder="Please enter your message"
+              />
+            </div>
+            <button>send</button>
           </div>
-          <div>
-            <label>Message:</label>
-            <input type="message" placeholder="Please enter your message" />
-          </div>
-          <button>send</button>
         </div>
         <div className={styles.contact_right_side}>
           <div>
