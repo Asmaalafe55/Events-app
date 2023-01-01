@@ -24,10 +24,14 @@ const Contact = () => {
           <button>send</button>
         </div>
         <div className={styles.contact_right_side}>
-          <HiPhone />
-          <div>+01 555 99 0342</div>
-          <HiMail />
-          <div>info@events.com</div>
+          <div>
+            <HiPhone />
+            <div>+01 555 99 0342</div>
+          </div>
+          <div>
+            <HiMail />
+            <div>info@events.com</div>
+          </div>
         </div>
       </div>
       {/* </div> */}
