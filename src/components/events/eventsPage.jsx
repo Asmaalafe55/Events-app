@@ -7,7 +7,7 @@ import styles from './EventsPage.module.scss';
 const eventsPage = ({ data }) => {
   return (
     <div className={styles.events}>
-      <label>Events Page</label>
+      <label>Events</label>
       <div>
         {data.map((event) => (
           <Link key={event.id} href={`/events/${event.id}`}>
