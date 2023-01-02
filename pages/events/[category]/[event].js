@@ -1,12 +1,12 @@
 import React, { useRef, useState } from 'react';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
+
+import SingleEvent from '../../../src/components/events/SingleEvent';
 
 const Event = ({ data }) => {
   const [message, setMessage] = useState('');
   const inputEmail = useRef();
   const router = useRouter();
-  console.log(router);
 
   const onSubmitFunction = async (e) => {
     e.preventDefault();
@@ -35,22 +35,12 @@ const Event = ({ data }) => {
     }
   };
   return (
-    <div>
-      <Image src={data.image} width={1000} height={500} alt={data.title} />
-      <h1>{data.title}</h1>
-      <p>{data.description}</p>
-      <label>Get Registered for this event!</label>
-      <form onSubmit={onSubmitFunction}>
-        <input
-          ref={inputEmail}
-          type="email"
-          id="email"
-          placeholder="Please insert your email here .."
-        />
-        <button type="submit">Submit</button>
-      </form>
-      <p>{message}</p>
-    </div>
+    <SingleEvent
+      data={data}
+      func={onSubmitFunction}
+      message={message}
+      inputEmail={inputEmail}
+    />
   );
 };
 
