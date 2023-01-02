@@ -1,32 +1,9 @@
 import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import EventsPerCity from '../../../src/components/events/EventsPerCity';
 
 const EventsCategoryCity = (props) => {
   const data = props.events;
-  return (
-    <div>
-      <h1>{`Events in ${data[0]?.city}`}</h1>
-      <div>
-        {data.map((event) => (
-          <Link
-            key={event.id}
-            href={`/events/${event.city}/${event.id}`}
-            passHref
-          >
-            <Image
-              width={200}
-              height={200}
-              alt={event.title}
-              src={event.image}
-            />
-            <h2>{event.title}</h2>
-            <p>{event.description}</p>
-          </Link>
-        ))}
-      </div>
-    </div>
-  );
+  return <EventsPerCity data={data} />;
 };
 
 export default EventsCategoryCity;

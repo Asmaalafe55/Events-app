@@ -1,0 +1,82 @@
+.events_per_city {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 8rem 2rem;
+
+  h1 {
+    align-self: center;
+    font-weight: 900;
+    font-size: 100px;
+    text-transform: capitalize;
+
+    color: var(--black-color);
+
+    mix-blend-mode: exclusion;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: var(--black-color);
+
+    a {
+      display: flex;
+      //   width: 100%;
+      padding: 3rem 1rem;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      //   &:hover {
+      //     img {
+      //       box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.25);
+      //       filter: drop-shadow(4px 12px 5px rgba(0, 0, 0, 0.25));
+      //     }
+      //     div {
+      //       box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.25);
+      //       filter: drop-shadow(4px 12px 5px rgba(0, 0, 0, 0.25));
+      //     }
+      //   }
+
+      img {
+        width: 500px;
+        height: 500px;
+        box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.25);
+        filter: drop-shadow(4px 8px 5px rgba(0, 0, 0, 0.25));
+
+        border-radius: 30px;
+      }
+
+      div {
+        width: 500px;
+        height: 500px;
+        background-color: var(--black-color);
+        color: var(--primary-color);
+
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        border-radius: 30px;
+
+        box-shadow: inset 4px 4px 6px rgba(0, 0, 0, 0.25);
+        filter: drop-shadow(4px 8px 5px rgba(0, 0, 0, 0.25));
+
+        padding: 1rem 3rem;
+
+        h2 {
+          font-weight: 900;
+          font-size: 45px;
+          font-feature-settings: 'pnum' on, 'lnum' on;
+          padding: 2rem 0;
+        }
+
+        p {
+          font-weight: 500;
+          font-size: 35px;
+          font-feature-settings: 'pnum' on, 'lnum' on;
+        }
+      }
+    }
+  }
+}
