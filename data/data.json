@@ -2,7 +2,7 @@
   "events_categories": [
     {
       "id": "london",
-      "title": "London",
+      "title": "ondon",
       "description": "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem",
       "image": "https://user-images.githubusercontent.com/92914100/209211045-2928deb8-5b2f-4d93-9d73-5ac98e8031ee.jpg"
     },
@@ -17,12 +17,6 @@
       "title": "Barcelona",
       "description": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscisfa.",
       "image": "https://images.unsplash.com/photo-1579282240050-352db0a14c21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=652&q=80"
-    },
-    {
-      "id": "Haifa",
-      "title": "Haifa",
-      "description": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscisfa.",
-      "image": "https://images.unsplash.com/photo-1549738237-c3cf2277f3f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
     }
   ],
   "allEvents": [
