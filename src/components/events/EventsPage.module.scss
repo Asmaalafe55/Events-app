@@ -1,0 +1,47 @@
+.events {
+  display: flex;
+  flex-direction: column;
+  padding: 6rem 2rem;
+
+  label {
+    font-weight: 900;
+    font-size: 100px;
+    align-self: center;
+
+    color: var(--black-color);
+    mix-blend-mode: exclusion;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    a {
+      padding: 1rem;
+      position: relative;
+
+      img {
+        width: 410px;
+        height: 255px;
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2px);
+        box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
+
+        border-radius: 30px;
+      }
+      h2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        // border-radius: 30px;
+
+        color: var(--primary-color);
+        font-weight: 900;
+        font-size: 35px;
+        // backdrop-filter: blur(2px);
+      }
+    }
+  }
+}
