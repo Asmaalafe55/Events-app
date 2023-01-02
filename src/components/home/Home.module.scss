@@ -2,7 +2,9 @@
   position: relative;
   padding-top: 80px;
 }
-
+.container {
+  display: flex;
+}
 .app__home {
   background-color: #ffffff;
   width: 70%;
@@ -40,7 +42,7 @@
       width: 25vw;
       box-shadow: inset 4px 8px 6px rgba(0, 0, 0, 0.25);
       position: absolute;
-      left: 0;
+      left: 4rem;
     }
 
     div {
@@ -80,4 +82,9 @@
     transform: translateX(-50%);
     text-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
   }
+}
+
+.app__home2 {
+  width: 30%;
+  background-color: var(--black-color);
 }
