@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { logoImages } from '../../images/images';
 import styles from './Footer.module.scss';
 
-import { CiFacebook, CiInstagram, CiTwitter } from 'react-icons/ci';
+// import { CiFacebook, CiInstagram, CiTwitter } from 'react-icons/ci';
 
 const Footer = () => {
   return (
