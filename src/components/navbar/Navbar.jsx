@@ -23,7 +23,7 @@ const Navbar = () => {
       <nav className={styles.app__navbar}>
         <Link href="/" className={styles.app__navbar_logo}>
           <Image alt="logo" src={logoImages.logoPic} width={50} height={50} />
-          <div>AppName</div>
+          <div>Events App</div>
         </Link>
         <ul className={styles.app__navbar_links}>
           {links.splice(1, 4).map((item) => (

@@ -37,7 +37,7 @@ const Footer = () => {
       <div className={styles.buttom_footer}>
         <Link href="/" className={styles.app__footer_logo}>
           <Image alt="logo" src={logoImages.logoPic} width={50} height={50} />
-          <div>AppName</div>
+          <div>Events App</div>
         </Link>
         <div className={styles.copyright}>
           <p>created by Asmaa</p>
