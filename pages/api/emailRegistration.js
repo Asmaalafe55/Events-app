@@ -3,6 +3,7 @@ import fs from 'fs';
 
 function buildPath() {
   return path.join(process.cwd(), 'data', 'data.json');
+  // cwd - current working directory
 }
 
 function extractData(filePath) {
@@ -14,19 +15,14 @@ function extractData(filePath) {
 export default function handler(req, res) {
   const { method } = req;
 
-  // Access to our data
-  // extract our data : AllEvents
-  // res 404 if there are no AllEvents
-  // to loop through them and identify the eventId
-  // add the email into email_registered - write on our data
-  // only if the email does not exist
-  // check the format of the email if OK
-
   const filePath = buildPath();
   const { events_categories, allEvents } = extractData(filePath);
+
   if (!allEvents) {
+    // res 404 if there are no AllEvents
     return res.status(404).json({ message: `Events data not found` });
   }
+
   if (method === 'POST') {
     const { email, eventId } = req.body;
 
@@ -51,7 +47,7 @@ export default function handler(req, res) {
       JSON.stringify({ events_categories, allEvents: newAllEvents })
     );
 
-    res.status(200).json({
+    res.status(201).json({
       message: `You have been registered succesfully with the email: ${email}, ${eventId}`,
     });
   }
