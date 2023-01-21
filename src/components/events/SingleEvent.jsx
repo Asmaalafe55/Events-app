@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React, { useRef, useState } from 'react';
 import { useRouter } from 'next/router';
+import axios from '../../../utils/axios';
 
 import styles from './SingleEvent.module.scss';
 
@@ -22,13 +23,21 @@ const SingleEvent = ({ data }) => {
     }
 
     try {
-      const response = await fetch('/api/emailRegistration', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email: emailValue, eventId }),
+      const response = await axios.post('/emailRegistration', {
+        email: emailValue,
+        eventId,
       });
+
+      // const response = await fetch(
+      //   'http://localhost:4000/api/emailRegistration',
+      //   {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //     body: JSON.stringify({ email: emailValue, eventId }),
+      //   }
+      // );
 
       if (!response.ok) throw new Error(`Error: ${response.status}`);
       const data = await response.json();

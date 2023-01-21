@@ -1,3 +1,4 @@
+import axios from '../utils/axios';
 import Head from 'next/head';
 import HomePage from '../src/components/home/HomePage';
 
@@ -16,10 +17,10 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps() {
-  const data = await import('/data/data.json');
+  const res = await axios.get('/events');
   return {
     props: {
-      data: data.events_categories,
+      data: res.data.events_categories,
     },
   };
 }

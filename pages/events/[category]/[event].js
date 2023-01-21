@@ -1,5 +1,5 @@
 import React from 'react';
-
+import axios from '../../../utils/axios';
 import SingleEvent from '../../../src/components/events/SingleEvent';
 
 const Event = ({ data }) => <SingleEvent data={data} />;
@@ -7,7 +7,9 @@ const Event = ({ data }) => <SingleEvent data={data} />;
 export default Event;
 
 export async function getStaticPaths() {
-  const { allEvents } = await import('/data/data.json');
+  const {
+    data: { allEvents },
+  } = await axios.get('/events');
   const allPaths = allEvents.map((path) => {
     return {
       params: {
@@ -24,7 +26,10 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const id = context?.params.event;
-  const { allEvents } = await import('/data/data.json');
+
+  const {
+    data: { allEvents },
+  } = await axios.get('/events');
 
   const eventData = allEvents.find((e) => e.id === id);
 
