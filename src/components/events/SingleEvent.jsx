@@ -15,33 +15,13 @@ const SingleEvent = ({ data }) => {
     const emailValue = inputEmail.current.value;
     const eventId = router?.query.id;
 
-    const validRegex =
-      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-    if (!emailValue.match(validRegex)) {
-      setMessage('Please introduce a correct email address');
-    }
-
     try {
       const response = await axios.post('/emailRegistration', {
         email: emailValue,
         eventId,
       });
 
-      // const response = await fetch(
-      //   'http://localhost:4000/api/emailRegistration',
-      //   {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type': 'application/json',
-      //     },
-      //     body: JSON.stringify({ email: emailValue, eventId }),
-      //   }
-      // );
-
-      if (!response.ok) throw new Error(`Error: ${response.status}`);
-      const data = await response.json();
-      setMessage(data.message);
+      setMessage(response.data.message);
       inputEmail.current.value = '';
     } catch (e) {
       console.log('ERROR', e);
