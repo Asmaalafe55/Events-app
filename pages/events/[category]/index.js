@@ -11,10 +11,11 @@ export default EventsCategoryCity;
 
 export async function getStaticPaths() {
   const { data: dataForCategories } = await axios.get('/categories');
+  console.log(5, dataForCategories[1].category);
 
-  const allPaths = dataForCategories.map((category) => {
+  const allPaths = dataForCategories.map((e) => {
     return {
-      params: { category: category.category.toString() },
+      params: { category: e.category.toString() },
     };
   });
 
@@ -26,10 +27,10 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const id = context?.params.category;
-
+  console.log(6, id);
   const { data } = await axios.get('/events');
 
-  const events = data.filter((e) => e.category.id === id);
+  const events = data.filter((e) => e.category.category === id);
 
   return {
     props: { events },
