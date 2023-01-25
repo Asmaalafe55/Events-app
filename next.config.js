@@ -7,6 +7,7 @@ const nextConfig = {
       'images.unsplash.com',
       'wembleypark.com',
       'user-images.githubusercontent.com',
+      'hydeparkwinterwonderland.com',
     ],
   },
 };

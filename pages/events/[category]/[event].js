@@ -7,10 +7,8 @@ const Event = ({ data }) => <SingleEvent data={data} />;
 export default Event;
 
 export async function getStaticPaths() {
-  const {
-    data: { allEvents },
-  } = await axios.get('/events');
-  const allPaths = allEvents.map((path) => {
+  const { data } = await axios.get('/events');
+  const allPaths = data.map((path) => {
     return {
       params: {
         category: path.city,
@@ -27,11 +25,9 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const id = context?.params.event;
 
-  const {
-    data: { allEvents },
-  } = await axios.get('/events');
+  const { data } = await axios.get('/events');
 
-  const eventData = allEvents.find((e) => e.id === id);
+  const eventData = data.find((e) => e.id === id);
 
   return {
     props: { data: eventData },

@@ -11,10 +11,10 @@ const Events = (props) => {
 export default Events;
 
 export async function getStaticProps() {
-  const res = await axios.get('/events');
+  const res = await axios.get('/categories');
   return {
     props: {
-      data: res.data.events_categories,
+      data: res.data,
     },
   };
 }
