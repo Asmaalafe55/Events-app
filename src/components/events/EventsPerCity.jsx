@@ -5,14 +5,15 @@ import Image from 'next/image';
 import styles from './EventsPerCity.module.scss';
 
 const EventsPerCity = ({ data }) => {
+  console.log(data);
   return (
     <div className={styles.events_per_city}>
-      <h1>{`Events in ${data[0]?.city}`}</h1>
+      <h1>Events in {data[0]?.category.title}</h1>
       <div>
         {data.map((event) => (
           <Link
             key={event.id}
-            href={`/events/${event.city}/${event.id}`}
+            href={`/events/${event.category.category}/${event.id}`}
             passHref
           >
             <Image
