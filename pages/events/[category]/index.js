@@ -26,6 +26,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const id = context?.params.category;
+  console.log(1, id);
   const { data } = await axios.get('/events');
   console.log(data);
   const events = data.filter((e) => e.category.id === id);

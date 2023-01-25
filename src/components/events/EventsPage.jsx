@@ -11,6 +11,7 @@ const eventsPage = ({ data }) => {
       <div>
         {data.map((event) => (
           <Link key={event.id} href={`/events/${event.id}`}>
+            {console.log(event.id)}
             <Image
               width={200}
               height={200}

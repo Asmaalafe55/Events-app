@@ -15,17 +15,35 @@ const Banner = ({ start, end, reverse = false }) => {
       >
         <section className={sectionStyle}>
           {images.slice(start, end).map((e, i) => (
-            <Image width={100} height={100} src={e} alt={`event-${i}`} />
+            <Image
+              key={src}
+              width={100}
+              height={100}
+              src={e}
+              alt={`event-${i}`}
+            />
           ))}
         </section>
         <section className={sectionStyle}>
           {images.slice(start, end).map((e, i) => (
-            <Image width={100} height={100} src={e} alt={`event-${i}`} />
+            <Image
+              key={src}
+              width={100}
+              height={100}
+              src={e}
+              alt={`event-${i}`}
+            />
           ))}
         </section>
         <section className={sectionStyle}>
           {images.slice(start, end).map((e, i) => (
-            <Image width={100} height={100} src={e} alt={`event-${i}`} />
+            <Image
+              key={src}
+              width={100}
+              height={100}
+              src={e}
+              alt={`event-${i}`}
+            />
           ))}
         </section>
       </div>
