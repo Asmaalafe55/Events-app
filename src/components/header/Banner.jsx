@@ -16,7 +16,7 @@ const Banner = ({ start, end, reverse = false }) => {
         <section className={sectionStyle}>
           {images.slice(start, end).map((e, i) => (
             <Image
-              key={src}
+              key={i}
               width={100}
               height={100}
               src={e}
@@ -27,7 +27,7 @@ const Banner = ({ start, end, reverse = false }) => {
         <section className={sectionStyle}>
           {images.slice(start, end).map((e, i) => (
             <Image
-              key={src}
+              key={i}
               width={100}
               height={100}
               src={e}
@@ -38,7 +38,7 @@ const Banner = ({ start, end, reverse = false }) => {
         <section className={sectionStyle}>
           {images.slice(start, end).map((e, i) => (
             <Image
-              key={src}
+              key={i}
               width={100}
               height={100}
               src={e}

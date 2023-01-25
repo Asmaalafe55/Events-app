@@ -11,7 +11,7 @@ export async function getStaticPaths() {
   const allPaths = data.map((path) => {
     return {
       params: {
-        category: path.category,
+        category: path.category.id,
         event: path.id,
       },
     };
