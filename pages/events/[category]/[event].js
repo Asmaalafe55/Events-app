@@ -24,7 +24,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const id = context?.params.event;
-  console.log(2, id);
   const { data } = await axios.get('/events');
 
   const eventData = data.find((e) => e.id === id);
