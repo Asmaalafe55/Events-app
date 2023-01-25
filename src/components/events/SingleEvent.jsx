@@ -16,7 +16,7 @@ const SingleEvent = ({ data }) => {
     const eventId = router?.query.id;
 
     try {
-      const response = await axios.post('/emailRegistration', {
+      const response = await axios.post('/addEmail', {
         email: emailValue,
         eventId,
       });
