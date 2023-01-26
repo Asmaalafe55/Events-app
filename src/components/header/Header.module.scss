@@ -54,13 +54,13 @@
     div {
       display: flex;
       flex-direction: column;
-      align-items: center;
       color: var(--black-color);
       padding: 2rem 1rem;
 
-      div {
+      form {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
 
         label {
           color: var(--black-color);
@@ -95,21 +95,20 @@
             color: rgba(37, 37, 37, 0.57);
           }
         }
-      }
+        button {
+          font-family: 'Playfair Display';
+          border-style: none;
+          width: 120px;
+          height: 50px;
+          font-weight: 400;
+          font-size: 20px;
+          border-radius: 20px;
+          text-transform: capitalize;
 
-      button {
-        font-family: 'Playfair Display';
-        border-style: none;
-        width: 120px;
-        height: 50px;
-        font-weight: 400;
-        font-size: 20px;
-        border-radius: 20px;
-        text-transform: capitalize;
-
-        background-color: var(--secondary-color);
-        color: var(--primary-color);
-        box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
+          background-color: var(--secondary-color);
+          color: var(--primary-color);
+          box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
+        }
       }
     }
   }

@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import axios from '../../../utils/axios';
 import styles from './Header.module.scss';
 import { Banner } from './Banner';
 
 const Header = (props) => {
-  const { subEmail, setSubEmail } = props;
+  const inputEmail = useRef();
+  const [message, setMessage] = useState('');
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const emailValue = inputEmail.current.value;
+
+    try {
+      const response = await axios.post('/emailNewsletter', {
+        email: emailValue,
+      });
+
+      setMessage(response.data.message);
+      inputEmail.current.value = '';
+    } catch (e) {
+      console.log('ERROR', e);
+    }
+  };
+
   return (
     <>
       <div className={(styles.app__header, styles.app__flex)}>
@@ -17,11 +36,16 @@ const Header = (props) => {
             <div>
               <h2>Subscribe now to our newsletter</h2>
               <div>
-                <div>
+                <form onSubmit={onSubmit}>
                   <label>Email:</label>
-                  <input type="email" placeholder="Please enter your email" />
-                </div>
-                <button>subscribe</button>
+                  <input
+                    ref={inputEmail}
+                    type="email"
+                    id="email"
+                    placeholder="Please enter your email"
+                  />
+                  <button type="submit">Subscribe</button>
+                </form>
               </div>
             </div>
           </div>
