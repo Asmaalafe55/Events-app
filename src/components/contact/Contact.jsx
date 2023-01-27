@@ -61,7 +61,7 @@ const Contact = (props) => {
               id="message"
               placeholder="Please enter your message"
             />
-            <button type="submit">Subscribe</button>
+            <button type="submit">Send</button>
           </form>
         </div>
         <div className={styles.contact_right_side}>
