@@ -30,7 +30,9 @@ const HomePage = ({ data }) => {
               </div>
             </Link>
           ))}
-          <div className={styles.contact__title}>Contact Us</div>
+          <div id="contact" className={styles.contact__title}>
+            Contact Us
+          </div>
         </div>
         <div className={styles.app__home2}></div>
       </div>

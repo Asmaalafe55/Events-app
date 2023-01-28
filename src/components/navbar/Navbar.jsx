@@ -22,7 +22,7 @@ const Navbar = () => {
     <header>
       <nav className={styles.app__navbar}>
         <Link href="/" className={styles.app__navbar_logo}>
-          <Image alt="logo" src={logoImages.logoPic} width={50} height={50} />
+          <Image alt="logo" src={logoImages.logoPic} width={30} height={30} />
           <div>Events App</div>
         </Link>
         <ul className={styles.app__navbar_links}>
