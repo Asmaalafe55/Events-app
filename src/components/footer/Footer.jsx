@@ -19,21 +19,15 @@ const Footer = () => {
           <a href="">Jobs</a>
           <a href="">Add your event</a>
         </div>
-        <div>
-          <div>legal</div>
-          <a href="">Terms and conditions</a>
-          <a href="">License agreement</a>
-          <a href="">Privacy policy</a>
-          <a href="">Copyright information</a>
-          <a href="">Cookies policy</a>
-          <a href="">Cookies settings</a>
-        </div>
+
         <div>
           <div>support</div>
           <a href="">FAQ</a>
+          <a href="">Legal</a>
           <a href="">Contact</a>
         </div>
       </div>
+
       <div className={styles.buttom_footer}>
         <Link href="/" className={styles.app__footer_logo}>
           <Image alt="logo" src={logoImages.logoPic} width={50} height={50} />

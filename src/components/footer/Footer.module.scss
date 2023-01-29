@@ -1,25 +1,14 @@
 .footer {
   display: flex;
-  flex: 1 1;
-  padding: 2rem 0;
-  justify-content: space-evenly;
+  padding: 2rem 2rem;
+  justify-content: right;
   align-items: flex-start;
+  height: 20rem;
 
-  color: var(--black-color);
-  background-color: var(--primary-color);
+  color: var(--primary-color);
+  background-color: var(--black-color);
 
   @media screen and (max-width: 768px) {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: auto auto;
-    font-size: smaller;
-    div {
-      justify-content: flex-start;
-
-      div {
-        margin-bottom: 1rem;
-      }
-    }
   }
 
   div {
@@ -49,6 +38,7 @@
   justify-content: space-between;
   padding: 1rem 2rem;
   align-items: center;
+  height: 5rem;
 
   color: var(--primary-color);
   background-color: var(--secondary-color);
@@ -59,7 +49,6 @@
 }
 
 .app__footer_logo {
-  width: 70%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -67,11 +56,12 @@
   div {
     color: var(--primary-color);
     text-align: center;
-    font-size: 35px;
+    font-size: 30px;
   }
   img {
-    width: 60px;
-    height: 60px;
+    margin-right: 1rem;
+    width: 40px;
+    height: 40px;
 
     @media screen and (min-width: 2000px) {
       width: 100px;
@@ -85,10 +75,10 @@
 
 .copyright {
   text-transform: capitalize;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
 
   @media screen and (max-width: 768px) {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
