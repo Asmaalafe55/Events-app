@@ -4,7 +4,7 @@ import axios from '../../../utils/axios';
 
 import { HiPhone, HiMail } from 'react-icons/hi';
 
-const Contact = (props) => {
+const Contact = () => {
   const inputEmail = useRef();
   const inputName = useRef();
   const inputMessage = useRef();
@@ -34,10 +34,10 @@ const Contact = (props) => {
 
   return (
     <>
-      <div id="contact" className={styles.contact__title}>
-        Contact Us
-      </div>
       <div className={styles.app__contact}>
+        <div id="contact" className={styles.contact__title}>
+          Contact Us
+        </div>
         <div className={styles.contact_left_side}>
           <form onSubmit={handleSubmit}>
             <label>Full Name:</label>
@@ -67,7 +67,7 @@ const Contact = (props) => {
             <button type="submit">Send</button>
           </form>
         </div>
-        <div className={styles.contact_right_side}>
+        {/* <div className={styles.contact_right_side}>
           <div>
             <HiPhone />
             <div>+01 555 99 0342</div>
@@ -76,7 +76,7 @@ const Contact = (props) => {
             <HiMail />
             <div>info@events.com</div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

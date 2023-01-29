@@ -1,14 +1,21 @@
 .app__contact {
-  background-color: var(--black-color);
-  position: relative;
+  background-color: var(--white-color);
   display: flex;
+  flex-direction: column;
 
+  .contact__title {
+    font-size: 55px;
+    text-align: center;
+    margin: 2rem 0;
+
+    color: var(--black-color);
+    text-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
+  }
   .contact_left_side {
-    color: var(--primary-color);
-    width: 70%;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem;
     display: flex;
     justify-content: center;
+    color: var(--black-color);
 
     form {
       display: flex;
@@ -23,18 +30,22 @@
       }
 
       input {
+        font-family: 'NoirPro';
         border-style: none;
         text-decoration: none;
         border-radius: 20px;
-        background-color: var(--primary-color);
         box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
 
-        width: 250px;
+        width: 1050px;
         height: 60px;
+        font-size: 25px;
+
+        color: var(--black-color);
+        background-color: var(--primary-color);
 
         &::placeholder {
           font-size: 18px;
-          padding-left: 0.7rem;
+          padding-left: 1rem;
 
           color: rgba(37, 37, 37, 0.57);
         }
@@ -45,10 +56,13 @@
 
       button {
         border-style: none;
-        width: 120px;
+        width: 200px;
         height: 50px;
+        margin: 2rem;
 
-        font-size: 20px;
+        align-self: center;
+        align-items: center;
+        font-size: 25px;
         border-radius: 20px;
         text-transform: capitalize;
 
@@ -83,11 +97,4 @@
       }
     }
   }
-}
-.contact__title {
-  font-size: 55px;
-  text-align: center;
-
-  transform: translateX(-50%);
-  text-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
 }
