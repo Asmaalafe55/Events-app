@@ -6,7 +6,7 @@
 
   h1 {
     align-self: center;
-    font-weight: 900;
+
     font-size: 100px;
     text-transform: capitalize;
 
@@ -65,14 +65,12 @@
         padding: 1rem 3rem;
 
         h2 {
-          font-weight: 900;
           font-size: 45px;
           font-feature-settings: 'pnum' on, 'lnum' on;
           padding: 2rem 0;
         }
 
         p {
-          font-weight: 500;
           font-size: 35px;
           font-feature-settings: 'pnum' on, 'lnum' on;
         }

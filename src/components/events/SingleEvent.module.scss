@@ -15,7 +15,6 @@
       padding: 1rem 2rem;
 
       h1 {
-        font-weight: 900;
         font-size: 55px;
         padding: 2rem 0;
 
@@ -23,7 +22,6 @@
       }
 
       p {
-        font-weight: 500;
         font-size: 35px;
         font-feature-settings: 'pnum' on, 'lnum' on;
       }
@@ -34,7 +32,6 @@
         align-items: center;
 
         label {
-          font-weight: 500;
           font-size: 40px;
           padding: 1rem 0;
         }
@@ -54,8 +51,6 @@
             height: 60px;
 
             &::placeholder {
-              font-family: 'Playfair Display';
-              font-weight: 400;
               font-size: 18px;
               padding-left: 0.7rem;
 
@@ -66,11 +61,10 @@
             }
           }
           button {
-            font-family: 'Playfair Display';
             border-style: none;
             width: 120px;
             height: 50px;
-            font-weight: 400;
+
             font-size: 20px;
             border-radius: 20px;
             text-transform: capitalize;

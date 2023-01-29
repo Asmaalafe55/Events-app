@@ -30,7 +30,6 @@
     align-items: flex-start;
 
     div {
-      font-weight: bold;
       text-transform: uppercase;
       margin-bottom: 2rem;
     }
@@ -68,7 +67,6 @@
   div {
     color: var(--primary-color);
     text-align: center;
-    font-weight: 400;
     font-size: 35px;
   }
   img {
@@ -87,7 +85,6 @@
 
 .copyright {
   text-transform: capitalize;
-  font-weight: 200;
   font-size: 18px;
   text-align: center;
 

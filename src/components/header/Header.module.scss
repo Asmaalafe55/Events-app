@@ -2,7 +2,6 @@
   flex: 1;
   width: 100%;
   height: 100%;
-  font-family: 'Playfair Display';
 
   @media screen and (min-width: 2000px) {
     padding-top: 8rem;
@@ -42,7 +41,6 @@
 
     h2 {
       color: var(--black-color);
-      font-weight: 800;
       font-size: 50px;
       text-align: center;
       text-transform: uppercase;
@@ -65,7 +63,6 @@
         label {
           color: var(--black-color);
 
-          font-weight: 600;
           font-size: 25px;
           padding-right: 0.5rem;
           margin-right: 0.5rem;
@@ -84,8 +81,6 @@
           height: 60px;
 
           &::placeholder {
-            font-family: 'Playfair Display';
-            font-weight: 400;
             font-size: 18px;
             padding-left: 0.7rem;
 
@@ -96,11 +91,9 @@
           }
         }
         button {
-          font-family: 'Playfair Display';
           border-style: none;
           width: 120px;
           height: 50px;
-          font-weight: 400;
           font-size: 20px;
           border-radius: 20px;
           text-transform: capitalize;

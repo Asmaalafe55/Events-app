@@ -2,7 +2,35 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Alegreya', serif;
+  font-family: 'NoirPro';
+}
+
+@font-face {
+  font-family: 'NoirPro';
+  src: url('/fonts/NoirPro-Regular.woff') format('woff'),
+    url('/fonts/NoirPro-Regular.wof2') format('wof2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NoirPro';
+  src: url('/fonts/NoirPro-Bold.woff') format('woff'),
+    url('/fonts/NoirPro-Bold.wof2') format('wof2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NoirPro';
+  src: url('/fonts/NoirPro-Medium.woff') format('woff'),
+    url('/fonts/NoirPro-Medium.wof2') format('wof2');
+
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
 }
 
 a {
@@ -17,6 +45,8 @@ a {
   --gray-color: #6b7688;
   --brown-color: #46364a;
   --white-color: #ffffff;
+
+  --font-base: 'NoirPro';
 }
 
 * {
