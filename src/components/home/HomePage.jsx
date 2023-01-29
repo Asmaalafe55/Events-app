@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
 
 import Header from '../header/Header';
 import Contact from '../contact/Contact';
@@ -9,10 +8,9 @@ import Contact from '../contact/Contact';
 import styles from './Home.module.scss';
 
 const HomePage = ({ data }) => {
-  const [subEmail, setSubEmail] = useState('');
   return (
     <main className={styles.home}>
-      <Header id="home" subEmail={subEmail} setSubEmail={setSubEmail} />
+      <Header id="home" />
       <div className={styles.container}>
         <div className={styles.app__home}>
           <div className={styles.title}>Top Events</div>
@@ -35,7 +33,6 @@ const HomePage = ({ data }) => {
             Contact Us
           </div>
         </div>
-        <div className={styles.app__home2}></div>
       </div>
       <Contact />
     </main>

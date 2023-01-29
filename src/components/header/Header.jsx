@@ -3,7 +3,7 @@ import axios from '../../../utils/axios';
 import styles from './Header.module.scss';
 import { Banner } from './Banner';
 
-const Header = (props) => {
+const Header = () => {
   const inputEmail = useRef();
   const [message, setMessage] = useState('');
 
