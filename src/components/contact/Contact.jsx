@@ -34,6 +34,9 @@ const Contact = (props) => {
 
   return (
     <>
+      <div id="contact" className={styles.contact__title}>
+        Contact Us
+      </div>
       <div className={styles.app__contact}>
         <div className={styles.contact_left_side}>
           <form onSubmit={handleSubmit}>

@@ -2,10 +2,11 @@
   position: relative;
   padding-top: 80px;
 }
-.container {
-  display: flex;
-}
+
 .app__home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 70vw;
   padding: 3rem 0;
 
@@ -16,60 +17,59 @@
     font-size: 55px;
     text-align: center;
   }
-
-  a {
+  div {
     display: flex;
-    padding: 2rem 0;
-    position: relative;
-    width: 100%;
-    filter: drop-shadow(4px 8px 5px rgba(0, 0, 0, 0.25));
 
-    transition: all 0.5s ease-in-out;
-
-    &:hover {
-      color: var(--secondary-color);
-    }
-
-    img {
-      height: 200px;
-      width: 25vw;
-      box-shadow: inset 4px 8px 6px rgba(0, 0, 0, 0.25);
-      position: absolute;
-      left: 4rem;
-    }
-
-    div {
-      padding: 1rem;
-      background-color: var(--primary-color);
-      height: 200px;
-      width: 100%;
+    a {
+      flex-direction: column;
       position: relative;
-      top: 0;
-      left: 25vw;
+      display: flex;
+      margin: 2rem 1rem;
 
-      h2 {
-        font-size: 50px;
-        text-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
+      width: 420px;
+      height: 600px;
+      align-items: center;
+      align-self: center;
+
+      border-radius: 30px;
+
+      background-color: var(--primary-color);
+      color: var(--black-color);
+
+      filter: drop-shadow(4px 8px 5px rgba(0, 0, 0, 0.25));
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        color: var(--secondary-color);
       }
 
-      p {
-        padding: 1rem 0;
-        font-size: 30px;
+      img {
+        margin: 2rem;
+        height: 270px;
+        width: 270px;
+        border-radius: 100%;
+
+        box-shadow: inset 4px 8px 6px rgba(0, 0, 0, 0.25);
+      }
+
+      div {
+        flex-direction: column;
+        padding: 1rem;
+        h2 {
+          text-align: center;
+          font-size: 40px;
+          text-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
+        }
+
+        p {
+          padding: 1rem 0;
+          font-size: 25px;
+        }
       }
     }
   }
 
   @media screen and (max-width: 768px) {
     display: none;
-  }
-
-  .contact__title {
-    position: absolute;
-    font-size: 55px;
-    text-align: center;
-    left: 50vw;
-    bottom: 2rem;
-    transform: translateX(-50%);
-    text-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
   }
 }

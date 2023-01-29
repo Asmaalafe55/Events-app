@@ -11,9 +11,10 @@ const HomePage = ({ data }) => {
   return (
     <main className={styles.home}>
       <Header id="home" />
-      <div className={styles.container}>
-        <div className={styles.app__home}>
-          <div className={styles.title}>Top Events</div>
+
+      <div className={styles.app__home}>
+        <div className={styles.title}>Top Events</div>
+        <div className={styles.list}>
           {data.map((event) => (
             <Link key={event.id} href={`/events/${event.category}`}>
               {console.log(event.id)}
@@ -29,11 +30,9 @@ const HomePage = ({ data }) => {
               </div>
             </Link>
           ))}
-          <div id="contact" className={styles.contact__title}>
-            Contact Us
-          </div>
         </div>
       </div>
+
       <Contact />
     </main>
   );
