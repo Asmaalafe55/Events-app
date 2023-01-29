@@ -77,6 +77,29 @@ const Contact = () => {
             <div>info@events.com</div>
           </div>
         </div> */}
+        {/*
+    .contact_right_side {
+    background-color: #ffffff;
+    color: var(--black-color);
+    padding: 4rem 2rem;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    div {
+      display: flex;
+      font-size: 28px;
+      padding: 0.5rem 0;
+
+      justify-content: space-evenly;
+      align-items: center;
+
+      svg {
+        width: 40;
+      }
+    }
+  }  */}
       </div>
     </>
   );
