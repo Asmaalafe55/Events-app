@@ -16,13 +16,16 @@
 .left__right {
   display: flex;
   flex-direction: row;
+  height: 710px;
+  background-color: #ffffff;
 }
 
 .header__left__side {
   position: relative;
   padding: 1rem 0;
-  width: 70%;
-  background-color: var(--black-color);
+  width: 60%;
+
+  margin: auto;
 
   @media screen and (max-width: 900px) {
     width: 100%;
@@ -31,13 +34,11 @@
 
 .header__right__side {
   background-color: #ffffff;
-  width: 30%;
   padding: 4rem 2rem;
   display: flex;
 
   div {
     margin: auto;
-    align-self: center;
 
     h2 {
       color: var(--black-color);

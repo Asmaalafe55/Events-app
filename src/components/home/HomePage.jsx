@@ -17,7 +17,8 @@ const HomePage = ({ data }) => {
         <div className={styles.app__home}>
           <div className={styles.title}>Top Events</div>
           {data.map((event) => (
-            <Link key={event.id} href={`/events/${event.id}`}>
+            <Link key={event.id} href={`/events/${event.category}`}>
+              {console.log(event.id)}
               <Image
                 width={200}
                 height={200}
