@@ -23,12 +23,12 @@
     font-size: 35px;
   }
   img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 30px;
 
     @media screen and (min-width: 2000px) {
-      width: 100px;
-      height: 100px;
+      width: 70px;
+      height: 50px;
     }
   }
   @media screen and (max-width: 900px) {

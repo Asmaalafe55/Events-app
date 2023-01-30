@@ -20,8 +20,9 @@ import e19 from '../images/pic/e19.jpg';
 import e20 from '../images/pic/e20.jpg';
 import e21 from '../images/pic/e21.jpg';
 
-import logoPic from '../images/logo.png';
-import logoPic1 from '../images/logo1.png';
+import red_logo from '../images/red_logo.png';
+import black_logo from '../images/black_logo.png';
+import white_logo from '../images/white_logo.png';
 
 const images = [
   e1,
@@ -47,8 +48,9 @@ const images = [
   e21,
 ];
 export const logoImages = {
-  logoPic,
-  logoPic1,
+  white_logo,
+  black_logo,
+  red_logo,
 };
 
 export default images;
