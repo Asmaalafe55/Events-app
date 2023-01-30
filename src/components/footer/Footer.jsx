@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import axios from '../../../utils/axios';
 import Image from 'next/image';
 import Link from 'next/link';
+
 import { HiPhone, HiMail } from 'react-icons/hi';
-
-import { logoImages } from '../../images/images';
 import styles from './Footer.module.scss';
-
+import { logoImages } from '../../images/images';
 // import { CiFacebook, CiInstagram, CiTwitter } from 'react-icons/ci';
 
 const Footer = () => {
+  const inputEmail = useRef();
+  const [message, setMessage] = useState('');
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const emailValue = inputEmail.current.value;
+
+    try {
+      const response = await axios.post('/emailNewsletter', {
+        email: emailValue,
+      });
+
+      setMessage(response.data.message);
+      inputEmail.current.value = '';
+    } catch (e) {
+      console.log('ERROR', e);
+    }
+  };
   return (
     <footer>
       <div className={styles.footer}>
@@ -22,7 +40,7 @@ const Footer = () => {
           <a href="">Legal</a>
         </div>
 
-        <div className={styles.contact_right_side}>
+        <div className={styles.contact_info}>
           <div>
             <HiPhone />
             <div>+01 555 99 0342</div>
@@ -31,6 +49,20 @@ const Footer = () => {
             <HiMail />
             <div>info@events.com</div>
           </div>
+        </div>
+
+        <div className={styles.newsletter}>
+          <h2>Subscribe now to our newsletter</h2>
+
+          <form onSubmit={onSubmit}>
+            <input
+              ref={inputEmail}
+              type="email"
+              id="email"
+              placeholder="Please enter your email"
+            />
+            <button type="submit">Subscribe</button>
+          </form>
         </div>
       </div>
 
