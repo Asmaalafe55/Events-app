@@ -12,8 +12,8 @@ const HomePage = ({ data }) => {
     <main className={styles.home}>
       <Header id="home" />
 
-      <div className={styles.app__home}>
-        <div className={styles.title}>Top Events</div>
+      <div className={styles.app_top}>
+        <div className={styles.title}>Top Categories</div>
         <div className={styles.list}>
           {data.map((event) => (
             <Link key={event._id} href={`/events/${event.category}`}>
