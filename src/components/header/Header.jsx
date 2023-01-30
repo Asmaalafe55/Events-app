@@ -5,7 +5,7 @@ import { Banner } from './Banner';
 const Header = () => {
   return (
     <>
-      <div className={(styles.app__header, styles.app__flex)}>
+      <div className={styles.app__header}>
         <div className={styles.left__right}>
           <div className={styles.header__left__side}>
             <Banner start={0} end={7} />
@@ -14,7 +14,12 @@ const Header = () => {
           </div>
 
           <div className={styles.header__right__side}>
-            <div>Hello 😁</div>
+            <div>
+              <div>
+                Discover & Register for Exciting Events Worldwide with Ease
+              </div>
+              <div>Join the Celebration of Life's Most Memorable Moments</div>
+            </div>
           </div>
         </div>
       </div>

@@ -5,9 +5,6 @@
 
   color: var(--primary-color);
   background-color: var(--black-color);
-
-  @media screen and (max-width: 768px) {
-  }
 }
 
 .links {
@@ -114,11 +111,6 @@
 
   color: var(--primary-color);
   background-color: var(--secondary-color);
-
-  // @media screen and (max-width: 768px) {
-  //   font-size: smaller;
-  //   width: 100%;
-  // }
 }
 
 .app__footer_logo {
@@ -150,8 +142,4 @@
   text-transform: capitalize;
   font-size: 16px;
   text-align: center;
-
-  @media screen and (max-width: 768px) {
-    font-size: 12px;
-  }
 }

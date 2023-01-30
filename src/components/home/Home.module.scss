@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // padding: 3rem 0;
+  padding: 3rem 0;
 
   background-color: var(--black-color);
   color: var(--primary-color);
@@ -21,7 +21,6 @@
 
     a {
       flex-direction: column;
-      position: relative;
       display: flex;
       margin: 2rem 1rem;
 
@@ -66,12 +65,5 @@
         }
       }
     }
-    @media screen and (max-width: 768px) {
-      flex-direction: column;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
   }
 }

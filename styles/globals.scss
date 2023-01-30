@@ -67,24 +67,24 @@ a {
 }
 //////
 
-.app {
-  background-color: var(--primary-color);
-  font-family: var(--font-base);
-}
+// .app {
+//   background-color: var(--primary-color);
+//   font-family: var(--font-base);
+// }
 
-.app__container {
-  width: 100%;
-  min-height: 100vh;
+// .app__container {
+//   width: 100%;
+//   min-height: 100vh;
 
-  display: flex;
-  flex-direction: row;
-}
+//   display: flex;
+//   flex-direction: row;
+// }
 
-.app__flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+// .app__flex {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
 .app__wrapper {
   flex: 1;
