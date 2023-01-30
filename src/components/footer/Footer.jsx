@@ -6,7 +6,11 @@ import Link from 'next/link';
 import { HiPhone, HiMail } from 'react-icons/hi';
 import styles from './Footer.module.scss';
 import { logoImages } from '../../images/images';
-// import { CiFacebook, CiInstagram, CiTwitter } from 'react-icons/ci';
+import {
+  AiFillFacebook,
+  AiFillInstagram,
+  AiFillTwitterCircle,
+} from 'react-icons/ai';
 
 const Footer = () => {
   const inputEmail = useRef();
@@ -30,7 +34,7 @@ const Footer = () => {
   return (
     <footer>
       <div className={styles.footer}>
-        <div>
+        <div className={styles.links}>
           <a href="">Pricing</a>
           <a href="">About us</a>
           <a href="">Business</a>
@@ -39,15 +43,28 @@ const Footer = () => {
           <a href="">FAQ</a>
           <a href="">Legal</a>
         </div>
-
-        <div className={styles.contact_info}>
-          <div>
-            <HiPhone />
-            <div>+01 555 99 0342</div>
+        <div className={styles.middle}>
+          <div className={styles.contact_info}>
+            <div>
+              <HiPhone />
+              <div>+01 555 99 0342</div>
+            </div>
+            <div>
+              <HiMail />
+              <div>info@events.com</div>
+            </div>
           </div>
-          <div>
-            <HiMail />
-            <div>info@events.com</div>
+
+          <div className={styles.social_media}>
+            <a href="">
+              <AiFillFacebook />
+            </a>
+            <a href="">
+              <AiFillInstagram />
+            </a>
+            <a href="">
+              <AiFillTwitterCircle />
+            </a>
           </div>
         </div>
 

@@ -95,14 +95,13 @@
     z-index: 5;
 
     padding: 1rem;
-    width: 60%;
+    // width: 60%;
     height: 100vh;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
 
-    // background: url(../../assets/bgWhite.png);
     background-color: var(--white-color);
     background-size: cover;
     background-repeat: repeat;

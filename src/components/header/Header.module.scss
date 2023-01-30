@@ -23,7 +23,7 @@
 
 .header__left__side {
   position: relative;
-  width: 60%;
+  // width: 60%;
 
   margin: auto;
 
@@ -37,6 +37,7 @@
   background-color: #ffffff;
 
   div {
+    width: 40%;
   }
 
   @media screen and (max-width: 900px) {
