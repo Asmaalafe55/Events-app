@@ -15,12 +15,16 @@
     display: flex;
     justify-content: center;
 
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+    }
+
     a {
       flex-direction: column;
       display: flex;
       margin: 2rem 1rem;
 
-      width: 420px;
+      width: 400px;
       height: 600px;
       align-items: center;
       align-self: center;
@@ -31,10 +35,19 @@
       color: var(--black-color);
 
       filter: drop-shadow(4px 8px 5px rgba(0, 0, 0, 0.25));
-      transition: all 0.5s ease-in-out;
+      transition: all 0.3s ease-in-out;
 
       &:hover {
         color: var(--secondary-color);
+      }
+      @media screen and (max-width: 1400px) {
+        margin: 2rem 0.5rem;
+        width: 350px;
+        height: 550px;
+      }
+      @media screen and (min-width: 1100px) {
+        width: 250px;
+        height: 500px;
       }
 
       img {
@@ -44,20 +57,31 @@
         border-radius: 100%;
 
         box-shadow: inset 4px 8px 6px rgba(0, 0, 0, 0.25);
+
+        @media screen and (min-width: 1400px) {
+          width: 150px;
+          height: 150px;
+        }
       }
 
       div {
         flex-direction: column;
         padding: 1rem;
+        font-size: 25px;
+        @media screen and (max-width: 1100px) {
+          font-size: 15px;
+        }
         h2 {
           text-align: center;
           font-size: 40px;
           text-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
+          @media screen and (max-width: 1100px) {
+            font-size: 25px;
+          }
         }
 
         p {
           padding: 1rem 0;
-          font-size: 25px;
         }
       }
     }
