@@ -1,8 +1,6 @@
 import React from 'react';
 import styles from './AboutUs.module.scss';
 
-import { Banner } from '../header/Banner';
-
 const AboutUs = () => {
   return (
     <div className={styles.left__right}>
@@ -18,11 +16,7 @@ const AboutUs = () => {
           culpa qui officia deserunt mollit anim id est laborum."
         </p>
       </div>
-      <div className={styles.about__right__side}>
-        <Banner start={0} end={7} />
-        <Banner start={7} end={14} reverse />
-        <Banner start={14} end={21} />
-      </div>
+      <div className={styles.about__right__side}></div>
     </div>
   );
 };
