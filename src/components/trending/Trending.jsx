@@ -17,6 +17,7 @@ const Trending = ({ data }) => {
               alt={event.title}
               src={event.image}
             />
+
             <div>
               <h2>{event.title}</h2>
               <p>{event.description}</p>

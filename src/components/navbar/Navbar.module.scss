@@ -95,7 +95,7 @@
     z-index: 5;
 
     padding: 1rem;
-    // width: 60%;
+    width: 60%;
     height: 100vh;
     display: flex;
     justify-content: flex-end;
@@ -129,7 +129,7 @@
         margin: 1rem;
 
         a {
-          color: var(--black-color);
+          color: var(--primary-color);
           text-decoration: none;
           font-size: 2rem;
           text-transform: capitalize;

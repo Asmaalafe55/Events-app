@@ -65,34 +65,23 @@ a {
     background: var(--black-color);
   }
 }
-//////
 
-// .app {
-//   background-color: var(--primary-color);
-//   font-family: var(--font-base);
-// }
+button {
+  border-style: none;
+  max-width: 400px;
+  min-width: 200px;
+  height: 50px;
+  margin: 0.5rem;
 
-// .app__container {
-//   width: 100%;
-//   min-height: 100vh;
+  align-self: center;
+  align-items: center;
+  font-size: 25px;
+  border-radius: 20px;
+  text-transform: capitalize;
 
-//   display: flex;
-//   flex-direction: row;
-// }
+  cursor: pointer;
 
-// .app__flex {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-.app__wrapper {
-  flex: 1;
-  width: 100%;
-  flex-direction: column;
-  padding: 4rem 2rem;
-
-  @media screen and (max-width: 450px) {
-    padding: 4rem 1rem 2rem;
-  }
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
 }

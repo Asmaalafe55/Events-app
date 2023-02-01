@@ -4,11 +4,16 @@
   height: 100%;
   padding-top: 4rem;
 }
+
 .left__right {
   display: flex;
   flex-direction: row;
   background-color: #ffffff;
   padding: 2rem 0;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
 }
 
 .header__left__side {
@@ -20,15 +25,27 @@
 }
 
 .header__right__side {
-  margin: auto;
+  display: flex;
+  flex-direction: column;
   background-color: #ffffff;
   color: var(--black-color);
 
-  @media screen and (max-width: 900px) {
-    display: none;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0.8rem;
+
+    div {
+      font-size: 3rem;
+      margin: 0.5rem 0;
+    }
+    p {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
   }
 
-  @media screen and (max-width: 900px) {
-    display: none;
+  .header_button {
+    align-self: center;
   }
 }

@@ -10,6 +10,10 @@
 
     color: var(--black-color);
     text-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
+
+    @media screen and (max-width: 600px) {
+      font-size: 40px;
+    }
   }
   .contact_left_side {
     padding: 2rem 2rem;
@@ -54,23 +58,8 @@
         height: 148px;
       }
 
-      button {
-        border-style: none;
-        width: 200px;
-        height: 50px;
+      .contact_button {
         margin: 2rem;
-
-        align-self: center;
-        align-items: center;
-        font-size: 25px;
-        border-radius: 20px;
-        text-transform: capitalize;
-
-        cursor: pointer;
-
-        background-color: var(--secondary-color);
-        color: var(--primary-color);
-        box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
       }
     }
   }

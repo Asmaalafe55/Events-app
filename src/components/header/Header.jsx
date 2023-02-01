@@ -18,8 +18,9 @@ const Header = () => {
               <div>
                 Discover & Register for Exciting Events Worldwide with Ease
               </div>
-              <div>Join the Celebration of Life's Most Memorable Moments</div>
+              <p>Join the Celebration of Life's Most Memorable Moments</p>
             </div>
+            <button className={styles.header_button}>Get Started</button>
           </div>
         </div>
       </div>
