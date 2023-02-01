@@ -8,13 +8,20 @@
   label {
     align-self: center;
     padding: 1rem 0;
-    font-size: 100px;
+    font-size: 90px;
     mix-blend-mode: hard-light;
+
+    @media screen and (max-width: 600px) {
+      font-size: 60px;
+    }
+    @media screen and (max-width: 300px) {
+      font-size: 40px;
+    }
   }
 
   div {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
 
     a {
@@ -22,27 +29,36 @@
       position: relative;
 
       img {
-        width: 410px;
+        min-width: 410px;
         height: 255px;
-        background: rgba(0, 0, 0, 0.1);
-
-        box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
-
         border-radius: 30px;
+
+        background: rgba(0, 0, 0, 0.1);
+        box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
 
         &:hover {
           box-shadow: 4px 10px 5px rgba(0, 0, 0, 0.25);
         }
+        @media screen and (max-width: 600px) {
+          min-width: 300px;
+        }
+        @media screen and (max-width: 300px) {
+          min-width: 250px;
+        }
       }
       h2 {
         position: absolute;
-        // top: 50%;
-        // left: 50%;
-        // transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
         color: var(--primary-color);
         font-size: 35px;
         text-shadow: 5px 9px 5px rgba(0, 0, 0, 0);
+
+        @media screen and (max-width: 300px) {
+          font-size: 25px;
+        }
       }
     }
   }
