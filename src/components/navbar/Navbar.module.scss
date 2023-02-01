@@ -21,8 +21,13 @@
     text-align: center;
     align-items: center;
     font-size: 35px;
+
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
   }
   img {
+    margin: 0 0.5rem;
     width: 50px;
     height: 30px;
 
@@ -68,7 +73,6 @@
   }
   @media screen and (max-width: 900px) {
     display: none;
-    color: var(--primary-color);
   }
 }
 
