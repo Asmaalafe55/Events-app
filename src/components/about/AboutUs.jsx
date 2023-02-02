@@ -3,8 +3,8 @@ import styles from './AboutUs.module.scss';
 
 const AboutUs = () => {
   return (
-    <div className={styles.left__right}>
-      <div className={styles.app__about}>
+    <div className={styles.left_right}>
+      <div className={styles.app_about}>
         <h1>About Us</h1>
         <p>
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -16,7 +16,7 @@ const AboutUs = () => {
           culpa qui officia deserunt mollit anim id est laborum."
         </p>
       </div>
-      <div className={styles.about__right__side}></div>
+      <div className={styles.about_right_side}></div>
     </div>
   );
 };
