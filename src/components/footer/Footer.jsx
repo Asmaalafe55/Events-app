@@ -91,7 +91,7 @@ const Footer = () => {
             width={50}
             height={30}
           />
-          <div>Events App</div>
+          <div>EventsApp</div>
         </Link>
         <div className={styles.copyright}>
           <p>created by Asmaa</p>

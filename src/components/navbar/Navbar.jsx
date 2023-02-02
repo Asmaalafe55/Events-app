@@ -28,7 +28,7 @@ const Navbar = () => {
             width={50}
             height={30}
           />
-          <div>Events App</div>
+          <div>EventsApp</div>
         </Link>
         <ul className={styles.app__navbar_links}>
           {links.splice(1, 4).map((item) => (
