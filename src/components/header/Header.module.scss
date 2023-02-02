@@ -7,7 +7,6 @@
 
 .left__right {
   display: flex;
-  flex-direction: row;
   background-color: #ffffff;
   padding: 2rem 0;
 
@@ -38,6 +37,12 @@
     div {
       font-size: 3rem;
       margin: 0.5rem 0;
+      @media screen and (min-width: 900px) {
+        font-size: 4rem;
+      }
+      @media screen and (min-width: 2000px) {
+        font-size: 5rem;
+      }
     }
     p {
       font-size: 1.5rem;
@@ -48,4 +53,7 @@
   .header_button {
     align-self: center;
   }
+  // @media screen and (min-width: 900px) {
+  //   margin: 2rem 2rem;
+  // }
 }
