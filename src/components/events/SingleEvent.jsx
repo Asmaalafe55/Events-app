@@ -35,24 +35,22 @@ const SingleEvent = ({ data }) => {
           <h1>{data.title}</h1>
           <p>{data.description}</p>
         </div>
-
-        <div>
-          <div>
-            <label>Get Registered for this event!</label>
-            <form onSubmit={onSubmit}>
-              <input
-                ref={inputEmail}
-                type="email"
-                id="email"
-                placeholder="Please insert your email here ..."
-              />
-              <button type="submit">Submit</button>
-            </form>
-            <p>{message}</p>
-          </div>
-        </div>
+        <Image src={data.image} width={1000} height={500} alt={data.title} />
       </div>
-      <Image src={data.image} width={1000} height={500} alt={data.title} />
+
+      <div className={styles.single_event_form}>
+        <label>Get Registered for this event!</label>
+        <form onSubmit={onSubmit}>
+          <input
+            ref={inputEmail}
+            type="email"
+            id="email"
+            placeholder="Please insert your email here ..."
+          />
+          <button type="submit">Submit</button>
+        </form>
+        <p>{message}</p>
+      </div>
     </div>
   );
 };
