@@ -26,6 +26,8 @@
 .header__right__side {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+
   background-color: #ffffff;
   color: var(--black-color);
 
@@ -33,6 +35,10 @@
     display: flex;
     flex-direction: column;
     margin: 1rem 0.8rem;
+
+    @media screen and (min-width: 900px) {
+      margin: 2rem 1.5rem;
+    }
 
     div {
       font-size: 3rem;
@@ -49,11 +55,7 @@
       font-weight: 400;
     }
   }
-
-  .header_button {
+  form {
     align-self: center;
   }
-  // @media screen and (min-width: 900px) {
-  //   margin: 2rem 2rem;
-  // }
 }
