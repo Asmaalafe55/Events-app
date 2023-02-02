@@ -40,10 +40,14 @@
           box-shadow: 4px 10px 5px rgba(0, 0, 0, 0.25);
         }
         @media screen and (max-width: 600px) {
-          min-width: 300px;
+          min-width: 280px;
         }
         @media screen and (max-width: 300px) {
           min-width: 250px;
+        }
+        @media screen and (min-width: 2000px) {
+          min-width: 500px;
+          height: 350px;
         }
       }
       h2 {
