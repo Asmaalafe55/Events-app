@@ -5,7 +5,7 @@ import { useState } from 'react';
 import styles from './Navbar.module.scss';
 import { HiX } from 'react-icons/hi';
 import { FiMenu } from 'react-icons/fi';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion, useCycle } from 'framer-motion';
 
 import { logoImages } from '../../images/images';
 
@@ -30,8 +30,9 @@ const Navbar = () => {
           />
           <div>EventsApp</div>
         </Link>
+
         <ul className={styles.app__navbar_links}>
-          {links.splice(1, 4).map((item) => (
+          {links.slice(1, 4).map((item) => (
             <li key={item.title}>
               <Link href={item.link} onClick={() => setToggle(false)}>
                 {item.title}
@@ -43,9 +44,16 @@ const Navbar = () => {
         <div className={styles.app__navbar_menu}>
           <FiMenu onClick={() => setToggle(true)} />
           {toggle && (
-            <motion.div
-              whileInView={{ x: [300, 0] }}
-              transition={{ duration: 0.85, ease: 'easeOut' }}
+            <motion.aside
+              className={styles.app__navbar_menu_container}
+              initial={{ width: 0 }}
+              animate={{
+                width: 300,
+              }}
+              exit={{
+                width: 0,
+                transition: { delay: 0.9, duration: 0.85, ease: 'easeOut' },
+              }}
             >
               <HiX onClick={() => setToggle(false)} />
               <ul className={styles.app__navbar_links}>
@@ -57,7 +65,7 @@ const Navbar = () => {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </motion.aside>
           )}
         </div>
       </nav>
