@@ -1,6 +1,6 @@
 .single_event_container {
   display: flex;
-  padding-top: 6rem;
+  padding-top: 5rem;
   background-color: var(--white-color);
   color: var(--black-color);
   flex-direction: column;
@@ -46,6 +46,7 @@
   }
   img {
     width: 50%;
+    // height: 100%;
     @media screen and (max-width: 900px) {
       width: 100%;
       height: 50%;

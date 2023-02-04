@@ -5,7 +5,7 @@ import { useState } from 'react';
 import styles from './Navbar.module.scss';
 import { HiX } from 'react-icons/hi';
 import { FiMenu } from 'react-icons/fi';
-import { AnimatePresence, motion, useCycle } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import { logoImages } from '../../images/images';
 

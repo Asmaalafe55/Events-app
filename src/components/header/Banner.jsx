@@ -10,7 +10,7 @@ const Banner = ({ start, end, reverse = false }) => {
       <div
         className={styles.wrapper}
         style={{
-          transform: reverse && 'translateX(-300%)',
+          transform: reverse && 'translateX(-200%)',
         }}
       >
         <section className={sectionStyle}>

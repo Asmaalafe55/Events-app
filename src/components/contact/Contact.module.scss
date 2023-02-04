@@ -61,6 +61,17 @@
       .contact_button {
         margin: 2rem;
       }
+
+      @media screen and (max-width: 600px) {
+        font-size: 30px;
+      }
+
+      @media screen and (min-width: 900px) {
+        min-width: 400px;
+      }
+      @media screen and (min-width: 2000px) {
+        min-width: 800px;
+      }
     }
   }
 }
