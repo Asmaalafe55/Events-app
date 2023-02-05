@@ -12,7 +12,7 @@ const EventsPerCity = ({ data }) => {
         {data.map((event) => (
           <Link
             key={event.id}
-            href={`/events/${event.category.category}/${event.id}`}
+            href={`/categories/${event.category.category}/${event.id}`}
             passHref
           >
             <Image
