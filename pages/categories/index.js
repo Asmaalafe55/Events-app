@@ -3,12 +3,12 @@ import axios from '../../utils/axios';
 
 import CategoriesPage from '../../src/components/categories/CategoriesPage';
 
-const Events = (props) => {
+const Categories = (props) => {
   const data = props.data;
   return <CategoriesPage data={data} />;
 };
 
-export default Events;
+export default Categories;
 
 export async function getStaticProps() {
   const res = await axios.get('/categories');

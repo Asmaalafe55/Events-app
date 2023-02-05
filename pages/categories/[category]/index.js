@@ -2,12 +2,12 @@ import React from 'react';
 import axios from '../../../utils/axios';
 import EventsPerCategory from '../../../src/components/events/EventsPerCategory';
 
-const EventsCategoryCity = (props) => {
+const EventsCategory = (props) => {
   const data = props.events;
   return <EventsPerCategory data={data} />;
 };
 
-export default EventsCategoryCity;
+export default EventsCategory;
 
 export async function getStaticPaths() {
   const { data: dataForCategories } = await axios.get('/categories');
