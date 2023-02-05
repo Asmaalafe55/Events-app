@@ -2,9 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import styles from './EventsPage.module.scss';
+import styles from './CategoriesPage.module.scss';
 
-const eventsPage = ({ data }) => {
+const CategoriesPage = ({ data }) => {
   return (
     <div className={styles.events}>
       <label>Categories</label>
@@ -25,4 +25,4 @@ const eventsPage = ({ data }) => {
   );
 };
 
-export default eventsPage;
+export default CategoriesPage;

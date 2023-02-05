@@ -1,11 +1,11 @@
 import React from 'react';
 import axios from '../../utils/axios';
 
-import EventsPage from '../../src/components/events/EventsPage';
+import CategoriesPage from '../../src/components/events/CategoriesPage';
 
 const Events = (props) => {
   const data = props.data;
-  return <EventsPage data={data} />;
+  return <CategoriesPage data={data} />;
 };
 
 export default Events;
