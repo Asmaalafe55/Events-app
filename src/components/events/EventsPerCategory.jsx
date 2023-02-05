@@ -2,9 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import styles from './EventsPerCity.module.scss';
+import styles from './EventsPerCategory.module.scss';
 
-const EventsPerCity = ({ data }) => {
+const EventsPerCategory = ({ data }) => {
   return (
     <div className={styles.events_per_city}>
       <h1>Events in {data[0]?.category.title}</h1>
@@ -32,4 +32,4 @@ const EventsPerCity = ({ data }) => {
   );
 };
 
-export default EventsPerCity;
+export default EventsPerCategory;

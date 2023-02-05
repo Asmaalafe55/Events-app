@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from '../../../utils/axios';
-import EventsPerCity from '../../../src/components/events/EventsPerCity';
+import EventsPerCategory from '../../../src/components/events/EventsPerCategory';
 
 const EventsCategoryCity = (props) => {
   const data = props.events;
-  return <EventsPerCity data={data} />;
+  return <EventsPerCategory data={data} />;
 };
 
 export default EventsCategoryCity;
