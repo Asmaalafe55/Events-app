@@ -35,11 +35,11 @@ const Footer = () => {
     <footer>
       <div className={styles.footer}>
         <div className={styles.links}>
-          <a href="">Pricing</a>
           <a href="">About us</a>
+          <a href="">Pricing</a>
           <a href="">Business</a>
+          <a href="">Users</a>
           <a href="">Jobs</a>
-          <a href="">Add your event</a>
           <a href="">FAQ</a>
           <a href="">Legal</a>
         </div>
