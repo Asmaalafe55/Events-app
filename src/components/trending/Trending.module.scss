@@ -114,20 +114,22 @@
   }
 }
 
-/*Magic card*/
 .card {
   width: 190px;
   height: 254px;
-  background: #f5f5f5;
+  max-width: 500px;
+  min-width: 250px;
   overflow: visible;
-  box-shadow: 0 5px 20px 2px rgba(0, 0, 0, 0.1);
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem 1rem;
-  max-width: 500px;
-  min-width: 250px;
+
   border-radius: 30px;
+  margin: 2rem 1rem;
+
+  background: var(--white-color);
+  box-shadow: 0 5px 20px 2px rgba(0, 0, 0, 0.1);
 
   @media screen and (min-width: 2000px) {
     width: 500px;
@@ -164,28 +166,31 @@
   width: 90%;
   height: 90%;
   transform: translate(-50%, -50%);
-  border: 2rem solid #e8e8e8;
+
+  border: 2rem solid var(--white-color);
 }
 
 /*Text*/
 .text_title {
   text-transform: uppercase;
   font-size: 0.75em;
-  color: var(--secendary-color);
   letter-spacing: 0.05rem;
+
+  color: var(--secondary-color);
 }
 
 .text_body {
-  font-size: 0.8em;
+  font-size: 1em;
   text-align: center;
-  color: #6f6d78;
   font-weight: 400;
   font-style: italic;
+
+  color: var(--black-color);
 }
 
 /*Hover*/
 .card:hover .card_img {
-  --size: 110px;
+  --size: 100px;
   width: var(--size);
   height: var(--size);
 }
