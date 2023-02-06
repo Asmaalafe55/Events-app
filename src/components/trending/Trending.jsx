@@ -29,20 +29,6 @@ const Trending = ({ data }) => {
               {event.title}
             </Link>
           </div>
-
-          // <Link key={event._id} href={`/categories/${event.category}`}>
-          //   <Image
-          //     width={200}
-          //     height={200}
-          //     alt={event.title}
-          //     src={event.image}
-          //   />
-
-          //   <div>
-          //     <h2>{event.title}</h2>
-          //     <p>{event.description}</p>
-          //   </div>
-          // </Link>
         ))}
       </div>
     </div>
