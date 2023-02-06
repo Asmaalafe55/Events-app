@@ -19,7 +19,6 @@ const Trending = ({ data }) => {
               alt={event.title}
               src={event.image}
             />
-
             <p class={styles.text_body}>{event.description}</p>
 
             <Link

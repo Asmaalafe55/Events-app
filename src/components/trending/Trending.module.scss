@@ -125,6 +125,8 @@
   flex-direction: column;
   align-items: center;
 
+  cursor: default;
+
   border-radius: 30px;
   margin: 2rem 1rem;
 
@@ -153,19 +155,19 @@
 
   position: relative;
   transition: all 0.3s ease-in-out;
-}
 
-.card-img::before {
-  content: '';
-  border-radius: inherit;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 90%;
-  height: 90%;
-  transform: translate(-50%, -50%);
+  &::before {
+    content: '';
+    border-radius: inherit;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: 90%;
+    transform: translate(-50%, -50%);
 
-  border: 2rem solid var(--white-color);
+    border: 2rem solid var(--white-color);
+  }
 }
 
 .text_body {
@@ -180,7 +182,7 @@
 
 .text_title {
   text-transform: uppercase;
-  font-size: 0.75em;
+  font-size: 1.2em;
   letter-spacing: 0.05rem;
 
   color: var(--secondary-color);
