@@ -21,14 +21,14 @@ const Trending = ({ data }) => {
             />
             <div class={styles.card_info}>
               <p class={styles.text_body}>{event.description}</p>
-              <Link
-                class={styles.text_title}
-                key={event._id}
-                href={`/categories/${event.category}`}
-              >
-                {event.title}
-              </Link>
             </div>
+            <Link
+              class={styles.text_title}
+              key={event._id}
+              href={`/categories/${event.category}`}
+            >
+              {event.title}
+            </Link>
           </div>
 
           // <Link key={event._id} href={`/categories/${event.category}`}>
