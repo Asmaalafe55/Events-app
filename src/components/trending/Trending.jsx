@@ -19,9 +19,9 @@ const Trending = ({ data }) => {
               alt={event.title}
               src={event.image}
             />
-            <div class={styles.card_info}>
-              <p class={styles.text_body}>{event.description}</p>
-            </div>
+
+            <p class={styles.text_body}>{event.description}</p>
+
             <Link
               class={styles.text_title}
               key={event._id}
