@@ -27,9 +27,9 @@
 }
 
 .card {
-  width: 250px;
   height: 300px;
-  max-width: 500px;
+  width: 250px;
+  max-width: 400px;
   min-width: 250px;
   overflow: visible;
 
@@ -44,8 +44,19 @@
   box-shadow: 0 5px 20px 2px rgba(0, 0, 0, 0.1);
 
   @media screen and (min-width: 2000px) {
-    width: 500px;
-    height: 700px;
+    width: 400px;
+    height: 500px;
+
+    &:hover {
+      img {
+        --size: 140px;
+        width: var(--size);
+        height: var(--size);
+      }
+    }
+  }
+  @media screen and (max-width: 900px) {
+    margin-top: 4rem;
   }
   &:hover {
     img {
@@ -63,7 +74,6 @@
   border-radius: 50%;
   transform: translateY(-50%);
 
-  position: relative;
   transition: all 0.3s ease-in-out;
 
   &::before {
@@ -77,6 +87,10 @@
     transform: translate(-50%, -50%);
 
     border: 2rem solid var(--white-color);
+  }
+
+  @media screen and (min-width: 2000px) {
+    --size: 150px;
   }
 }
 
@@ -95,8 +109,6 @@
   font-weight: 400;
   font-style: italic;
   overflow: scroll;
-  // overflow: hidden;
-  // word-wrap: break-word;
 
   color: var(--black-color);
 }
