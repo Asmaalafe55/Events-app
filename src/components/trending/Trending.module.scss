@@ -94,6 +94,9 @@
   padding: 0 1rem;
   font-weight: 400;
   font-style: italic;
+  overflow: scroll;
+  // overflow: hidden;
+  // word-wrap: break-word;
 
   color: var(--black-color);
 }
