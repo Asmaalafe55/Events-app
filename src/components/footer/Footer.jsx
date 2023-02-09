@@ -68,19 +68,36 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className={styles.newsletter}>
-          <h2>Subscribe now to our newsletter</h2>
+        {/* <div className={styles.newsletter}>
+          <h2>Subscribe now to our newsletter</h2> */}
 
-          <form onSubmit={onSubmit}>
-            <input
-              ref={inputEmail}
-              type="email"
-              id="email"
-              placeholder="Please enter your email"
-            />
-            <button type="submit">Subscribe</button>
-          </form>
-        </div>
+        <form className={styles.subscribe} onSubmit={onSubmit}>
+          <p>SUBSCRIBE</p>
+          <input
+            ref={inputEmail}
+            className={styles.subscribe_input}
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your e-mail"
+          />
+          <button className={styles.submit_btn} type="submit">
+            SUBMIT
+          </button>
+        </form>
+        {/* </div> */}
+
+        {/* <div class="subscribe">
+          <p>SUBSCRIBE</p>
+          <input
+            type="email"
+            name="email"
+            className="subscribe-input"
+            placeholder="Your e-mail"
+          />
+          <br />
+          <div class="submit-btn">SUBMIT</div>
+        </div> */}
       </div>
 
       <div className={styles.buttom_footer}>
