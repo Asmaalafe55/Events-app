@@ -1,17 +1,17 @@
 import React from 'react';
 import axios from '../../utils/axios';
 
-// import CategoriesPage from '../../src/components/categories/CategoriesPage';
+import SignPage from '../../src/components/sign/SignPage';
 
-const Categories = (props) => {
+const Sign = (props) => {
   const data = props.data;
-  return <CategoriesPage data={data} />;
+  return <SignPage data={data} />;
 };
 
-export default Categories;
+export default Sign;
 
 export async function getStaticProps() {
-  const res = await axios.get('/categories');
+  const res = await axios.get('/users');
   return {
     props: {
       data: res.data,
