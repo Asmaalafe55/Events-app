@@ -17,7 +17,6 @@
     "react-icons": "^4.7.1"
   },
   "devDependencies": {
-    "antd": "^5.1.7",
     "sass": "^1.57.1"
   }
 }
