@@ -1,7 +1,15 @@
 .sign_page {
-  padding-top: 7rem;
+  padding: 7rem 0;
   display: flex;
   justify-content: center;
+  width: 100%;
+
+  background-color: var(--white-color);
+
+  @media screen and (max-width: 600px) {
+    padding-top: 3.8rem;
+    padding-bottom: 0;
+  }
 }
 
 .form {
@@ -10,15 +18,21 @@
   gap: 10px;
   padding: 0.4rem 2rem;
 
-  width: 30%;
+  max-width: 600px;
+  min-width: 250px;
   background-color: #171717;
   border-radius: 25px;
 
   p {
     text-align: center;
     margin: 2rem;
-    color: rgb(255, 255, 255);
+    color: var(--white-color);
     font-size: 1.2rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    border-radius: 0;
   }
 }
 
@@ -53,57 +67,46 @@
 .btn {
   display: flex;
   justify-content: center;
-  flex-direction: row;
   margin-top: 2.5rem;
-}
+  margin: auto;
 
-.button1 {
-  padding: 0.5rem;
-  padding-left: 1.1rem;
-  padding-right: 1.1rem;
-  border-radius: 5px;
-  margin-right: 0.5rem;
-  border: none;
-  outline: none;
-  transition: 0.4s ease-in-out;
-  background-color: #252525;
-  color: white;
+  button {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    min-width: 70px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: 0.4s ease-in-out;
+    background-color: var(--black-color);
+    color: var(--white-color);
 
-  &:hover {
-    background-color: black;
-    color: white;
+    &:hover {
+      background-color: black;
+      color: var(--white-color);
+    }
+  }
+  &:last-child {
+    &:hover {
+      background-color: red;
+      color: var(--white-color);
+    }
   }
 }
 
-.button2 {
-  padding: 0.5rem;
-  padding-left: 2.3rem;
-  padding-right: 2.3rem;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  transition: 0.4s ease-in-out;
-  background-color: #252525;
-  color: white;
+// .button3 {
+//   padding: 0.5rem;
+//   font-size: 1.2rem;
+//   min-width: 70px;
+//   border-radius: 5px;
+//   border: none;
+//   outline: none;
+//   transition: 0.4s ease-in-out;
+//   background-color: var(--black-color);
+//   color: var(--white-color);
 
-  &:hover {
-    background-color: black;
-    color: white;
-  }
-}
-
-.button3 {
-  margin-bottom: 3rem;
-  padding: 0.5rem;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  transition: 0.4s ease-in-out;
-  background-color: #252525;
-  color: white;
-
-  &:hover {
-    background-color: red;
-    color: white;
-  }
-}
+//   &:hover {
+//     background-color: red;
+//     color: var(--white-color);
+//   }
+// }
