@@ -68,9 +68,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* <div className={styles.newsletter}>
-          <h2>Subscribe now to our newsletter</h2> */}
-
         <form className={styles.subscribe} onSubmit={onSubmit}>
           <p>SUBSCRIBE</p>
           <input
@@ -84,20 +81,8 @@ const Footer = () => {
           <button className={styles.submit_btn} type="submit">
             SUBMIT
           </button>
+          <p>{message}</p>
         </form>
-        {/* </div> */}
-
-        {/* <div class="subscribe">
-          <p>SUBSCRIBE</p>
-          <input
-            type="email"
-            name="email"
-            className="subscribe-input"
-            placeholder="Your e-mail"
-          />
-          <br />
-          <div class="submit-btn">SUBMIT</div>
-        </div> */}
       </div>
 
       <div className={styles.buttom_footer}>
