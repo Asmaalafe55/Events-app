@@ -17,7 +17,7 @@ const Trending = ({ data }) => {
             href={`/categories/${event.category}`}
           >
             <Image
-              class={styles.card_img}
+              className={styles.card_img}
               width={200}
               height={200}
               alt={event.title}
