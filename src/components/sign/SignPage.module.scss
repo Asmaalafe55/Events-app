@@ -2,7 +2,8 @@
   padding: 7rem 0;
   display: flex;
   justify-content: center;
-  width: 100%;
+  gap: 4rem;
+  // width: 100%;
 
   background-color: var(--white-color);
 
@@ -15,6 +16,7 @@
 .form {
   display: flex;
   flex-direction: column;
+
   gap: 10px;
   padding: 0.4rem 2rem;
 
@@ -86,27 +88,4 @@
       color: var(--white-color);
     }
   }
-  &:last-child {
-    &:hover {
-      background-color: red;
-      color: var(--white-color);
-    }
-  }
 }
-
-// .button3 {
-//   padding: 0.5rem;
-//   font-size: 1.2rem;
-//   min-width: 70px;
-//   border-radius: 5px;
-//   border: none;
-//   outline: none;
-//   transition: 0.4s ease-in-out;
-//   background-color: var(--black-color);
-//   color: var(--white-color);
-
-//   &:hover {
-//     background-color: red;
-//     color: var(--white-color);
-//   }
-// }

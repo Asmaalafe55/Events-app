@@ -13,7 +13,7 @@ const Trending = ({ data }) => {
         {data.map((event) => (
           <Link
             key={event._id}
-            class={styles.card}
+            className={styles.card}
             href={`/categories/${event.category}`}
           >
             <Image
@@ -24,7 +24,7 @@ const Trending = ({ data }) => {
               src={event.image}
             />
             <div className={styles.text_title}>{event.title}</div>
-            <p class={styles.text_body}>{event.description}</p>
+            <p className={styles.text_body}>{event.description}</p>
           </Link>
         ))}
       </div>

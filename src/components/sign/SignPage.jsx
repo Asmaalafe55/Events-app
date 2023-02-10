@@ -31,12 +31,8 @@ const SignPage = () => {
           <input placeholder="Password" type="password" />
         </div>
         <div className={styles.btn}>
-          <button className={styles.button1}>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          </button>
-          <button className={styles.button2}>Sign Up</button>
+          <button>Login</button>
         </div>
-        <button className={styles.button3}>Forgot Password</button>
       </form>
     </div>
   );
