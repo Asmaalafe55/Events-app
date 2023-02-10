@@ -4,10 +4,6 @@
   background-color: var(--white-color);
   color: var(--black-color);
   flex-direction: column;
-
-  @media screen and (max-width: 900px) {
-    padding-top: 2rem;
-  }
 }
 
 .single_event {
