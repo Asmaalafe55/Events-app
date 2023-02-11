@@ -32,25 +32,23 @@ const Navbar = () => {
         </Link>
 
         <div className={styles.app__navbar_links}>
-          <div>
-            <Link href="/aboutUs" onClick={() => setToggle(false)}>
-              About Us
-            </Link>
+          <Link href="/aboutUs" onClick={() => setToggle(false)}>
+            About Us
+          </Link>
 
-            <Link href="/categories" onClick={() => setToggle(false)}>
-              Categories
-            </Link>
+          <Link href="/categories" onClick={() => setToggle(false)}>
+            Categories
+          </Link>
 
-            <div className={styles.dropdown}>
-              <div>Sign</div>
-              <div className={styles.dropdown_content}>
-                <Link href="/sign-in" onClick={() => setToggle(false)}>
-                  Log in
-                </Link>
-                <Link href="/sign-up" onClick={() => setToggle(false)}>
-                  Sign up
-                </Link>
-              </div>
+          <div className={styles.dropdown}>
+            <div>Sign</div>
+            <div className={styles.dropdown_content}>
+              <Link href="/sign-in" onClick={() => setToggle(false)}>
+                Log in
+              </Link>
+              <Link href="/sign-up" onClick={() => setToggle(false)}>
+                Sign up
+              </Link>
             </div>
           </div>
         </div>

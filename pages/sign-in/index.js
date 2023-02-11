@@ -1,11 +1,11 @@
 import React from 'react';
 import axios from '../../utils/axios';
 
-import SignPage from '../../src/components/sign/SignPage';
+import LoginPage from '../../src/components/sign/LoginPage';
 
 const Sign = (props) => {
   const data = props.data;
-  return <SignPage data={data} />;
+  return <LoginPage data={data} />;
 };
 
 export default Sign;

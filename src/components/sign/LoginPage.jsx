@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './SignPage.module.scss';
+import styles from './LoginPage.module.scss';
 
-const SignPage = () => {
+const LoginPage = () => {
   return (
     <div className={styles.sign_page}>
       <form className={styles.form}>
@@ -38,4 +38,4 @@ const SignPage = () => {
   );
 };
 
-export default SignPage;
+export default LoginPage;
