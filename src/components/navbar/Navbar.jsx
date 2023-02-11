@@ -31,15 +31,29 @@ const Navbar = () => {
           <div>EventsApp</div>
         </Link>
 
-        <ul className={styles.app__navbar_links}>
-          {links.slice(1, 4).map((item) => (
-            <li key={item.title}>
-              <Link href={item.link} onClick={() => setToggle(false)}>
-                {item.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className={styles.app__navbar_links}>
+          <div>
+            <Link href="/aboutUs" onClick={() => setToggle(false)}>
+              About Us
+            </Link>
+
+            <Link href="/categories" onClick={() => setToggle(false)}>
+              Categories
+            </Link>
+
+            <div className={styles.dropdown}>
+              <div>Sign</div>
+              <div className={styles.dropdown_content}>
+                <Link href="/sign-in" onClick={() => setToggle(false)}>
+                  Log in
+                </Link>
+                <Link href="/sign-up" onClick={() => setToggle(false)}>
+                  Sign up
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div className={styles.app__navbar_menu}>
           <FiMenu onClick={() => setToggle(true)} />
