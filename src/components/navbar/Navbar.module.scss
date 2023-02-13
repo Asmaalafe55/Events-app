@@ -71,10 +71,13 @@
   position: relative;
   display: inline-block;
   margin: 0 1rem;
-  cursor: context-menu;
-}
-.dropdown:hover .dropdown_content {
-  display: block;
+  cursor: pointer;
+
+  &:hover {
+    .dropdown_content {
+      display: block;
+    }
+  }
 }
 
 .dropdown_content {
