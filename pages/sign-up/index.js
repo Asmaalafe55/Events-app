@@ -1,9 +1,9 @@
 import React from 'react';
 
-import LoginPage from '../../src/components/sign/LoginPage';
+import RegisterPage from '../../src/components/sign/RegisterPage';
 
-const Sign = () => {
-  return <LoginPage />;
+const SignUp = () => {
+  return <RegisterPage />;
 };
 
-export default Sign;
+export default SignUp;
