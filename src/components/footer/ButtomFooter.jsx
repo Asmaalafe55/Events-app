@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+
 import { logoImages } from '../../images/images';
 import styles from './Footer.module.scss';
 
