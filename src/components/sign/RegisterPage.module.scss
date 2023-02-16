@@ -1,0 +1,14 @@
+.sign_up_page {
+  padding: 7rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+
+  background-color: var(--white-color);
+  color: var(--black-color);
+
+  @media screen and (max-width: 600px) {
+    padding-top: 3.8rem;
+    padding-bottom: 0;
+  }
+}
