@@ -1,4 +1,4 @@
-.sign_page {
+.sign_in_page {
   padding: 7rem 0;
   display: flex;
   justify-content: center;
@@ -9,82 +9,5 @@
   @media screen and (max-width: 600px) {
     padding-top: 3.8rem;
     padding-bottom: 0;
-  }
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-
-  gap: 10px;
-  padding: 0.4rem 2rem;
-
-  max-width: 600px;
-  min-width: 250px;
-  background-color: #171717;
-  border-radius: 25px;
-
-  p {
-    text-align: center;
-    margin: 2rem;
-    color: var(--white-color);
-    font-size: 1.2rem;
-  }
-
-  @media screen and (max-width: 600px) {
-    width: 100%;
-    border-radius: 0;
-  }
-}
-
-.field {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-radius: 25px;
-  padding: 0.6rem;
-  border: none;
-  outline: none;
-  color: white;
-  background-color: #171717;
-  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-
-  svg {
-    height: 1.3rem;
-    width: 1.3rem;
-    fill: white;
-  }
-
-  input {
-    background: none;
-    border: none;
-    outline: none;
-    width: 100%;
-    color: #d3d3d3;
-  }
-}
-
-.btn {
-  display: flex;
-  justify-content: center;
-  margin-top: 2.5rem;
-  margin: auto;
-
-  button {
-    padding: 0.5rem;
-    font-size: 1.2rem;
-    min-width: 70px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    transition: 0.4s ease-in-out;
-    background-color: var(--black-color);
-    color: var(--white-color);
-
-    &:hover {
-      background-color: black;
-      color: var(--white-color);
-    }
   }
 }
