@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { HiPhone, HiMail } from 'react-icons/hi';
+import ButtomFooter from './ButtomFooter';
 import styles from './Footer.module.scss';
 import { logoImages } from '../../images/images';
 import {
@@ -85,21 +86,7 @@ const Footer = () => {
         </form>
       </div>
 
-      <div className={styles.buttom_footer}>
-        <Link href="/" className={styles.app__footer_logo}>
-          <Image
-            alt="logo"
-            src={logoImages.white_logo}
-            width={50}
-            height={30}
-          />
-          <div>EventsApp</div>
-        </Link>
-        <div className={styles.copyright}>
-          <p>created by Asmaa</p>
-          <p>all rights reserved</p>
-        </div>
-      </div>
+      <ButtomFooter />
     </footer>
   );
 };

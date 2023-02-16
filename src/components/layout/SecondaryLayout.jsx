@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from '../footer/Footer';
+import ButtomFooter from '../footer/ButtomFooter';
 import Navbar from '../navbar/Navbar';
 
 const SecondaryLayout = ({ children }) => {
@@ -7,7 +7,7 @@ const SecondaryLayout = ({ children }) => {
     <>
       <Navbar />
       {children}
-      <Footer />
+      <ButtomFooter />
     </>
   );
 };
