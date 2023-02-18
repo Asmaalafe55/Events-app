@@ -1,9 +1,9 @@
 import React from 'react';
 
-import RegisterPage from '../../src/components/sign/RegisterPage';
+import SignUpPage from '../../src/components/sign/SignUpPage';
 
 const SignUp = () => {
-  return <RegisterPage />;
+  return <SignUpPage />;
 };
 
 export default SignUp;
