@@ -26,8 +26,8 @@ const Navbar = () => {
           <Image
             alt="logo"
             src={logoImages.white_logo}
-            width={50}
-            height={30}
+            width={40}
+            height={20}
           />
           <div>EventsApp</div>
         </Link>

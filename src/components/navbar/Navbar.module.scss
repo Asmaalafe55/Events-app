@@ -1,6 +1,6 @@
 .app__navbar {
   width: 100%;
-  height: 99.55px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,7 +19,7 @@
   div {
     color: var(--primary-color);
     text-align: center;
-    font-size: 35px;
+    font-size: 25px;
 
     @media screen and (max-width: 900px) {
       display: none;
@@ -27,22 +27,22 @@
   }
   img {
     margin: 0 0.5rem;
-    width: 50px;
-    height: 30px;
+    width: 40px;
+    height: 20px;
   }
 }
 
 .app__navbar_links {
   flex: 1;
   display: flex;
-  // width: min-content;
+
   height: 100%;
   justify-content: flex-end;
   align-items: center;
   color: var(--primary-color);
   background-color: var(--black-color);
   padding-right: 1rem;
-  font-size: 30px;
+  font-size: 20px;
 
   list-style: none;
 
