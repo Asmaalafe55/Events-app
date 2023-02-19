@@ -68,7 +68,6 @@
 
   a {
     margin: 0 0.5rem;
-
     svg {
       width: 30px;
       height: 30px;
@@ -81,7 +80,7 @@
   justify-content: space-between;
   padding: 1rem 2rem;
   align-items: center;
-  height: 5rem;
+  height: 4rem;
   width: 100%;
 
   color: var(--primary-color);
@@ -96,7 +95,7 @@
   div {
     color: var(--primary-color);
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
 
     @media screen and (max-width: 600px) {
       display: none;
@@ -104,14 +103,14 @@
   }
   img {
     margin: 0 0.5rem;
-    width: 50px;
-    height: 30px;
+    width: 40px;
+    height: 20px;
   }
 }
 
 .copyright {
   text-transform: capitalize;
-  font-size: 16px;
+  font-size: 15px;
   text-align: center;
 
   @media screen and (max-width: 600px) {
@@ -140,7 +139,6 @@
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 4px;
-    line-height: 28px;
   }
 
   input {
