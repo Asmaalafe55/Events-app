@@ -15,8 +15,9 @@
   // }
 }
 .left_sign_in {
-  width: 70%;
-  height: 80vh;
+  width: 50%;
+  height: 90vh;
+  margin: auto;
 
   align-self: center;
   background-color: var(--white-color);
@@ -28,12 +29,17 @@
 }
 
 .right_sign_in {
-  width: 30%;
-  height: 80vh;
+  width: 50%;
+  height: 90vh;
 
   align-self: center;
   background-color: var(--black-color);
   color: var(--white-color);
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 
   @media screen and (max-width: 900px) {
     width: 100%;

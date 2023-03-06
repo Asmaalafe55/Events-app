@@ -23,7 +23,10 @@ import e21 from '../images/pic/e21.jpg';
 import red_logo from '../images/red_logo.png';
 import black_logo from '../images/black_logo.png';
 import white_logo from '../images/white_logo.png';
+
 import about from '../images/about.png';
+import signin from '../images/signin.png';
+import signup from '../images/signup.png';
 
 const images = [
   e1,
@@ -56,6 +59,8 @@ export const logoImages = {
 };
 export const imagesArray = {
   about,
+  signin,
+  signup,
 };
 
 export default images;
