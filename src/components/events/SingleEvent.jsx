@@ -42,10 +42,11 @@ const SingleEvent = ({ data }) => {
         <label>Get Registered for this event!</label>
         <form onSubmit={onSubmit}>
           <input
+            className={styles.single_event_input}
             ref={inputEmail}
             type="email"
             id="email"
-            placeholder="Please insert your email here ..."
+            placeholder="Your email"
           />
           <button type="submit">Submit</button>
         </form>

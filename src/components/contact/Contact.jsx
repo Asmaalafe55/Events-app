@@ -38,6 +38,7 @@ const Contact = () => {
           <form onSubmit={handleSubmit}>
             <label>Full Name:</label>
             <input
+              className={styles.contact_input}
               ref={inputName}
               type="text"
               id="name"
@@ -46,6 +47,7 @@ const Contact = () => {
 
             <label>Email:</label>
             <input
+              className={styles.contact_input}
               ref={inputEmail}
               type="email"
               id="email"
@@ -54,7 +56,7 @@ const Contact = () => {
 
             <label>Message:</label>
             <input
-              className={styles.custom_input}
+              className={styles.contact_input}
               ref={inputMessage}
               type="text"
               id="message"

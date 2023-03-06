@@ -33,7 +33,7 @@
         padding: 0.5rem 0.7rem;
       }
 
-      input {
+      .contact_input {
         font-family: 'NoirPro';
         border-style: none;
         text-decoration: none;
@@ -42,21 +42,20 @@
 
         width: 100%;
         height: 60px;
-        font-size: 25px;
+        font-size: 20px;
+        padding: 0 1rem;
 
         color: var(--black-color);
         background-color: var(--primary-color);
 
         &::placeholder {
-          font-size: 18px;
-          padding-left: 1rem;
-
+          font-size: 15px;
           color: rgba(37, 37, 37, 0.57);
         }
       }
-      .custom_input {
-        height: 148px;
-      }
+      // .custom_input {
+      //   height: 148px;
+      // }
 
       .contact_button {
         margin: 2rem;
