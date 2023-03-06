@@ -23,8 +23,9 @@ const Contact = () => {
       inputName.current.value = '';
       inputEmail.current.value = '';
       inputMessage.current.value = '';
+
       setMessage(response.data.message);
-      alert('Your message has been sent!');
+      // alert('Your message has been sent!');
     } catch (e) {
       console.log('ERROR', e);
     }
