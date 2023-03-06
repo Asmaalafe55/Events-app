@@ -1,12 +1,10 @@
 import React, { useRef, useState } from 'react';
 import axios from '../../../utils/axios';
-import Image from 'next/image';
-import Link from 'next/link';
 
 import { HiPhone, HiMail } from 'react-icons/hi';
 import ButtomFooter from './ButtomFooter';
 import styles from './Footer.module.scss';
-import { logoImages } from '../../images/images';
+
 import {
   AiFillFacebook,
   AiFillInstagram,
