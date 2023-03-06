@@ -19,7 +19,7 @@ const AboutUs = () => {
         </p>
       </div>
       <div className={styles.about_right_side}>
-        <Image src={imagesArray.about} alt="about" width={100} height={100} />
+        <Image src={imagesArray.about} alt="about" width={500} />
       </div>
     </div>
   );
