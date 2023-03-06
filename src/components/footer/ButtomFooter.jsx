@@ -13,7 +13,10 @@ const ButtomFooter = () => {
         <div>EventsApp</div>
       </Link>
       <div className={styles.copyright}>
-        <p>created by Asmaa</p>
+        <p>
+          created by
+          <Link href="https://asmaa-lafe-portfolio.netlify.app"> Asmaa</Link>
+        </p>
         <p>all rights reserved</p>
       </div>
     </div>
