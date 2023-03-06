@@ -1,25 +1,26 @@
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { imagesArray } from '../../images/images';
 import styles from './SignInPage.module.scss';
 
 const SignInPage = () => {
-  const inputEmail = useRef();
-  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const emailValue = inputEmail.current.value;
+    const emailValue = email.current.value;
+    const passValue = password.current.value;
 
     try {
       const response = await axios.post('/sign-in', {
         email: emailValue,
+        password: passValue,
       });
 
-      setMessage(response.data.message);
-      inputEmail.current.value = '';
+      setEmail('');
+      setPassword('');
     } catch (e) {
       console.log('ERROR', e);
     }
@@ -31,17 +32,24 @@ const SignInPage = () => {
         <form className={styles.signin} onSubmit={onSubmit}>
           <p>SIGN IN</p>
           <input
-            ref={inputEmail}
+            ref={() => setEmail()}
             className={styles.signin_input}
             type="email"
             id="email"
             name="email"
-            placeholder="Your e-mail"
+            placeholder="Email"
           />
-          <button className={styles.submit_btn} type="submit">
+          <input
+            ref={() => setPassword()}
+            className={styles.signin_input}
+            type="email"
+            id="email"
+            name="email"
+            placeholder="password"
+          />
+          {/* <button className={styles.submit_btn} type="submit">
             SUBMIT
-          </button>
-          <p>{message}</p>
+          </button> */}
         </form>
       </div>
       <div className={styles.right_sign_in}>
