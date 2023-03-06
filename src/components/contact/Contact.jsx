@@ -56,8 +56,8 @@ const Contact = () => {
             />
 
             <label>Message:</label>
-            <input
-              className={styles.contact_input}
+            <textarea
+              className={styles.contact_custom_input}
               ref={inputMessage}
               type="text"
               id="message"

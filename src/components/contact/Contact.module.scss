@@ -42,19 +42,18 @@
         width: 100%;
         height: 60px;
         font-size: 20px;
-        padding: 0 1rem;
+        padding: 1rem 1rem;
+        display: flex;
 
         color: var(--black-color);
         background-color: var(--primary-color);
-
-        &::placeholder {
-          font-size: 15px;
-          color: rgba(37, 37, 37, 0.57);
-        }
       }
-      // .custom_input {
-      //   height: 148px;
-      // }
+
+      .contact_custom_input {
+        @extend .contact_input;
+        height: 150px;
+        resize: none;
+      }
 
       .contact_button {
         margin: 2rem;
