@@ -21,7 +21,7 @@ const Header = () => {
               <p>Join the Celebration of Life's Most Memorable Moments</p>
             </div>
             <form action="/sign-in">
-              <button>Get Started</button>
+              <button className="primary_button">Get Started</button>
             </form>
           </div>
         </div>
