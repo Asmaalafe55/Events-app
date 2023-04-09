@@ -47,9 +47,9 @@ const SignInPage = () => {
             name="email"
             placeholder="password"
           />
-          {/* <button className={styles.submit_btn} type="submit">
+          <button className={styles.submit_btn} type="submit">
             SUBMIT
-          </button> */}
+          </button>
         </form>
       </div>
       <div className={styles.right_sign_in}>
