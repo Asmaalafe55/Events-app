@@ -29,43 +29,39 @@ const SignInPage = () => {
       <div>
         <div className={styles.form_container}>
           <p className={styles.title}>SIGN IN</p>
-          <form className={styles.signin} onSubmit={onSubmit}>
-            <div className={styles.input_group}>
+          <form onSubmit={onSubmit}>
+            <div>
               <label for="email">Email</label>
               <input
                 ref={() => setEmail()}
-                className={styles.signin_input}
                 type="email"
                 id="email"
                 name="email"
                 placeholder=""
               />
             </div>
-            <div className={styles.input_group}>
+            <div>
               <label for="password">Password</label>
               <input
                 ref={() => setPassword()}
-                className={styles.signin_input}
                 type="email"
                 id="email"
                 name="email"
                 placeholder=""
               />
-              <div className={styles.forgot}>
+              <div>
                 <a rel="noopener noreferrer" href="#">
                   Forgot Password ?
                 </a>
               </div>
             </div>
             <button className={styles.submit_btn} type="submit">
-              SUBMIT
+              SIGN IN
             </button>
           </form>
 
           <div className={styles.social_message}>
-            <div></div>
             <p>Login with social accounts</p>
-            <div></div>
           </div>
 
           <div className={styles.social_icons}>

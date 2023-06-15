@@ -18,12 +18,13 @@
     flex-direction: column;
     align-items: center;
     align-self: center;
+    justify-content: center;
     background-color: var(--primary-color);
     border-radius: 0.75rem;
 
     .form_container {
       width: 300px;
-      height: 400px;
+      height: 500px;
 
       @media screen and (max-width: 300px) {
         width: 100%;
@@ -32,7 +33,6 @@
       .title {
         text-align: center;
         color: var(--black-color);
-        margin-top: 0.8rem;
         font-size: 1.5rem;
         line-height: 2rem;
         font-weight: 700;
@@ -99,6 +99,7 @@
           display: block;
           width: 100%;
           background-color: var(--black-color);
+          margin-top: 14px;
           padding: 0.75rem;
           text-align: center;
           color: var(--primary-color);
