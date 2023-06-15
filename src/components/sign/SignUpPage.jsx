@@ -19,21 +19,17 @@ const SignUpPage = () => {
     }
 
     try {
-      // Send a POST request to the server with the user data
       const response = await axios.post('/sign-up', {
         email: emailValue,
         password: passValue,
       });
 
-      // Clear the form inputs after successful submission
       setEmail('');
       setPassword('');
       setConfirmPassword('');
 
-      // Handle the response or perform any necessary actions
       console.log('User signed up successfully:', response.data);
     } catch (error) {
-      // Handle any errors that occur during the sign-up process
       console.error('Error signing up:', error.message);
     }
   };
