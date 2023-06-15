@@ -4,22 +4,37 @@ import styles from './SignPage.module.scss';
 const SignUpPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const onSubmit = async (e) => {
     e.preventDefault();
+
     const emailValue = email.current.value;
     const passValue = password.current.value;
+    const confirmPassValue = confirmPassword.current.value;
+
+    if (passValue !== confirmPassValue) {
+      console.log('Passwords do not match');
+      return;
+    }
 
     try {
-      const response = await axios.post('/sign-in', {
+      // Send a POST request to the server with the user data
+      const response = await axios.post('/sign-up', {
         email: emailValue,
         password: passValue,
       });
 
+      // Clear the form inputs after successful submission
       setEmail('');
       setPassword('');
-    } catch (e) {
-      console.log('ERROR', e);
+      setConfirmPassword('');
+
+      // Handle the response or perform any necessary actions
+      console.log('User signed up successfully:', response.data);
+    } catch (error) {
+      // Handle any errors that occur during the sign-up process
+      console.error('Error signing up:', error.message);
     }
   };
 
@@ -30,9 +45,9 @@ const SignUpPage = () => {
           <p className={styles.title}>SIGN UP</p>
           <form onSubmit={onSubmit}>
             <div>
-              <label for="email">Email</label>
+              <label htmlFor="email">Email</label>
               <input
-                ref={() => setEmail()}
+                ref={(input) => setEmail(input.value)}
                 type="email"
                 id="email"
                 name="email"
@@ -40,22 +55,22 @@ const SignUpPage = () => {
               />
             </div>
             <div>
-              <label for="password">Password</label>
+              <label htmlFor="password">Password</label>
               <input
-                ref={() => setPassword()}
-                type="email"
-                id="email"
-                name="email"
+                ref={(input) => setPassword(input.value)}
+                type="password"
+                id="password"
+                name="password"
                 placeholder=""
               />
             </div>
             <div>
-              <label for="password">Confirm Password</label>
+              <label htmlFor="confirm-password">Confirm Password</label>
               <input
-                ref={() => setPassword()}
-                type="email"
-                id="email"
-                name="email"
+                ref={(input) => setConfirmPassword(input.value)}
+                type="password"
+                id="confirm-password"
+                name="confirm-password"
                 placeholder=""
               />
             </div>

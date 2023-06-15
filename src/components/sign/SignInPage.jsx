@@ -8,6 +8,7 @@ const SignInPage = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+
     const emailValue = email.current.value;
     const passValue = password.current.value;
 
@@ -19,8 +20,10 @@ const SignInPage = () => {
 
       setEmail('');
       setPassword('');
-    } catch (e) {
-      console.log('ERROR', e);
+
+      console.log('User signed in successfully:', response.data);
+    } catch (error) {
+      console.error('Error signing in:', error.message);
     }
   };
 
