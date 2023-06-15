@@ -9,13 +9,10 @@ const SignInPage = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const emailValue = email.current.value;
-    const passValue = password.current.value;
-
     try {
       const response = await axios.post('/sign-in', {
-        email: emailValue,
-        password: passValue,
+        email,
+        password,
       });
 
       setEmail('');
@@ -36,21 +33,23 @@ const SignInPage = () => {
             <div>
               <label for="email">Email</label>
               <input
-                ref={() => setEmail()}
                 type="email"
                 id="email"
                 name="email"
                 placeholder=""
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div>
               <label for="password">Password</label>
               <input
-                ref={() => setPassword()}
-                type="email"
-                id="email"
-                name="email"
+                type="password"
+                id="password"
+                name="password"
                 placeholder=""
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
               <div>
                 <a rel="noopener noreferrer" href="#">

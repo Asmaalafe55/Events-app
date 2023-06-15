@@ -9,9 +9,9 @@ const SignUpPage = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const emailValue = email.current.value;
-    const passValue = password.current.value;
-    const confirmPassValue = confirmPassword.current.value;
+    const emailValue = email;
+    const passValue = password;
+    const confirmPassValue = confirmPassword;
 
     if (passValue !== confirmPassValue) {
       console.log('Passwords do not match');
@@ -43,31 +43,34 @@ const SignUpPage = () => {
             <div>
               <label htmlFor="email">Email</label>
               <input
-                ref={(input) => setEmail(input.value)}
                 type="email"
                 id="email"
                 name="email"
                 placeholder=""
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div>
               <label htmlFor="password">Password</label>
               <input
-                ref={(input) => setPassword(input.value)}
                 type="password"
                 id="password"
                 name="password"
                 placeholder=""
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div>
-              <label htmlFor="confirm-password">Confirm Password</label>
+              <label htmlFor="confirmPassword">Confirm Password</label>
               <input
-                ref={(input) => setConfirmPassword(input.value)}
                 type="password"
-                id="confirm-password"
-                name="confirm-password"
+                id="confirmPassword"
+                name="confirmPassword"
                 placeholder=""
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
             <button className={styles.submit_btn} type="submit">
