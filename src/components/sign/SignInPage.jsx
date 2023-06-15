@@ -28,33 +28,28 @@ const SignInPage = () => {
 
   return (
     <div className={styles.sign_in_page}>
-      <div className={styles.left_sign_in}>
-        <form className={styles.signin} onSubmit={onSubmit}>
-          <p>SIGN IN</p>
-          <input
-            ref={() => setEmail()}
-            className={styles.signin_input}
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-          />
-          <input
-            ref={() => setPassword()}
-            className={styles.signin_input}
-            type="email"
-            id="email"
-            name="email"
-            placeholder="password"
-          />
-          <button className={styles.submit_btn} type="submit">
-            SUBMIT
-          </button>
-        </form>
-      </div>
-      <div className={styles.right_sign_in}>
-        <Image src={imagesArray.signin} width={500} height={500} />
-      </div>
+      <form className={styles.signin} onSubmit={onSubmit}>
+        <p>SIGN IN</p>
+        <input
+          ref={() => setEmail()}
+          className={styles.signin_input}
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+        />
+        <input
+          ref={() => setPassword()}
+          className={styles.signin_input}
+          type="email"
+          id="email"
+          name="email"
+          placeholder="password"
+        />
+        <button className={styles.submit_btn} type="submit">
+          SUBMIT
+        </button>
+      </form>
     </div>
   );
 };

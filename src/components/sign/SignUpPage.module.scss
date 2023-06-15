@@ -10,28 +10,3 @@
     flex-direction: column;
   }
 }
-.left_sign_up {
-  width: 70%;
-  height: 80vh;
-
-  align-self: center;
-  background-color: var(--white-color);
-  color: var(--black-color);
-
-  @media screen and (max-width: 900px) {
-    width: 100%;
-  }
-}
-
-.right_sign_up {
-  width: 30%;
-  height: 80vh;
-
-  align-self: center;
-  background-color: var(--black-color);
-  color: var(--white-color);
-
-  @media screen and (max-width: 900px) {
-    width: 100%;
-  }
-}
