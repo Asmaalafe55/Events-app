@@ -1,3 +1,4 @@
+@import '../../../styles/buttons.module.scss';
 .single_event_container {
   display: flex;
   padding-top: 4rem;
@@ -95,6 +96,9 @@
         border-style: none;
         text-decoration: none;
       }
+    }
+    button {
+      @extend .button_type1;
     }
   }
 }

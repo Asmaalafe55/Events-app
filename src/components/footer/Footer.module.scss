@@ -1,3 +1,4 @@
+@import '../../../styles/buttons.module.scss';
 .footer {
   display: flex;
   align-items: center;
@@ -169,6 +170,7 @@
 }
 
 .submit_btn {
+  @extend .button_type1;
   position: absolute;
   border-radius: 30px;
   border-bottom-right-radius: 0;

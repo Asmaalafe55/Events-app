@@ -1,3 +1,4 @@
+@import '../../../styles/buttons.module.scss';
 .app__contact {
   background-color: var(--white-color);
   display: flex;
@@ -56,6 +57,7 @@
       }
 
       .contact_button {
+        @extend .button_type1;
         margin: 2rem;
       }
 

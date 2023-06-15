@@ -107,6 +107,10 @@
           border-radius: 0.375rem;
           font-weight: 600;
           cursor: pointer;
+
+          &:hover {
+            box-shadow: 10px 10px 20px #c1c1c1, -10px -10px 20px #ffffff;
+          }
         }
       }
 
@@ -114,6 +118,7 @@
         display: flex;
         align-items: center;
         padding-top: 1rem;
+        background-color: transparent;
 
         p {
           padding-left: 0.75rem;
@@ -127,6 +132,7 @@
         display: flex;
         justify-content: center;
         flex-direction: row;
+        background-color: transparent;
 
         button {
           border-radius: 0.125rem;
