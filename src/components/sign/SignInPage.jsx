@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import styles from './SignInPage.module.scss';
+import styles from './SignPage.module.scss';
 
 const SignInPage = () => {
   const [email, setEmail] = useState('');
@@ -25,7 +25,7 @@ const SignInPage = () => {
   };
 
   return (
-    <div className={styles.sign_in_page}>
+    <div className={styles.sign_page}>
       <div>
         <div className={styles.form_container}>
           <p className={styles.title}>SIGN IN</p>
