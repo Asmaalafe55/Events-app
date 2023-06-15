@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 
-import { imagesArray } from '../../images/images';
 import styles from './SignInPage.module.scss';
 
 const SignInPage = () => {
