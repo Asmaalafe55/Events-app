@@ -1,5 +1,4 @@
-import React, { useRef, useState } from 'react';
-import Image from 'next/image';
+import React, { useState } from 'react';
 
 import styles from './SignInPage.module.scss';
 
@@ -92,7 +91,7 @@ const SignInPage = () => {
 
           <p className={styles.signup}>
             Don't have an account?<space> </space>
-            <a rel="noopener noreferrer" href="#" class="">
+            <a rel="noopener noreferrer" href="/sign-up">
               Sign up
             </a>
           </p>
