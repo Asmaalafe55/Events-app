@@ -9,6 +9,11 @@ const SignInPage = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
+    if (!email || !password) {
+      console.log('Please enter both email and password');
+      return;
+    }
+
     try {
       const response = await axios.post('/sign-in', {
         email,

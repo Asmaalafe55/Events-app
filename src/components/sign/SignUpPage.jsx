@@ -9,19 +9,20 @@ const SignUpPage = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const emailValue = email;
-    const passValue = password;
-    const confirmPassValue = confirmPassword;
+    if (!email || !password) {
+      console.log('Please enter both email and password');
+      return;
+    }
 
-    if (passValue !== confirmPassValue) {
+    if (password !== confirmPassword) {
       console.log('Passwords do not match');
       return;
     }
 
     try {
       const response = await axios.post('/sign-up', {
-        email: emailValue,
-        password: passValue,
+        email,
+        password,
       });
 
       setEmail('');
