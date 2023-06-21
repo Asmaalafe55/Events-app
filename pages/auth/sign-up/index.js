@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SignUpPage from '../../src/components/sign/SignUpPage';
+import SignUpPage from '../../../src/components/sign/SignUpPage';
 
 const SignUp = () => {
   return <SignUpPage />;
