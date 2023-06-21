@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from '../../utils/axios';
 
-import CategoriesPage from '../../src/components/categories/CategoriesPage';
+import CategoriesPage from '../../components/categories/CategoriesPage';
 
 const Categories = (props) => {
   const data = props.data;

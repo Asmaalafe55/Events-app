@@ -1,6 +1,6 @@
 import styles from './Banner.module.scss';
 import Image from 'next/image';
-import images from '../../images/images';
+import images from '../../public/images/images';
 
 const Banner = ({ start, end, reverse = false }) => {
   const sectionStyle = reverse ? styles.move_reverse : styles.move;

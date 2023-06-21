@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import styles from './SignPage.module.scss';
 
-const SignUpPage = () => {
+import styles from '../SignPage.module.scss';
+
+const SignInPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -14,24 +14,18 @@ const SignUpPage = () => {
       return;
     }
 
-    if (password !== confirmPassword) {
-      console.log('Passwords do not match');
-      return;
-    }
-
     try {
-      const response = await axios.post('/sign-up', {
+      const response = await axios.post('/sign-in', {
         email,
         password,
       });
 
       setEmail('');
       setPassword('');
-      setConfirmPassword('');
 
-      console.log('User signed up successfully:', response.data);
+      console.log('User signed in successfully:', response.data);
     } catch (error) {
-      console.error('Error signing up:', error.message);
+      console.error('Error signing in:', error.message);
     }
   };
 
@@ -39,7 +33,7 @@ const SignUpPage = () => {
     <div className={styles.sign_page}>
       <div>
         <div className={styles.form_container}>
-          <p className={styles.title}>SIGN UP</p>
+          <p className={styles.title}>SIGN IN</p>
           <form onSubmit={onSubmit}>
             <div>
               <label htmlFor="email">Email</label>
@@ -62,25 +56,19 @@ const SignUpPage = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-            </div>
-            <div>
-              <label htmlFor="confirmPassword">Confirm Password</label>
-              <input
-                type="password"
-                id="confirmPassword"
-                name="confirmPassword"
-                placeholder=""
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-              />
+              <div>
+                <a rel="noopener noreferrer" href="#">
+                  Forgot Password ?
+                </a>
+              </div>
             </div>
             <button className={styles.submit_btn} type="submit">
-              SIGN UP
+              SIGN IN
             </button>
           </form>
 
           <div className={styles.social_message}>
-            <p>Sign Up with social accounts</p>
+            <p>Login with social accounts</p>
           </div>
 
           <div className={styles.social_icons}>
@@ -105,9 +93,9 @@ const SignUpPage = () => {
           </div>
 
           <p className={styles.signup}>
-            Do you have an account?<space> </space>
-            <a rel="noopener noreferrer" href="/sign-in">
-              Sign in
+            Don't have an account?<space> </space>
+            <a rel="noopener noreferrer" href="/sign-up">
+              Sign up
             </a>
           </p>
         </div>
@@ -116,4 +104,4 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
+export default SignInPage;

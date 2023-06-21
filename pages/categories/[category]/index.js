@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from '../../../utils/axios';
-import EventsPerCategory from '../../../src/components/events/EventsPerCategory';
+import EventsPerCategory from '../../../components/events/EventsPerCategory';
 
 const EventsCategory = (props) => {
   const data = props.events;

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import styles from './Contact.module.scss';
-import axios from '../../../utils/axios';
+import axios from '../../utils/axios';
 
 const Contact = () => {
   const inputEmail = useRef();

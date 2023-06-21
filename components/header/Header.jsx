@@ -20,7 +20,7 @@ const Header = () => {
               </div>
               <p>Join the Celebration of Life's Most Memorable Moments</p>
             </div>
-            <form action="/sign-in">
+            <form action="/auth/sign-in">
               <button className="primary_button">Get Started</button>
             </form>
           </div>

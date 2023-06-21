@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { useRef, useState } from 'react';
 import { useRouter } from 'next/router';
-import axios from '../../../utils/axios';
+import axios from '../../utils/axios';
 
 import styles from './SingleEvent.module.scss';
 

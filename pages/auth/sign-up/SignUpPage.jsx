@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import styles from '../SignPage.module.scss';
 
-import styles from './SignPage.module.scss';
-
-const SignInPage = () => {
+const SignUpPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -14,18 +14,24 @@ const SignInPage = () => {
       return;
     }
 
+    if (password !== confirmPassword) {
+      console.log('Passwords do not match');
+      return;
+    }
+
     try {
-      const response = await axios.post('/sign-in', {
+      const response = await axios.post('/sign-up', {
         email,
         password,
       });
 
       setEmail('');
       setPassword('');
+      setConfirmPassword('');
 
-      console.log('User signed in successfully:', response.data);
+      console.log('User signed up successfully:', response.data);
     } catch (error) {
-      console.error('Error signing in:', error.message);
+      console.error('Error signing up:', error.message);
     }
   };
 
@@ -33,7 +39,7 @@ const SignInPage = () => {
     <div className={styles.sign_page}>
       <div>
         <div className={styles.form_container}>
-          <p className={styles.title}>SIGN IN</p>
+          <p className={styles.title}>SIGN UP</p>
           <form onSubmit={onSubmit}>
             <div>
               <label htmlFor="email">Email</label>
@@ -56,19 +62,25 @@ const SignInPage = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <div>
-                <a rel="noopener noreferrer" href="#">
-                  Forgot Password ?
-                </a>
-              </div>
+            </div>
+            <div>
+              <label htmlFor="confirmPassword">Confirm Password</label>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder=""
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
             </div>
             <button className={styles.submit_btn} type="submit">
-              SIGN IN
+              SIGN UP
             </button>
           </form>
 
           <div className={styles.social_message}>
-            <p>Login with social accounts</p>
+            <p>Sign Up with social accounts</p>
           </div>
 
           <div className={styles.social_icons}>
@@ -93,9 +105,9 @@ const SignInPage = () => {
           </div>
 
           <p className={styles.signup}>
-            Don't have an account?<space> </space>
-            <a rel="noopener noreferrer" href="/sign-up">
-              Sign up
+            Do you have an account?<space> </space>
+            <a rel="noopener noreferrer" href="/sign-in">
+              Sign in
             </a>
           </p>
         </div>
@@ -104,4 +116,4 @@ const SignInPage = () => {
   );
 };
 
-export default SignInPage;
+export default SignUpPage;

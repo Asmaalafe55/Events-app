@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import axios from '../../../utils/axios';
+import axios from '../../utils/axios';
 
 import { HiPhone, HiMail } from 'react-icons/hi';
 import ButtomFooter from './ButtomFooter';

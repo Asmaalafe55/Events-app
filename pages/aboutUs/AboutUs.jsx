@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { imagesArray } from '../../images/images';
+import { imagesArray } from '../../public/images/images';
 import styles from './AboutUs.module.scss';
 
 const AboutUs = () => {

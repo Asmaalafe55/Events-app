@@ -7,7 +7,7 @@ import { HiX } from 'react-icons/hi';
 import { FiMenu } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
-import { logoImages } from '../../images/images';
+import { logoImages } from '../../public/images/images';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -15,8 +15,8 @@ const Navbar = () => {
     { link: '/', title: 'Home' },
     { link: '/aboutUs', title: 'About Us' },
     { link: '/categories', title: 'Categories' },
-    { link: '/sign-in', title: 'Sign In' },
-    { link: '/sign-up', title: 'Sign Up' },
+    { link: '/auth/sign-in', title: 'Sign In' },
+    { link: '/auth/sign-up', title: 'Sign Up' },
   ];
 
   return (
@@ -44,10 +44,10 @@ const Navbar = () => {
           <div className={styles.dropdown}>
             <div>Sign</div>
             <div className={styles.dropdown_content}>
-              <Link href="/sign-in" onClick={() => setToggle(false)}>
+              <Link href="/auth/sign-in" onClick={() => setToggle(false)}>
                 Sign in
               </Link>
-              <Link href="/sign-up" onClick={() => setToggle(false)}>
+              <Link href="/auth/sign-up" onClick={() => setToggle(false)}>
                 Sign up
               </Link>
             </div>
