@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from '../SignPage.module.scss';
 import Joi from 'joi';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 
 const SignUpPage = () => {
   const [firstName, setFirstName] = useState('');
