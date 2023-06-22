@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Joi from 'joi';
+import { useHistory } from 'react-router-dom';
 
 import styles from '../SignPage.module.scss';
 
@@ -10,6 +11,8 @@ const SignInPage = () => {
   const [error, setError] = useState('');
 
   const customTlds = ['com', 'net', 'org'];
+
+  const history = useHistory();
 
   const schema = Joi.object({
     email: Joi.string()
@@ -34,11 +37,19 @@ const SignInPage = () => {
         password,
       });
 
+      const { id, email, access_token } = response.data;
+
       setEmail('');
       setPassword('');
       setError('');
 
+      localStorage.setItem('userId', id);
+      localStorage.setItem('userEmail', email);
+      localStorage.setItem('accessToken', access_token);
+
       console.log('User signed in successfully:', response.data);
+
+      history.push('/profile');
     } catch (error) {
       const errorMessage =
         error.response?.data?.message || 'An error occurred during login';
