@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 const ProfilePage = () => {
-  const history = useHistory();
+  const router = useRouter();
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem('access_token');
 
     if (!isLoggedIn) {
-      history.push('/auth/sign-in');
+      router.push('/auth/sign-in');
     }
-  }, [history]);
+  }, [router]);
 
   return <div>Profile page</div>;
 };
