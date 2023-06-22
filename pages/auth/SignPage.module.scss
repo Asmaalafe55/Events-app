@@ -1,7 +1,8 @@
 .sign_page {
   display: flex;
-  justify-content: center;
   width: 100%;
+  align-items: center;
+  justify-content: center;
   height: calc(100vh - 4rem);
   padding-top: 4rem;
 
@@ -21,6 +22,7 @@
     justify-content: center;
     background-color: var(--primary-color);
     border-radius: 0.75rem;
+    position: relative;
 
     .form_container {
       width: 300px;
