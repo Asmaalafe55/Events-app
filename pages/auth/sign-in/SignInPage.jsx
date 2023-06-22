@@ -9,8 +9,13 @@ const SignInPage = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  const customTlds = ['com', 'net', 'org'];
+
   const schema = Joi.object({
-    email: Joi.string().email().required().label('Email'),
+    email: Joi.string()
+      .email({ tlds: { allow: customTlds } })
+      .required()
+      .label('Email'),
     password: Joi.string().required().label('Password'),
   });
 

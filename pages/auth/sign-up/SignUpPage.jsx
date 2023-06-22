@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../SignPage.module.scss';
+import Joi from 'joi';
 
 const SignUpPage = () => {
   const [firstName, setFirstName] = useState('');
@@ -7,27 +8,50 @@ const SignUpPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [errors, setErrors] = useState({});
+
+  const customTlds = ['com', 'net', 'org'];
+
+  const schema = Joi.object({
+    firstName: Joi.string().required().label('First Name'),
+    lastName: Joi.string().required().label('Last Name'),
+    email: Joi.string()
+      .email({ tlds: { allow: customTlds } })
+      .required()
+      .label('Email'),
+    password: Joi.string().min(6).required().label('Password'),
+    confirmPassword: Joi.string()
+      .valid(Joi.ref('password'))
+      .required()
+      .label('Confirm Password'),
+  });
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    if (!firstName || !lastName || !email || !password) {
-      console.log('Please enter all required fields');
+    const formData = {
+      firstName,
+      lastName,
+      email,
+      password,
+      confirmPassword,
+    };
+
+    const { error } = schema.validate(formData, { abortEarly: false });
+
+    if (error) {
+      const validationErrors = {};
+      error.details.forEach((detail) => {
+        validationErrors[detail.context.key] = detail.message;
+      });
+      setErrors(validationErrors);
       return;
     }
 
-    if (password !== confirmPassword) {
-      console.log('Passwords do not match');
-      return;
-    }
+    setErrors({});
 
     try {
-      const response = await axios.post('/sign-up', {
-        firstName,
-        lastName,
-        email,
-        password,
-      });
+      const response = await axios.post('/register', formData);
 
       setFirstName('');
       setLastName('');
@@ -57,6 +81,7 @@ const SignUpPage = () => {
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
               />
+              {errors.firstName && <span>{errors.firstName}</span>}
             </div>
             <div>
               <label htmlFor="lastName">Last Name</label>
@@ -68,6 +93,7 @@ const SignUpPage = () => {
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
               />
+              {errors.lastName && <span>{errors.lastName}</span>}
             </div>
             <div>
               <label htmlFor="email">Email</label>
@@ -79,6 +105,7 @@ const SignUpPage = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
+              {errors.email && <span>{errors.email}</span>}
             </div>
             <div>
               <label htmlFor="password">Password</label>
@@ -90,6 +117,7 @@ const SignUpPage = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
+              {errors.password && <span>{errors.password}</span>}
             </div>
             <div>
               <label htmlFor="confirmPassword">Confirm Password</label>
@@ -101,6 +129,7 @@ const SignUpPage = () => {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
+              {errors.confirmPassword && <span>{errors.confirmPassword}</span>}
             </div>
             <button className={styles.submit_btn} type="submit">
               SIGN UP
@@ -131,7 +160,6 @@ const SignUpPage = () => {
               </svg>
             </button>
           </div>
-
           <p className={styles.signup}>
             Do you have an account?<space> </space>
             <a rel="noopener noreferrer" href="/auth/sign-in">
