@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../SignPage.module.scss';
 import Joi from 'joi';
+import { useRouter } from 'next/router';
 
 const SignUpPage = () => {
   const [firstName, setFirstName] = useState('');
@@ -11,6 +12,8 @@ const SignUpPage = () => {
   const [errors, setErrors] = useState({});
 
   const customTlds = ['com', 'net', 'org'];
+
+  const router = useRouter();
 
   const schema = Joi.object({
     firstName: Joi.string().required().label('First Name'),
@@ -53,13 +56,21 @@ const SignUpPage = () => {
     try {
       const response = await axios.post('/register', formData);
 
+      const { id, email, fName, lName, access_token } = response.data;
+
       setFirstName('');
       setLastName('');
       setEmail('');
       setPassword('');
       setConfirmPassword('');
 
+      localStorage.setItem('userId', id);
+      localStorage.setItem('userEmail', email);
+      localStorage.setItem('accessToken', access_token);
+
       console.log('User signed up successfully:', response.data);
+
+      router.push('/profile');
     } catch (error) {
       console.error('Error signing up:', error.message);
     }
