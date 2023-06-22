@@ -1,31 +1,43 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import Joi from 'joi';
 
 import styles from '../SignPage.module.scss';
 
 const SignInPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const schema = Joi.object({
+    email: Joi.string().email().required().label('Email'),
+    password: Joi.string().required().label('Password'),
+  });
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    if (!email || !password) {
-      console.log('Please enter both email and password');
+    const { error: validationError } = schema.validate({ email, password });
+    if (validationError) {
+      setError(validationError.details[0].message);
       return;
     }
 
     try {
-      const response = await axios.post('/sign-in', {
+      const response = await axios.post('/api/login', {
         email,
         password,
       });
 
       setEmail('');
       setPassword('');
+      setError('');
 
       console.log('User signed in successfully:', response.data);
     } catch (error) {
-      console.error('Error signing in:', error.message);
+      const errorMessage =
+        error.response?.data?.message || 'An error occurred during login';
+      setError(errorMessage);
     }
   };
 
@@ -62,6 +74,9 @@ const SignInPage = () => {
                 </a>
               </div>
             </div>
+
+            {error && <p className={styles.error}>{error}</p>}
+
             <button className={styles.submit_btn} type="submit">
               SIGN IN
             </button>
@@ -94,7 +109,7 @@ const SignInPage = () => {
 
           <p className={styles.signup}>
             Don't have an account?<space> </space>
-            <a rel="noopener noreferrer" href="/sign-up">
+            <a rel="noopener noreferrer" href="/auth/sign-up">
               Sign up
             </a>
           </p>

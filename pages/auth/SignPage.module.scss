@@ -23,10 +23,13 @@
     background-color: var(--primary-color);
     border-radius: 0.75rem;
     position: relative;
+    p {
+      padding: 1rem;
+    }
 
     .form_container {
       width: 300px;
-      height: 500px;
+      min-height: 500px;
 
       @media screen and (max-width: 300px) {
         width: 100%;
@@ -165,4 +168,10 @@
       }
     }
   }
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
 }

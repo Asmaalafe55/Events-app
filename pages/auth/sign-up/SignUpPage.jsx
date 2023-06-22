@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styles from '../SignPage.module.scss';
 
 const SignUpPage = () => {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -9,8 +11,8 @@ const SignUpPage = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    if (!email || !password) {
-      console.log('Please enter both email and password');
+    if (!firstName || !lastName || !email || !password) {
+      console.log('Please enter all required fields');
       return;
     }
 
@@ -21,10 +23,14 @@ const SignUpPage = () => {
 
     try {
       const response = await axios.post('/sign-up', {
+        firstName,
+        lastName,
         email,
         password,
       });
 
+      setFirstName('');
+      setLastName('');
       setEmail('');
       setPassword('');
       setConfirmPassword('');
@@ -41,6 +47,28 @@ const SignUpPage = () => {
         <div className={styles.form_container}>
           <p className={styles.title}>SIGN UP</p>
           <form onSubmit={onSubmit}>
+            <div>
+              <label htmlFor="firstName">First Name</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder=""
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
+            </div>
+            <div>
+              <label htmlFor="lastName">Last Name</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder=""
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
+            </div>
             <div>
               <label htmlFor="email">Email</label>
               <input
@@ -106,7 +134,7 @@ const SignUpPage = () => {
 
           <p className={styles.signup}>
             Do you have an account?<space> </space>
-            <a rel="noopener noreferrer" href="/sign-in">
+            <a rel="noopener noreferrer" href="/auth/sign-in">
               Sign in
             </a>
           </p>
