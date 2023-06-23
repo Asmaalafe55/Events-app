@@ -5,7 +5,8 @@ const ProfilePage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const isLoggedIn = localStorage.getItem('access_token');
+    const isLoggedIn = localStorage.getItem('accessToken');
+    console.log(isLoggedIn);
 
     if (!isLoggedIn) {
       router.push('/auth/sign-in');
