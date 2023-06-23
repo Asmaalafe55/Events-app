@@ -13,7 +13,7 @@ const SignInPage = () => {
   const router = useRouter();
 
   const schema = Joi.object({
-    email: Joi.string().email({ tlds: false }).required(),
+    email: Joi.string().email({ tlds: false }).required().label('Email'),
     password: Joi.string().required().label('Password'),
   });
 

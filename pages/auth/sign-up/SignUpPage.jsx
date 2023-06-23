@@ -19,7 +19,7 @@ const SignUpPage = () => {
   const schema = Joi.object({
     firstName: Joi.string().required().label('First Name'),
     lastName: Joi.string().required().label('Last Name'),
-    email: Joi.string().email({ tlds: false }).required(),
+    email: Joi.string().email({ tlds: false }).required().label('Email'),
     password: Joi.string().min(6).required().label('Password'),
     confirmPassword: Joi.string()
       .valid(Joi.ref('password'))
@@ -39,7 +39,7 @@ const SignUpPage = () => {
     };
     console.log(formData);
 
-    const { error } = schema.validate(formData);
+    const { error } = schema.validate(formData, { abortEarly: false });
 
     if (error) {
       console.log('asmaa');
