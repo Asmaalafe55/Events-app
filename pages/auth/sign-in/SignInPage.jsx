@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Axios from '../../../utils/axios';
 import signInSchema from '../../../utils/schemas/signInSchema';
-import Joi from 'joi';
 import { useRouter } from 'next/router';
 
 import styles from '../SignPage.module.scss';
