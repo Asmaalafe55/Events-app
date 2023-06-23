@@ -37,12 +37,10 @@ const SignUpPage = () => {
       password,
       confirmPassword,
     };
-    console.log(formData);
 
     const { error } = schema.validate(formData, { abortEarly: false });
 
     if (error) {
-      console.log('asmaa');
       const validationErrors = {};
       error.details.forEach((detail) => {
         validationErrors[detail.context.key] = detail.message;
@@ -54,15 +52,12 @@ const SignUpPage = () => {
     setErrors({});
 
     try {
-      console.log(1);
       const response = await Axios.post('/register', {
         firstName,
         lastName,
         email,
         password,
       });
-
-      console.log(2);
 
       const {
         id,
