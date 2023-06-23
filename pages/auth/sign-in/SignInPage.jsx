@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Axios from '../../../utils/axios';
+import signInSchema from '../../../utils/schemas/signInSchema';
 import Joi from 'joi';
 import { useRouter } from 'next/router';
 
@@ -12,15 +13,17 @@ const SignInPage = () => {
 
   const router = useRouter();
 
-  const schema = Joi.object({
-    email: Joi.string().email({ tlds: false }).required().label('Email'),
-    password: Joi.string().required().label('Password'),
-  });
-
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    const { error: validationError } = schema.validate({ email, password });
+    const { error: validationError } = signInSchema.validate(
+      {
+        email,
+        password,
+      },
+      { abortEarly: false }
+    );
+
     if (validationError) {
       setError(validationError.details[0].message);
       return;

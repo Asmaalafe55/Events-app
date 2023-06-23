@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styles from '../SignPage.module.scss';
-import Joi from 'joi';
 import { useRouter } from 'next/router';
 import Axios from '../../../utils/axios';
+import signUpSchema from '../../../utils/schemas/signUpSchema';
 
 const SignUpPage = () => {
   const [firstName, setFirstName] = useState('');
@@ -12,20 +12,7 @@ const SignUpPage = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errors, setErrors] = useState({});
 
-  // const customTlds = ['com', 'net', 'org'];
-
   const router = useRouter();
-
-  const schema = Joi.object({
-    firstName: Joi.string().required().label('First Name'),
-    lastName: Joi.string().required().label('Last Name'),
-    email: Joi.string().email({ tlds: false }).required().label('Email'),
-    password: Joi.string().min(6).required().label('Password'),
-    confirmPassword: Joi.string()
-      .valid(Joi.ref('password'))
-      .required()
-      .label('Confirm Password'),
-  });
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -38,7 +25,7 @@ const SignUpPage = () => {
       confirmPassword,
     };
 
-    const { error } = schema.validate(formData, { abortEarly: false });
+    const { error } = signUpSchema.validate(formData, { abortEarly: false });
 
     if (error) {
       const validationErrors = {};
