@@ -6,11 +6,23 @@ import styles from './Navbar.module.scss';
 import { HiX } from 'react-icons/hi';
 import { FiMenu } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 import { logoImages } from '../../public/images/images';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const isLoggedIn =
+    typeof window !== 'undefined' && localStorage.getItem('accessToken');
+
+  const router = useRouter();
+
+  const handleLogout = () => {
+    localStorage.removeItem('accessToken');
+
+    // router.push('/');
+  };
+
   const links = [
     { link: '/', title: 'Home' },
     { link: '/aboutUs', title: 'About Us' },
@@ -41,17 +53,23 @@ const Navbar = () => {
             Categories
           </Link>
 
-          <div className={styles.dropdown}>
-            <div>Sign</div>
-            <div className={styles.dropdown_content}>
-              <Link href="/auth/sign-in" onClick={() => setToggle(false)}>
-                Sign in
-              </Link>
-              <Link href="/auth/sign-up" onClick={() => setToggle(false)}>
-                Sign up
-              </Link>
+          {isLoggedIn ? (
+            <Link href="/" onClick={handleLogout}>
+              Logout
+            </Link>
+          ) : (
+            <div className={styles.dropdown}>
+              <div>Sign</div>
+              <div className={styles.dropdown_content}>
+                <Link href="/auth/sign-in" onClick={() => setToggle(false)}>
+                  Sign in
+                </Link>
+                <Link href="/auth/sign-up" onClick={() => setToggle(false)}>
+                  Sign up
+                </Link>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <div className={styles.app__navbar_menu}>
