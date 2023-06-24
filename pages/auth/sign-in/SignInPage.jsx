@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Axios from '../../../utils/axios';
 import signInSchema from '../../../utils/schemas/signInSchema';
 import { useRouter } from 'next/router';
@@ -11,6 +11,17 @@ const SignInPage = () => {
   const [error, setError] = useState('');
 
   const router = useRouter();
+
+  useEffect(() => {
+    const isUserSignedIn = () => {
+      const accessToken = localStorage.getItem('accessToken');
+      return accessToken !== null;
+    };
+
+    if (isUserSignedIn()) {
+      router.push('/profile');
+    }
+  }, []);
 
   const onSubmit = async (e) => {
     e.preventDefault();

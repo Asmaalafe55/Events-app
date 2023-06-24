@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../SignPage.module.scss';
 import { useRouter } from 'next/router';
 import Axios from '../../../utils/axios';
@@ -13,6 +13,17 @@ const SignUpPage = () => {
   const [errors, setErrors] = useState({});
 
   const router = useRouter();
+
+  useEffect(() => {
+    const isUserSignedIn = () => {
+      const accessToken = localStorage.getItem('accessToken');
+      return accessToken !== null;
+    };
+
+    if (isUserSignedIn()) {
+      router.push('/profile');
+    }
+  }, []);
 
   const onSubmit = async (e) => {
     e.preventDefault();
