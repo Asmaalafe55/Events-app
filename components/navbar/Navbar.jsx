@@ -12,16 +12,16 @@ import { logoImages } from '../../public/images/images';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  const isLoggedIn =
-    typeof window !== 'undefined' && localStorage.getItem('accessToken');
+  // const isLoggedIn =
+  //   typeof window !== 'undefined' && localStorage.getItem('accessToken');
 
   const router = useRouter();
 
-  const handleLogout = () => {
-    localStorage.removeItem('accessToken');
+  // const handleLogout = () => {
+  //   localStorage.removeItem('accessToken');
 
-    // router.push('/');
-  };
+  //   // router.push('/');
+  // };
 
   const links = [
     { link: '/', title: 'Home' },
@@ -53,23 +53,23 @@ const Navbar = () => {
             Categories
           </Link>
 
-          {isLoggedIn ? (
+          {/* {isLoggedIn ? (
             <Link href="/" onClick={handleLogout}>
               Logout
             </Link>
-          ) : (
-            <div className={styles.dropdown}>
-              <div>Sign</div>
-              <div className={styles.dropdown_content}>
-                <Link href="/auth/sign-in" onClick={() => setToggle(false)}>
-                  Sign in
-                </Link>
-                <Link href="/auth/sign-up" onClick={() => setToggle(false)}>
-                  Sign up
-                </Link>
-              </div>
+          ) : ( */}
+          <div className={styles.dropdown}>
+            <div>Sign</div>
+            <div className={styles.dropdown_content}>
+              <Link href="/auth/sign-in" onClick={() => setToggle(false)}>
+                Sign in
+              </Link>
+              <Link href="/auth/sign-up" onClick={() => setToggle(false)}>
+                Sign up
+              </Link>
             </div>
-          )}
+          </div>
+          {/* )} */}
         </div>
 
         <div className={styles.app__navbar_menu}>
