@@ -4,7 +4,7 @@ import React from 'react';
 import style from './Profile.module.scss';
 import { Layout, Menu, theme } from 'antd';
 import {
-  FileOutlined,
+  SettingOutlined,
   PieChartOutlined,
   UserOutlined,
 } from '@ant-design/icons';
@@ -20,14 +20,16 @@ function getItem(label, key, icon, children) {
   };
 }
 const items = [
-  getItem('Option 1', '1', <PieChartOutlined />),
-  getItem('User', 'sub1', <UserOutlined />, [
-    getItem('Tom', '3'),
-    getItem('Bill', '4'),
-    getItem('Alex', '5'),
+  getItem('Profile', '1', <UserOutlined />),
+  getItem('Events', 'sub1', <PieChartOutlined />, [
+    getItem('Liked', '3'),
+    getItem('Registered', '4'),
+    getItem('Expired', '5'),
+    getItem('Canceled', '6'),
+    getItem('Deleted', '7'),
   ]),
 
-  getItem('Files', '9', <FileOutlined />),
+  getItem('Settings', '9', <SettingOutlined />),
 ];
 
 const ProfilePage = () => {
