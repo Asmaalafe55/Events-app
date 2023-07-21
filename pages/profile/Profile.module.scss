@@ -1,9 +1,35 @@
 .profile_page {
   padding-top: 4rem;
-}
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .avatarsCollection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+
+    .avatar {
+      cursor: pointer;
+      transition: border-color 0.3s ease-in-out;
+      border: 2px solid transparent;
+      box-shadow: 5px 5px 10px #b3b3b3, -5px -5px 10px #ffffff;
+
+      &:hover {
+        border-color: #1890ff;
+      }
+
+      &.selectedAvatar {
+        border-color: #1890ff;
+      }
+    }
+  }
+  .avatar {
+    box-shadow: 5px 5px 10px #b3b3b3, -5px -5px 10px #ffffff;
+  }
 }

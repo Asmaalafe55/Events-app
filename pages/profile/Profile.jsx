@@ -37,6 +37,15 @@ const items = [
   getItem('Settings', '9', <SettingOutlined />),
 ];
 
+const avatars = [
+  'https://xsgames.co/randomusers/avatar.php?g=pixel',
+  'https://robohash.org/stefan-one',
+  'https://robohash.org/stefan-two',
+  'https://robohash.org/stefan-three',
+  'https://avatars.dicebear.com/api/open-peeps/stefan.svg',
+  'https://avatars.dicebear.com/api/croodles/stefan.svg',
+];
+
 const ProfilePage = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [avatarSrc, setAvatarSrc] = useState(
@@ -44,13 +53,10 @@ const ProfilePage = () => {
   );
   const [title, setTitle] = useState('Card title');
   const [description, setDescription] = useState('This is the description');
+  const [selectedAvatar, setSelectedAvatar] = useState(avatarSrc);
 
   const toggleEditMode = () => {
     setIsEditing(!isEditing);
-  };
-
-  const handleAvatarChange = (e) => {
-    setAvatarSrc(e.target.value);
   };
 
   const handleTitleChange = (e) => {
@@ -64,6 +70,15 @@ const ProfilePage = () => {
   const handleSaveChanges = () => {
     setIsEditing(false);
   };
+
+  const handleAvatarSelect = (avatarUrl) => {
+    setSelectedAvatar(avatarUrl);
+  };
+
+  useEffect(() => {
+    setAvatarSrc(selectedAvatar);
+  }, [selectedAvatar]);
+
   const router = useRouter();
 
   const {
@@ -139,13 +154,6 @@ const ProfilePage = () => {
                 {isEditing ? (
                   <React.Fragment>
                     <Meta
-                      avatar={
-                        <input
-                          type="text"
-                          value={avatarSrc}
-                          onChange={handleAvatarChange}
-                        />
-                      }
                       title={
                         <Input value={title} onChange={handleTitleChange} />
                       }
@@ -156,10 +164,25 @@ const ProfilePage = () => {
                         />
                       }
                     />
+                    <div className={style.avatarsCollection}>
+                      {avatars.map((avatarUrl) => (
+                        <Avatar
+                          key={avatarUrl}
+                          src={avatarUrl}
+                          size={64}
+                          onClick={() => handleAvatarSelect(avatarUrl)}
+                          className={`${style.avatar} ${
+                            selectedAvatar === avatarUrl
+                              ? style.selectedAvatar
+                              : ''
+                          }`}
+                        />
+                      ))}
+                    </div>
                   </React.Fragment>
                 ) : (
                   <Meta
-                    avatar={<Avatar src={avatarSrc} />}
+                    avatar={<Avatar src={avatarSrc} className={style.avatar} />}
                     title={title}
                     description={description}
                   />
