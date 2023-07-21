@@ -1,13 +1,18 @@
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import React from 'react';
 import style from './Profile.module.scss';
-import { Layout, Menu, theme } from 'antd';
+import { Layout, Menu, theme, Input, Avatar, Card } from 'antd';
 import {
   SettingOutlined,
   PieChartOutlined,
   UserOutlined,
+  EditOutlined,
+  EllipsisOutlined,
+  SaveOutlined,
 } from '@ant-design/icons';
+
+const { Meta } = Card;
 
 const { Content, Sider } = Layout;
 
@@ -33,6 +38,32 @@ const items = [
 ];
 
 const ProfilePage = () => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [avatarSrc, setAvatarSrc] = useState(
+    'https://xsgames.co/randomusers/avatar.php?g=pixel'
+  );
+  const [title, setTitle] = useState('Card title');
+  const [description, setDescription] = useState('This is the description');
+
+  const toggleEditMode = () => {
+    setIsEditing(!isEditing);
+  };
+
+  const handleAvatarChange = (e) => {
+    setAvatarSrc(e.target.value);
+  };
+
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
+  };
+
+  const handleDescriptionChange = (e) => {
+    setDescription(e.target.value);
+  };
+
+  const handleSaveChanges = () => {
+    setIsEditing(false);
+  };
   const router = useRouter();
 
   const {
@@ -86,7 +117,55 @@ const ProfilePage = () => {
               background: colorBgContainer,
             }}
           >
-            Content
+            <div className={style.content}>
+              <Card
+                style={{
+                  width: 300,
+                }}
+                cover={
+                  <img
+                    alt="example"
+                    src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                  />
+                }
+                actions={[
+                  isEditing ? (
+                    <SaveOutlined key="save" onClick={handleSaveChanges} />
+                  ) : (
+                    <EditOutlined key="edit" onClick={toggleEditMode} />
+                  ),
+                ]}
+              >
+                {isEditing ? (
+                  <React.Fragment>
+                    <Meta
+                      avatar={
+                        <input
+                          type="text"
+                          value={avatarSrc}
+                          onChange={handleAvatarChange}
+                        />
+                      }
+                      title={
+                        <Input value={title} onChange={handleTitleChange} />
+                      }
+                      description={
+                        <Input
+                          value={description}
+                          onChange={handleDescriptionChange}
+                        />
+                      }
+                    />
+                  </React.Fragment>
+                ) : (
+                  <Meta
+                    avatar={<Avatar src={avatarSrc} />}
+                    title={title}
+                    description={description}
+                  />
+                )}
+              </Card>
+            </div>
           </Content>
         </Layout>
       </Layout>
