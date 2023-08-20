@@ -8,7 +8,6 @@ import {
   PieChartOutlined,
   UserOutlined,
   EditOutlined,
-  EllipsisOutlined,
   SaveOutlined,
 } from '@ant-design/icons';
 
@@ -73,22 +72,17 @@ const ProfilePage = () => {
 
   const handleAvatarSelect = (avatarUrl) => {
     setSelectedAvatar(avatarUrl);
+    setAvatarSrc(avatarUrl);
   };
-
-  useEffect(() => {
-    setAvatarSrc(selectedAvatar);
-  }, [selectedAvatar]);
-
-  const router = useRouter();
 
   const {
     token: { colorBgContainer },
   } = theme.useToken();
 
+  const router = useRouter();
+
   useEffect(() => {
     const isLoggedIn = localStorage.getItem('accessToken');
-    console.log(isLoggedIn);
-
     if (!isLoggedIn) {
       router.push('/auth/sign-in');
     }
