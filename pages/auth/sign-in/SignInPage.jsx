@@ -72,7 +72,7 @@ const SignInPage = () => {
           <p className={styles.title}>SIGN IN</p>
           <form onSubmit={onSubmit}>
             <div>
-              <label htmlFor="email">Email</label>
+              <label for="email">Email</label>
               <input
                 type="email"
                 id="email"
@@ -83,7 +83,7 @@ const SignInPage = () => {
               />
             </div>
             <div>
-              <label htmlFor="password">Password</label>
+              <label for="password">Password</label>
               <input
                 type="password"
                 id="password"

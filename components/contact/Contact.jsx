@@ -37,7 +37,7 @@ const Contact = () => {
         <div className={styles.contact__title}>Contact Us</div>
         <div className={styles.contact_left_side}>
           <form onSubmit={handleSubmit}>
-            <label>Full Name:</label>
+            <label for="name">Full Name:</label>
             <input
               className={styles.contact_input}
               ref={inputName}
@@ -46,7 +46,7 @@ const Contact = () => {
               placeholder="Please enter your full name"
             />
 
-            <label>Email:</label>
+            <label for="email">Email:</label>
             <input
               className={styles.contact_input}
               ref={inputEmail}
@@ -55,7 +55,7 @@ const Contact = () => {
               placeholder="Please enter your email"
             />
 
-            <label>Message:</label>
+            <label for="message">Message:</label>
             <textarea
               className={styles.contact_custom_input}
               ref={inputMessage}
