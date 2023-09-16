@@ -16,7 +16,6 @@ export async function getStaticPaths() {
       },
     };
   });
-  console.log('asmaaaaa');
   return {
     paths: allPaths,
     fallback: false,
