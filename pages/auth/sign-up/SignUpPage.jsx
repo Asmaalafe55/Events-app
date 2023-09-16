@@ -90,7 +90,7 @@ const SignUpPage = () => {
           <p className={styles.title}>SIGN UP</p>
           <form onSubmit={onSubmit}>
             <div>
-              <label for="firstName">First Name</label>
+              <label htmlFor="firstName">First Name</label>
               <input
                 type="text"
                 id="firstName"
@@ -102,7 +102,7 @@ const SignUpPage = () => {
               {errors.firstName && <span>{errors.firstName}</span>}
             </div>
             <div>
-              <label for="lastName">Last Name</label>
+              <label htmlFor="lastName">Last Name</label>
               <input
                 type="text"
                 id="lastName"
@@ -114,7 +114,7 @@ const SignUpPage = () => {
               {errors.lastName && <span>{errors.lastName}</span>}
             </div>
             <div>
-              <label for="email">Email</label>
+              <label htmlFor="email">Email</label>
               <input
                 type="email"
                 id="email"
@@ -126,7 +126,7 @@ const SignUpPage = () => {
               {errors.email && <span>{errors.email}</span>}
             </div>
             <div>
-              <label for="password">Password</label>
+              <label htmlFor="password">Password</label>
               <input
                 type="password"
                 id="password"
@@ -138,7 +138,7 @@ const SignUpPage = () => {
               {errors.password && <span>{errors.password}</span>}
             </div>
             <div>
-              <label for="confirmPassword">Confirm Password</label>
+              <label htmlFor="confirmPassword">Confirm Password</label>
               <input
                 type="password"
                 id="confirmPassword"

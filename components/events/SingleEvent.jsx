@@ -39,7 +39,7 @@ const SingleEvent = ({ data }) => {
       </div>
 
       <div className={styles.single_event_form}>
-        <label for="email">Get Registered for this event!</label>
+        <label htmlFor="email">Get Registered for this event!</label>
         <form onSubmit={onSubmit}>
           <input
             className={styles.single_event_input}
