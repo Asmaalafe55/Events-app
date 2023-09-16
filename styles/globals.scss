@@ -65,23 +65,3 @@ a {
     background: var(--black-color);
   }
 }
-
-button {
-  border-style: none;
-  max-width: 400px;
-  min-width: 150px;
-  height: 50px;
-  margin: 0.5rem;
-
-  align-self: center;
-  align-items: center;
-  font-size: 25px;
-  border-radius: 20px;
-  text-transform: capitalize;
-
-  cursor: pointer;
-
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
-}

@@ -1,0 +1,104 @@
+@import '../../styles/buttons.module.scss';
+.single_event_container {
+  display: flex;
+  padding-top: 4rem;
+  background-color: var(--white-color);
+  color: var(--black-color);
+  flex-direction: column;
+}
+
+.single_event {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--white-color);
+
+  div {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 1rem 2rem;
+    background-color: var(--white-color);
+
+    h1 {
+      font-size: 55px;
+      padding: 2rem 0;
+
+      text-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
+
+      @media screen and (max-width: 600px) {
+        font-size: 40px;
+      }
+    }
+
+    p {
+      font-size: 35px;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+      @media screen and (max-width: 600px) {
+        font-size: 25px;
+      }
+    }
+    @media screen and (max-width: 900px) {
+      width: 100%;
+    }
+  }
+  img {
+    width: 50%;
+    @media screen and (max-width: 900px) {
+      width: 100%;
+      height: 50%;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
+}
+
+.single_event_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
+
+  width: 100%;
+  background-color: var(--lightGray-color);
+
+  label {
+    font-size: 40px;
+    padding: 1rem 0;
+
+    @media screen and (max-width: 600px) {
+      font-size: 30px;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .single_event_input {
+      font-family: 'NoirPro';
+      padding: 0 1rem;
+      font-size: 15px;
+      color: var(--black-color);
+
+      border-style: none;
+      text-decoration: none;
+      border-radius: 20px;
+      background-color: var(--primary-color);
+      box-shadow: 4px 8px 5px rgba(0, 0, 0, 0.25);
+      max-width: 300px;
+      min-width: 250px;
+      height: 60px;
+
+      &:focus {
+        border-style: none;
+        text-decoration: none;
+      }
+    }
+    button {
+      @extend .button_type1;
+    }
+  }
+}

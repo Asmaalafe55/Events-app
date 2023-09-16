@@ -1,9 +1,12 @@
-import MainLayout from '../src/components/layout/MainLayout';
-import SecondaryLayout from '../src/components/layout/SecondaryLayout';
+import MainLayout from '../components/layout/MainLayout';
+import SecondaryLayout from '../components/layout/SecondaryLayout';
 import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps, router }) {
-  if (router.pathname === '/sign-in' || router.pathname === '/sign-up') {
+  if (
+    router.pathname === '/auth/sign-in' ||
+    router.pathname === '/auth/sign-up'
+  ) {
     return (
       <>
         <SecondaryLayout>

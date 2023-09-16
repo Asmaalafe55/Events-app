@@ -1,8 +1,8 @@
 import axios from '../utils/axios';
 import Head from 'next/head';
-import Trending from '../src/components/trending/Trending';
-import Header from '../src/components/header/Header';
-import Contact from '../src/components/contact/Contact';
+import Trending from '../components/trending/Trending';
+import Header from '../components/header/Header';
+import Contact from '../components/contact/Contact';
 
 export default function Home(props) {
   const data = props.data;

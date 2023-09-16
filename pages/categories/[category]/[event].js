@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from '../../../utils/axios';
-import SingleEvent from '../../../src/components/events/SingleEvent';
+import SingleEvent from '../../../components/events/SingleEvent';
 
 const Event = ({ data }) => <SingleEvent data={data} />;
 
