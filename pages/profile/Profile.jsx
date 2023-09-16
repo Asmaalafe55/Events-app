@@ -82,6 +82,7 @@ const ProfilePage = () => {
   const router = useRouter();
 
   useEffect(() => {
+    // If user entered to profilr path to redirect user to sign in page
     const isLoggedIn = localStorage.getItem('accessToken');
     if (!isLoggedIn) {
       router.push('/auth/sign-in');
