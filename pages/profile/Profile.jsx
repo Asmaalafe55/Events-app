@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from '../../utils/axios';
+
 import style from './Profile.module.scss';
 import { Layout, Menu, theme, Input, Avatar, Card } from 'antd';
 import {
@@ -45,12 +46,15 @@ const avatars = [
   'https://avatars.dicebear.com/api/croodles/stefan.svg',
 ];
 
-const ProfilePage = () => {
+const ProfilePage = (props) => {
+  const data = props.data;
+  console.log('Data:', data);
+
   const [isEditing, setIsEditing] = useState(false);
   const [avatarSrc, setAvatarSrc] = useState(
     'https://xsgames.co/randomusers/avatar.php?g=pixel'
   );
-  const [title, setTitle] = useState('Card title');
+  const [title, setTitle] = useState(data ? data.firstName : '');
   const [description, setDescription] = useState('This is the description');
   const [selectedAvatar, setSelectedAvatar] = useState(avatarSrc);
 
@@ -192,3 +196,17 @@ const ProfilePage = () => {
 };
 
 export default ProfilePage;
+
+export async function getStaticProps() {
+  // Get the email from local storage
+  const email = localStorage.getItem('userEmail');
+
+  // Make a request to fetch user information by email
+  const res = await axios.get(`/users/email/${email}`);
+
+  return {
+    props: {
+      data: res.data,
+    },
+  };
+}
