@@ -57,7 +57,9 @@ const ProfilePage = ({ data }) => {
     'https://xsgames.co/randomusers/avatar.php?g=pixel'
   );
   const [title, setTitle] = useState(
-    data && data.firstName ? data.firstName : ''
+    data && data.firstName && data.lastName
+      ? `${data.firstName} ${data.lastName}`
+      : ''
   );
 
   const [description, setDescription] = useState('This is the description');
