@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from '../../utils/axios';
 import Profile from '../../components/profile/Profile';
 
 const ProfilePage = (props) => {
-  const data = props.data;
+  const initialData = props.data; // Initial data from getStaticProps or getServerSideProps
+  const [data, setData] = useState(initialData); // State to hold the data
 
   useEffect(() => {
     // Ensure we are on the client side before using localStorage
@@ -16,6 +17,8 @@ const ProfilePage = (props) => {
         try {
           const res = await axios.get(`/users/email/${email}`);
           console.log('API Response:', res.data);
+          // Update the state with the fetched data
+          setData(res.data);
         } catch (error) {
           console.error('Error fetching user data:', error);
         }
@@ -26,6 +29,7 @@ const ProfilePage = (props) => {
       }
     }
   }, []); // Run this effect only once on component mount
+  console.log('A11111e:', data);
 
   return <Profile data={data} />;
 };

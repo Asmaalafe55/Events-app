@@ -48,6 +48,10 @@ const avatars = [
 const ProfilePage = ({ data }) => {
   console.log('Data:', data);
 
+  if (!data) {
+    return <div>Loading ... </div>;
+  }
+
   const [isEditing, setIsEditing] = useState(false);
   const [avatarSrc, setAvatarSrc] = useState(
     'https://xsgames.co/randomusers/avatar.php?g=pixel'
