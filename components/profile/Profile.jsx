@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-import axios from '../../utils/axios';
 
 import style from './Profile.module.scss';
 import { Layout, Menu, theme, Input, Avatar, Card } from 'antd';
@@ -46,15 +45,17 @@ const avatars = [
   'https://avatars.dicebear.com/api/croodles/stefan.svg',
 ];
 
-const ProfilePage = (props) => {
-  const data = props.data;
+const ProfilePage = ({ data }) => {
   console.log('Data:', data);
 
   const [isEditing, setIsEditing] = useState(false);
   const [avatarSrc, setAvatarSrc] = useState(
     'https://xsgames.co/randomusers/avatar.php?g=pixel'
   );
-  const [title, setTitle] = useState(data ? data.firstName : '');
+  const [title, setTitle] = useState(
+    data && data.firstName ? data.firstName : ''
+  );
+
   const [description, setDescription] = useState('This is the description');
   const [selectedAvatar, setSelectedAvatar] = useState(avatarSrc);
 

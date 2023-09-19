@@ -10,7 +10,6 @@ const ProfilePage = (props) => {
     if (typeof window !== 'undefined') {
       // Get the email from local storage
       const email = localStorage.getItem('userEmail');
-      console.log('Email from localStorage:', email);
 
       // Make a request to fetch user information by email
       const fetchUserData = async () => {
