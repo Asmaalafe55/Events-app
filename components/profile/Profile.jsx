@@ -196,17 +196,3 @@ const ProfilePage = (props) => {
 };
 
 export default ProfilePage;
-
-export async function getStaticProps() {
-  // Get the email from local storage
-  const email = localStorage.getItem('userEmail');
-
-  // Make a request to fetch user information by email
-  const res = await axios.get(`/users/email/${email}`);
-
-  return {
-    props: {
-      data: res.data,
-    },
-  };
-}
