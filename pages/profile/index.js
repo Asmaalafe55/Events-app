@@ -16,7 +16,6 @@ const ProfilePage = (props) => {
       const fetchUserData = async () => {
         try {
           const res = await axios.get(`/users/email/${email}`);
-          console.log('API Response:', res.data);
           // Update the state with the fetched data
           setData(res.data);
         } catch (error) {
@@ -29,7 +28,6 @@ const ProfilePage = (props) => {
       }
     }
   }, []); // Run this effect only once on component mount
-  console.log('A11111e:', data);
 
   return <Profile data={data} />;
 };

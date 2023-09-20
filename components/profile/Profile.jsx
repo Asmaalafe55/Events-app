@@ -49,7 +49,23 @@ const ProfilePage = ({ data }) => {
   console.log('Data:', data);
 
   if (!data) {
-    return <div>Loading ... </div>;
+    return (
+      <div className={style.loading_card}>
+        <div className={style.loading_card_1}></div>
+        <div className={style.right}>
+          <div className={style.loading_card_2}></div>
+          <div className={style.loading_card_3}></div>
+          <div className={style.loading_card_3}></div>
+          <div className={style.loading_card_3}></div>
+          <div className={style.loading_card_3}></div>
+          <div className={style.bottom}>
+            <div className={style.loading_card_4}></div>
+            <div className={style.loading_card_4}></div>
+            <div className={style.loading_card_4}></div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   const [isEditing, setIsEditing] = useState(false);
