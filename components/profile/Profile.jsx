@@ -78,7 +78,7 @@ const ProfilePage = ({ data }) => {
       : ''
   );
 
-  const [description, setDescription] = useState('This is the description');
+  const [description, setDescription] = useState('Hello! This is me 👋🏼');
   const [selectedAvatar, setSelectedAvatar] = useState(avatarSrc);
 
   const toggleEditMode = () => {
