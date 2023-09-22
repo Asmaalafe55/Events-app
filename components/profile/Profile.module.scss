@@ -70,6 +70,10 @@ $gray: rgba(229, 231, 235, 1);
 .profile_page {
   padding-top: 4rem;
 
+  .layout {
+    min-height: 100vh;
+  }
+
   .content {
     display: flex;
     justify-content: center;

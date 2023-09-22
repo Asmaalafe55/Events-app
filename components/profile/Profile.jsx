@@ -118,11 +118,7 @@ const ProfilePage = ({ data }) => {
 
   return (
     <div className={style.profile_page}>
-      <Layout
-        style={{
-          minHeight: '100vh',
-        }}
-      >
+      <Layout className={style.layout}>
         <Sider
           width={200}
           style={{
