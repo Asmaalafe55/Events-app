@@ -27,6 +27,7 @@ const ProfileCard = ({
         {/* Render avatar selection component */}
 
         <Meta
+          avatar={<Avatar src={avatarSrc} className={style.avatar} />}
           title={<Input value={title} onChange={handleTitleChange} />}
           description={
             <Input value={description} onChange={handleDescriptionChange} />
