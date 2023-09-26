@@ -97,13 +97,6 @@ const Profile = ({ data }) => {
                 setSelectedAvatar={setSelectedAvatar}
                 handleAvatarSelect={handleAvatarSelect}
               />
-              {/* {isEditing && (
-                <AvatarSelect
-                  avatars={avatars}
-                  selectedAvatar={selectedAvatar}
-                  handleAvatarSelect={handleAvatarSelect}
-                />
-              )} */}
             </div>
           </Content>
         </Layout>

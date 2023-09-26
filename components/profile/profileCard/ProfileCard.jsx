@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, Input, Avatar } from 'antd';
 import style from './ProfileCard.module.scss';
 import { EditOutlined, SaveOutlined } from '@ant-design/icons';
-import AvatarSelect from '../avatarSelect/AvatarSelect'; // Import the AvatarSelect component
+import AvatarSelect from '../avatarSelect/AvatarSelect';
 
 const { Meta } = Card;
 
