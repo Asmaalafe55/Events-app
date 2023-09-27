@@ -25,10 +25,9 @@ const Profile = ({ data }) => {
     data ? `${data.firstName} ${data.lastName}` : ''
   );
   const [description, setDescription] = useState('Hello! This is me 👋🏼');
-  const [avatarSrc, setAvatarSrc] = useState(
+  const [selectedAvatar, setSelectedAvatar] = useState(
     'https://xsgames.co/randomusers/avatar.php?g=pixel'
   );
-  const [selectedAvatar, setSelectedAvatar] = useState(avatarSrc);
 
   const toggleEditMode = () => {
     setIsEditing(!isEditing);
@@ -48,7 +47,6 @@ const Profile = ({ data }) => {
 
   const handleAvatarSelect = (avatarUrl) => {
     setSelectedAvatar(avatarUrl);
-    setAvatarSrc(avatarUrl);
   };
 
   const {
@@ -91,10 +89,7 @@ const Profile = ({ data }) => {
                 handleDescriptionChange={handleDescriptionChange}
                 toggleEditMode={toggleEditMode}
                 avatars={avatars}
-                avatarSrc={avatarSrc}
-                setAvatarSrc={setAvatarSrc}
                 selectedAvatar={selectedAvatar}
-                setSelectedAvatar={setSelectedAvatar}
                 handleAvatarSelect={handleAvatarSelect}
               />
             </div>

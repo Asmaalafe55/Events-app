@@ -3,7 +3,6 @@ import { Card, Input, Avatar } from 'antd';
 import style from './ProfileCard.module.scss';
 import { EditOutlined, SaveOutlined } from '@ant-design/icons';
 import AvatarSelect from '../avatarSelect/AvatarSelect';
-
 const { Meta } = Card;
 
 const ProfileCard = ({
@@ -15,10 +14,7 @@ const ProfileCard = ({
   handleDescriptionChange,
   toggleEditMode,
   avatars,
-  avatarSrc,
-  setAvatarSrc,
   selectedAvatar,
-  setSelectedAvatar,
   handleAvatarSelect,
 }) => {
   const renderEditingSection = () => {
@@ -27,7 +23,7 @@ const ProfileCard = ({
         {/* Render avatar selection component */}
 
         <Meta
-          avatar={<Avatar src={avatarSrc} className={style.avatar} />}
+          avatar={<Avatar src={selectedAvatar} className={style.avatar} />}
           title={<Input value={title} onChange={handleTitleChange} />}
           description={
             <Input value={description} onChange={handleDescriptionChange} />
@@ -36,7 +32,7 @@ const ProfileCard = ({
 
         <AvatarSelect
           avatars={avatars}
-          selectedAvatar={avatarSrc}
+          selectedAvatar={selectedAvatar}
           handleAvatarSelect={handleAvatarSelect}
         />
       </>
@@ -46,7 +42,7 @@ const ProfileCard = ({
   const renderDisplaySection = () => {
     return (
       <Meta
-        avatar={<Avatar src={avatarSrc} className={style.avatar} />}
+        avatar={<Avatar src={selectedAvatar} className={style.avatar} />}
         title={title}
         description={description}
       />
