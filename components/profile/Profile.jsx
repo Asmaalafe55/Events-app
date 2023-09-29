@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Layout, theme, Card } from 'antd';
+import { Layout, theme } from 'antd';
 
 import { useRouter } from 'next/router';
 
@@ -7,7 +7,6 @@ import ProfileCard from './profileCard/ProfileCard';
 import ProfileMenu from './profileMenu/ProfileMenu';
 import style from './Profile.module.scss';
 
-const { Meta } = Card;
 const { Content, Sider } = Layout;
 
 const avatars = [
