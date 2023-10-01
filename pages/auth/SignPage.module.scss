@@ -170,8 +170,51 @@
   }
 }
 
+// .error {
+//   color: red;
+//   font-size: 14px;
+//   margin: auto;
+// }
 .error {
-  color: red;
+  width: 250px;
+  padding: 12px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  background: #ef665b;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px -3px #111;
+
+  .error__icon {
+    width: 20px;
+    height: 20px;
+    transform: translateY(-2px);
+    margin-right: 8px;
+
+    path {
+      fill: #fff;
+    }
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+  }
+}
+
+.error__icon .error__title {
+  font-weight: 500;
   font-size: 14px;
-  margin-top: 5px;
+  color: #fff;
+}
+
+.error__close {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.error__close path {
+  fill: #fff;
 }
