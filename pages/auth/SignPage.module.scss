@@ -3,16 +3,12 @@
   width: 100%;
   align-items: center;
   justify-content: center;
-  height: calc(100vh - 4rem);
-  padding-top: 4rem;
+  height: calc(130vh - 10rem);
+  margin: auto;
 
-  top: 0;
-  left: 0;
-  width: 100%;
   background-image: url('../../public/images/signin.png');
   background-size: cover;
   background-position: center;
-  z-index: -1;
 
   div {
     display: flex;
@@ -29,7 +25,7 @@
 
     .form_container {
       width: 300px;
-      min-height: 500px;
+      min-height: 400px;
 
       @media screen and (max-width: 300px) {
         width: 100%;
@@ -39,7 +35,6 @@
         text-align: center;
         color: var(--black-color);
         font-size: 1.5rem;
-        line-height: 2rem;
         font-weight: 700;
       }
 
@@ -114,7 +109,7 @@
           cursor: pointer;
 
           &:hover {
-            box-shadow: 10px 10px 20px #c1c1c1, -10px -10px 20px #ffffff;
+            box-shadow: 10px 10px 20px #c1c1c1, -5px -5px 10px #ffffff;
           }
         }
       }
@@ -169,6 +164,7 @@
       .error {
         width: 200px;
         flex-direction: row;
+        margin-top: 20px;
       }
     }
   }

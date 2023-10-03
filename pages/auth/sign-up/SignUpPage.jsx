@@ -3,6 +3,7 @@ import styles from '../SignPage.module.scss';
 import { useRouter } from 'next/router';
 import Axios from '../../../utils/axios';
 import signUpSchema from '../../../utils/schemas/signUpSchema';
+import { Alert } from 'antd';
 
 const SignUpPage = () => {
   const [firstName, setFirstName] = useState('');
@@ -11,6 +12,7 @@ const SignUpPage = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errors, setErrors] = useState({});
+  const [error, setError] = useState('');
 
   const router = useRouter();
 
@@ -70,6 +72,7 @@ const SignUpPage = () => {
       setEmail('');
       setPassword('');
       setConfirmPassword('');
+      setError('');
 
       localStorage.setItem('userId', id);
       localStorage.setItem('userEmail', userEmail);
@@ -80,6 +83,10 @@ const SignUpPage = () => {
       router.push('/profile');
     } catch (error) {
       console.error('Error signing up:', error.message);
+
+      const errorMessage =
+        error.response?.data?.message || 'An error occurred during login';
+      setError(errorMessage);
     }
   };
 
@@ -154,10 +161,18 @@ const SignUpPage = () => {
             </button>
           </form>
 
+          {error && (
+            <Alert
+              className={styles.error}
+              message={error}
+              type="error"
+              showIcon
+            />
+          )}
+
           <div className={styles.social_message}>
             <p>Sign Up with social accounts</p>
           </div>
-
           <div className={styles.social_icons}>
             <button aria-label="Log in with Google">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
