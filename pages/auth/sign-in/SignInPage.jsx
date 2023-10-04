@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Axios from '../../../utils/axios';
 import signInSchema from '../../../utils/schemas/signInSchema';
-import ForgotPasswordForm from '../../../components/auth/ForgotPasswordForm';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Alert } from 'antd';
 
@@ -95,7 +95,7 @@ const SignInPage = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <div>
-                <Link to="/auth/forgot-password">Forgot Password?</Link>
+                <Link href="/auth/forgot-password">Forgot Password?</Link>
               </div>
             </div>
 
