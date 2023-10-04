@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Axios from '../../../utils/axios';
 import signInSchema from '../../../utils/schemas/signInSchema';
+import ForgotPasswordForm from '../../../components/auth/ForgotPasswordForm';
 import { useRouter } from 'next/router';
-import { Alert, Space } from 'antd';
+import { Alert } from 'antd';
 
 import styles from '../SignPage.module.scss';
 
@@ -10,8 +11,13 @@ const SignInPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
 
   const router = useRouter();
+
+  const handleForgotPasswordClick = () => {
+    setShowForgotPassword(true);
+  };
 
   useEffect(() => {
     const isUserSignedIn = () => {
@@ -94,9 +100,9 @@ const SignInPage = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <div>
-                <a rel="noopener noreferrer" href="#">
-                  Forgot Password ?
-                </a>
+                <button onClick={handleForgotPasswordClick}>
+                  Forgot Password?
+                </button>
               </div>
             </div>
 
@@ -104,6 +110,8 @@ const SignInPage = () => {
               SIGN IN
             </button>
           </form>
+
+          {showForgotPassword && <ForgotPasswordForm />}
 
           {error && (
             <Alert
