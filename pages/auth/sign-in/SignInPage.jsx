@@ -11,13 +11,8 @@ const SignInPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [showForgotPassword, setShowForgotPassword] = useState(false);
 
   const router = useRouter();
-
-  const handleForgotPasswordClick = () => {
-    setShowForgotPassword(true);
-  };
 
   useEffect(() => {
     const isUserSignedIn = () => {
@@ -100,9 +95,7 @@ const SignInPage = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <div>
-                <button onClick={handleForgotPasswordClick}>
-                  Forgot Password?
-                </button>
+                <Link to="/auth/forgot-password">Forgot Password?</Link>
               </div>
             </div>
 
@@ -110,8 +103,6 @@ const SignInPage = () => {
               SIGN IN
             </button>
           </form>
-
-          {showForgotPassword && <ForgotPasswordForm />}
 
           {error && (
             <Alert
