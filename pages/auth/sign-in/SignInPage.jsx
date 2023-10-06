@@ -14,6 +14,7 @@ const SignInPage = () => {
 
   const router = useRouter();
 
+  // Check if the user is already signed in when the component mounts
   useEffect(() => {
     const isUserSignedIn = () => {
       const accessToken = localStorage.getItem('accessToken');
@@ -23,11 +24,12 @@ const SignInPage = () => {
     if (isUserSignedIn()) {
       router.push('/profile');
     }
-  }, []);
+  }, [router]); // Dependencies array to ensure this effect runs only on component mount or router change
 
   const onSubmit = async (e) => {
     e.preventDefault();
 
+    // Validate the input using signInSchema
     const { error: validationError } = signInSchema.validate(
       {
         email,
@@ -42,6 +44,7 @@ const SignInPage = () => {
     }
 
     try {
+      // Send a POST request to login endpoint with email and password
       const response = await Axios.post('/login', {
         email,
         password,
@@ -49,21 +52,24 @@ const SignInPage = () => {
 
       const { id, email: userEmail, access_token } = response.data;
 
+      // Clear the form and error state
       setEmail('');
       setPassword('');
       setError('');
 
+      // Store user information and token in localStorage
       localStorage.setItem('userId', id);
       localStorage.setItem('userEmail', userEmail);
       localStorage.setItem('accessToken', access_token);
 
       console.log('User signed in successfully:', response.data);
 
-      router.push('/profile');
+      router.push('/profile'); // Redirect to profile page after successful login
     } catch (error) {
       const errorMessage =
         error.response?.data?.message || 'An error occurred during login';
       setError(errorMessage);
+      console.log(error);
     }
   };
 
