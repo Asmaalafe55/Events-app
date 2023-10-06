@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './Navbar.module.scss';
 import { HiX } from 'react-icons/hi';
 import { FiMenu } from 'react-icons/fi';
@@ -12,24 +12,41 @@ import { logoImages } from '../../public/images/images';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  // const isLoggedIn =
-  //   typeof window !== 'undefined' && localStorage.getItem('accessToken');
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
 
   const router = useRouter();
 
-  // const handleLogout = () => {
-  //   localStorage.removeItem('accessToken');
+  useEffect(() => {
+    // Check if the access token is in localStorage
+    const accessToken = localStorage.getItem('accessToken');
+    setIsLoggedIn(!!accessToken); // Update login status based on the token
+  }, []); // Run this effect only once when the component mounts
 
-  //   // router.push('/');
-  // };
+  const handleLogout = () => {
+    // Handle logout logic here: remove token from localStorage, etc.
+    localStorage.removeItem('accessToken');
+    setIsLoggedIn(false); // Update login status after logout
 
-  const links = [
-    { link: '/', title: 'Home' },
-    { link: '/aboutUs', title: 'About Us' },
-    { link: '/categories', title: 'Categories' },
-    { link: '/auth/sign-in', title: 'Sign In' },
-    { link: '/auth/sign-up', title: 'Sign Up' },
-  ];
+    // Redirect to home or any other desired page
+    router.push('/');
+  };
+
+  const handleSignIn = () => {
+    console.log('Sign In button clicked!');
+  };
+
+  const links = isLoggedIn
+    ? [
+        { link: '/aboutUs', title: 'About Us' },
+        { link: '/categories', title: 'Categories' },
+        { link: '/', title: 'Logout', onClick: handleLogout },
+      ]
+    : [
+        { link: '/aboutUs', title: 'About Us' },
+        { link: '/categories', title: 'Categories' },
+        { link: '/auth/sign-in', title: 'Sign In' },
+        { link: '/auth/sign-up', title: 'Sign Up' },
+      ];
 
   return (
     <header>
@@ -45,31 +62,15 @@ const Navbar = () => {
         </Link>
 
         <div className={styles.app__navbar_links}>
-          <Link href="/aboutUs" onClick={() => setToggle(false)}>
-            About Us
-          </Link>
-
-          <Link href="/categories" onClick={() => setToggle(false)}>
-            Categories
-          </Link>
-
-          {/* {isLoggedIn ? (
-            <Link href="/" onClick={handleLogout}>
-              Logout
+          {links.map((item) => (
+            <Link
+              key={item.title}
+              href={item.link}
+              // onClick={item.onClick ? item.onClick : () => setToggle(false)}
+            >
+              {item.title}
             </Link>
-          ) : ( */}
-          <div className={styles.dropdown}>
-            <div>Sign</div>
-            <div className={styles.dropdown_content}>
-              <Link href="/auth/sign-in" onClick={() => setToggle(false)}>
-                Sign in
-              </Link>
-              <Link href="/auth/sign-up" onClick={() => setToggle(false)}>
-                Sign up
-              </Link>
-            </div>
-          </div>
-          {/* )} */}
+          ))}
         </div>
 
         <div className={styles.app__navbar_menu}>
