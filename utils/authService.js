@@ -1,7 +1,9 @@
-const AuthService = {
-  tokenRenewalTimeout: null,
+import axios from 'axios';
 
-  checkTokenExpiry: () => {
+let tokenRenewalTimeout;
+
+const AuthService = {
+  checkTokenExpiry: async () => {
     const token = localStorage.getItem('accessToken');
 
     if (token) {
@@ -11,26 +13,24 @@ const AuthService = {
       // Check if the token is about to expire (5 minutes before)
       if (exp - currentTime <= 300) {
         // Token is about to expire, renew the token
-        renewToken();
+        await AuthService.renewToken();
       }
     }
+    return Promise.resolve(); // Resolve immediately if the token doesn't need renewal
   },
 
   renewToken: async () => {
     // Make a request to the server to renew the token
     try {
-      const response = await fetch('/renew-token', {
-        method: 'POST',
+      const response = await axios.post('/renew-token', null, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
         },
-        // Add any required request body data
       });
 
-      if (response.ok) {
-        const data = await response.json();
-        const newToken = data.access_token;
+      if (response.status === 200) {
+        const newToken = response.data.access_token;
 
         // Update the token in localStorage with the new token
         localStorage.setItem('accessToken', newToken);
@@ -42,11 +42,12 @@ const AuthService = {
 
   // Function to start periodic token check
   startTokenCheck: () => {
-    // Start periodic token check and store the interval ID in tokenRenewalTimeout
-    AuthService.tokenRenewalTimeout = setInterval(
-      AuthService.checkTokenExpiry,
-      60000
-    );
+    tokenRenewalTimeout = setInterval(AuthService.checkTokenExpiry, 60000); // Check every minute
+  },
+
+  // Function to clear the token renewal interval
+  stopTokenCheck: () => {
+    clearInterval(tokenRenewalTimeout);
   },
 };
 

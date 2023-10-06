@@ -9,9 +9,9 @@ function MyApp({ Component, pageProps, router }) {
     // Start the token check when the application loads
     AuthService.startTokenCheck();
 
-    // Cleanup the token check interval when the component unmounts
+    // Cleanup on component unmount
     return () => {
-      clearInterval(AuthService.tokenRenewalTimeout);
+      AuthService.stopTokenCheck();
     };
   }, []);
 
