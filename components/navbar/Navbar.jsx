@@ -66,7 +66,7 @@ const Navbar = () => {
             <Link
               key={item.title}
               href={item.link}
-              // onClick={item.onClick ? item.onClick : () => setToggle(false)}
+              onClick={item.onClick ? item.onClick : () => setToggle(false)}
             >
               {item.title}
             </Link>
