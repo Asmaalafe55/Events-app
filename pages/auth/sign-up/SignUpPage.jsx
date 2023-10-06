@@ -16,6 +16,7 @@ const SignUpPage = () => {
 
   const router = useRouter();
 
+  // Check if the user is already signed in when the component mounts
   useEffect(() => {
     const isUserSignedIn = () => {
       const accessToken = localStorage.getItem('accessToken');
@@ -25,11 +26,13 @@ const SignUpPage = () => {
     if (isUserSignedIn()) {
       router.push('/profile');
     }
-  }, []);
+  }, [router]);
 
+  // Form submission handler
   const onSubmit = async (e) => {
     e.preventDefault();
 
+    // Form data object
     const formData = {
       firstName,
       lastName,
@@ -38,8 +41,10 @@ const SignUpPage = () => {
       confirmPassword,
     };
 
+    // Validate form data
     const { error } = signUpSchema.validate(formData, { abortEarly: false });
 
+    // Handle validation errors
     if (error) {
       const validationErrors = {};
       error.details.forEach((detail) => {
@@ -49,9 +54,10 @@ const SignUpPage = () => {
       return;
     }
 
-    setErrors({});
+    setErrors({}); // Clear previous validation errors
 
     try {
+      // Make a POST request to register the user
       const response = await Axios.post('/register', {
         firstName,
         lastName,
@@ -59,6 +65,7 @@ const SignUpPage = () => {
         password,
       });
 
+      // Handle successful registration
       const {
         id,
         email: userEmail,
@@ -67,6 +74,7 @@ const SignUpPage = () => {
         access_token,
       } = response.data;
 
+      // Clear form fields and errors
       setFirstName('');
       setLastName('');
       setEmail('');
@@ -74,14 +82,14 @@ const SignUpPage = () => {
       setConfirmPassword('');
       setError('');
 
+      // Store user data in localStorage
       localStorage.setItem('userId', id);
       localStorage.setItem('userEmail', userEmail);
       localStorage.setItem('accessToken', access_token);
 
-      console.log('User signed up successfully:', response.data);
-
       router.push('/profile');
     } catch (error) {
+      // Handle registration error
       console.error('Error signing up:', error.message);
 
       const errorMessage =
