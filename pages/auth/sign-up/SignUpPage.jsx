@@ -3,6 +3,7 @@ import styles from '../SignPage.module.scss';
 import { useRouter } from 'next/router';
 import Axios from '../../../utils/axios';
 import signUpSchema from '../../../utils/schemas/signUpSchema';
+import { Alert } from 'antd';
 
 const SignUpPage = () => {
   const [firstName, setFirstName] = useState('');
@@ -11,9 +12,11 @@ const SignUpPage = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errors, setErrors] = useState({});
+  const [error, setError] = useState('');
 
   const router = useRouter();
 
+  // Check if the user is already signed in when the component mounts
   useEffect(() => {
     const isUserSignedIn = () => {
       const accessToken = localStorage.getItem('accessToken');
@@ -23,11 +26,13 @@ const SignUpPage = () => {
     if (isUserSignedIn()) {
       router.push('/profile');
     }
-  }, []);
+  }, [router]);
 
+  // Form submission handler
   const onSubmit = async (e) => {
     e.preventDefault();
 
+    // Form data object
     const formData = {
       firstName,
       lastName,
@@ -36,8 +41,10 @@ const SignUpPage = () => {
       confirmPassword,
     };
 
+    // Validate form data
     const { error } = signUpSchema.validate(formData, { abortEarly: false });
 
+    // Handle validation errors
     if (error) {
       const validationErrors = {};
       error.details.forEach((detail) => {
@@ -47,9 +54,10 @@ const SignUpPage = () => {
       return;
     }
 
-    setErrors({});
+    setErrors({}); // Clear previous validation errors
 
     try {
+      // Make a POST request to register the user
       const response = await Axios.post('/register', {
         firstName,
         lastName,
@@ -57,6 +65,7 @@ const SignUpPage = () => {
         password,
       });
 
+      // Handle successful registration
       const {
         id,
         email: userEmail,
@@ -65,21 +74,27 @@ const SignUpPage = () => {
         access_token,
       } = response.data;
 
+      // Clear form fields and errors
       setFirstName('');
       setLastName('');
       setEmail('');
       setPassword('');
       setConfirmPassword('');
+      setError('');
 
+      // Store user data in localStorage
       localStorage.setItem('userId', id);
       localStorage.setItem('userEmail', userEmail);
       localStorage.setItem('accessToken', access_token);
 
-      console.log('User signed up successfully:', response.data);
-
       router.push('/profile');
     } catch (error) {
+      // Handle registration error
       console.error('Error signing up:', error.message);
+
+      const errorMessage =
+        error.response?.data?.message || 'An error occurred during login';
+      setError(errorMessage);
     }
   };
 
@@ -154,10 +169,18 @@ const SignUpPage = () => {
             </button>
           </form>
 
+          {error && (
+            <Alert
+              className={styles.error}
+              message={error}
+              type="error"
+              showIcon
+            />
+          )}
+
           <div className={styles.social_message}>
             <p>Sign Up with social accounts</p>
           </div>
-
           <div className={styles.social_icons}>
             <button aria-label="Log in with Google">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
