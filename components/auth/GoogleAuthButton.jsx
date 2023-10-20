@@ -1,4 +1,5 @@
 import GoogleLogin from 'react-google-button';
+import { GoogleOutlined } from '@ant-design/icons';
 
 const GoogleAuthButton = () => {
   const responseGoogle = (response) => {
@@ -11,11 +12,16 @@ const GoogleAuthButton = () => {
   };
 
   return (
-    <GoogleLogin
-      clientId={process.env.CLIENT_ID}
-      onClick={responseGoogle}
-      onFailure={onFailure}
-    />
+    <button aria-label="Log in with Google">
+      <GoogleOutlined />
+      <GoogleLogin
+        clientId={process.env.CLIENT_ID}
+        onClick={responseGoogle}
+        onFailure={onFailure}
+        style={{ display: 'none' }}
+        id="google-auth-button"
+      />
+    </button>
   );
 };
 
