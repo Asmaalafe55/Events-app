@@ -27,12 +27,12 @@ const Navbar = () => {
     localStorage.removeItem('accessToken');
     setIsLoggedIn(false); // Update login status after logout
 
+    console.log('Current route:', router.pathname);
     // Redirect to home or any other desired page
-    router.push('/');
-  };
-
-  const handleSignIn = () => {
-    console.log('Sign In button clicked!');
+    if (router.pathname === '/profile') {
+      console.log('Redirecting to home');
+      router.push('/');
+    }
   };
 
   const links = isLoggedIn
