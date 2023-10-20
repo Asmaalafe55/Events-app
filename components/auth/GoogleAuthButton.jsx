@@ -12,7 +12,7 @@ const GoogleAuthButton = () => {
 
   return (
     <GoogleLogin
-      clientId="YOUR_GOOGLE_CLIENT_ID"
+      clientId={process.env.CLIENT_ID}
       onClick={responseGoogle}
       onFailure={onFailure}
     />
