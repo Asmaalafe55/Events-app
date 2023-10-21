@@ -91,7 +91,12 @@ const Navbar = () => {
               <ul className={styles.app__navbar_links}>
                 {links.map((item) => (
                   <li key={item.title}>
-                    <Link href={item.link} onClick={() => setToggle(false)}>
+                    <Link
+                      href={item.link}
+                      onClick={
+                        item.onClick ? item.onClick : () => setToggle(false)
+                      }
+                    >
                       {item.title}
                     </Link>
                   </li>

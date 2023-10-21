@@ -12,16 +12,11 @@ const GoogleAuthButton = () => {
   };
 
   return (
-    <button aria-label="Log in with Google">
-      <GoogleOutlined />
-      <GoogleLogin
-        clientId={process.env.CLIENT_ID}
-        onClick={responseGoogle}
-        onFailure={onFailure}
-        style={{ display: 'none' }}
-        id="google-auth-button"
-      />
-    </button>
+    <GoogleLogin
+      clientId={process.env.CLIENT_ID}
+      onClick={responseGoogle}
+      onFailure={onFailure}
+    />
   );
 };
 
