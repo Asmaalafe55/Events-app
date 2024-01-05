@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import Axios from '../../../utils/axios';
 import Link from 'next/link';
 import signInSchema from '../../../utils/schemas/signInSchema';
-import GoogleAuthButton from '../../../components/auth/GoogleAuthButton';
 import { Alert } from 'antd';
 import { GoogleOutlined, GithubOutlined } from '@ant-design/icons';
 
@@ -126,11 +125,8 @@ const SignInPage = () => {
           </div>
 
           <div className={styles.social_icons}>
-            {/* <button aria-label="Log in with Google"> */}
-            <GoogleAuthButton />
-            {/* <GoogleOutlined /> */}
-            {/* </button> */}
             <button aria-label="Log in with GitHub">
+              <GoogleOutlined />
               <GithubOutlined />
             </button>
           </div>
