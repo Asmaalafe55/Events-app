@@ -4,6 +4,7 @@ import { Layout, theme } from 'antd';
 import { useRouter } from 'next/router';
 
 import ProfileCard from './profileCard/ProfileCard';
+import LikedEvents from './events/liked/LikedEvents';
 import ProfileMenu from './profileMenu/ProfileMenu';
 import style from './Profile.module.scss';
 
@@ -79,7 +80,7 @@ const Profile = ({ data }) => {
             }}
           >
             <div className={style.content}>
-              <ProfileCard
+              {/* <ProfileCard
                 isEditing={isEditing}
                 title={title}
                 description={description}
@@ -90,7 +91,8 @@ const Profile = ({ data }) => {
                 avatars={avatars}
                 selectedAvatar={selectedAvatar}
                 handleAvatarSelect={handleAvatarSelect}
-              />
+              /> */}
+              <LikedEvents />
             </div>
           </Content>
         </Layout>
