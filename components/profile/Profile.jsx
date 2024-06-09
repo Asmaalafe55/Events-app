@@ -29,6 +29,7 @@ const Profile = ({ data }) => {
     'https://xsgames.co/randomusers/avatar.php?g=pixel'
   );
 
+
   const toggleEditMode = () => {
     setIsEditing(!isEditing);
   };
@@ -92,7 +93,7 @@ const Profile = ({ data }) => {
                 selectedAvatar={selectedAvatar}
                 handleAvatarSelect={handleAvatarSelect}
               /> */}
-              <LikedEvents />
+              <LikedEvents userId={data} />
             </div>
           </Content>
         </Layout>

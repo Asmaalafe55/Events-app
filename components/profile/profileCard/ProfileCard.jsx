@@ -17,6 +17,7 @@ const ProfileCard = ({
   selectedAvatar,
   handleAvatarSelect,
 }) => {
+
   const renderEditingSection = () => {
     return (
       <>
