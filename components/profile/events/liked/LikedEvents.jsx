@@ -14,7 +14,7 @@ const LikedEvents = ({}) => {
         />
       }
     >
-      kjbj
+      kjbjljnkjb
     </Card>
   );
 };
