@@ -7,11 +7,8 @@ import { List, Space } from 'antd';
 const LikedEvents = ({ data }) => {
   const [userData, setUserData] = useState([]);
 
-  console.log("liked7468",data);
-
   useEffect(() => {
     const fetchLikedEvents = async () => {
-      console.log("liked74453468",data);
 
       if (!data || !data._id) {
         console.error('Invalid user data:', data);
