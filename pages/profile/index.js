@@ -3,12 +3,10 @@ import axios from '../../utils/axios';
 import Profile from '../../components/profile/Profile';
 
 const ProfilePage = (props) => {
-  console.log(23213,props);
 
   const initialData = props.data; // Initial data from getStaticProps or getServerSideProps
   const [data, setData] = useState(initialData); // State to hold the data
-  console.log(111,initialData );
-
+  
   useEffect(() => {
     // Ensure we are on the client side before using localStorage
     if (typeof window !== 'undefined') {

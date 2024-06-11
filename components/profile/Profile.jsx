@@ -27,8 +27,9 @@ const Profile = ({ data }) => {
   const [description, setDescription] = useState('Hello! This is me 👋🏼');
   const [selectedAvatar, setSelectedAvatar] = useState(
     'https://xsgames.co/randomusers/avatar.php?g=pixel'
-  );
+  ); 
 
+  console.log('profile',data); // tha data contains tha PASSWORD !!!! i should remove it 
 
   const toggleEditMode = () => {
     setIsEditing(!isEditing);
@@ -86,14 +87,14 @@ const Profile = ({ data }) => {
                 title={title}
                 description={description}
                 handleSaveChanges={handleSaveChanges}
-                handleTitleChange={handleTitleChange}
+                handlseTitleChange={handleTitleChange}
                 handleDescriptionChange={handleDescriptionChange}
                 toggleEditMode={toggleEditMode}
                 avatars={avatars}
                 selectedAvatar={selectedAvatar}
                 handleAvatarSelect={handleAvatarSelect}
               /> */}
-              <LikedEvents userId={data} />
+              <LikedEvents data={data} />
             </div>
           </Content>
         </Layout>

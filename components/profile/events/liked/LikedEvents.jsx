@@ -1,24 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from '../../../../utils/axios';
 import style from './LikedEvents.module.scss';
 import { LikeOutlined, MessageOutlined, StarOutlined } from '@ant-design/icons';
 import { List, Space } from 'antd';
 
-const LikedEvents = ({ userId }) => {
-  const [data, setData] = useState([]);
+const LikedEvents = ({ data }) => {
+  const [userData, setUserData] = useState([]);
+
+  console.log("liked7468",data);
 
   useEffect(() => {
     const fetchLikedEvents = async () => {
+      console.log("liked74453468",data);
+
+      if (!data || !data._id) {
+        console.error('Invalid user data:', data);
+        return;
+      }
       try {
-        const response = await axios.get(`/api/likes/${userId}`);
-        setData(response.data);
+        const userId = data._id;
+        const res = await axios.get(`/likes/${userId}`);
+        setUserData(res.data); 
       } catch (error) {
         console.error('Error fetching liked events:', error);
       }
     };
 
     fetchLikedEvents();
-  }, [userId]);
+  }, [data]);
 
   const IconText = ({ icon, text }) => (
     <Space>
@@ -37,7 +46,7 @@ const LikedEvents = ({ userId }) => {
         },
         pageSize: 5,
       }}
-      dataSource={data}
+      dataSource={userData} // Use userData instead of data
       footer={
         <div>
           <b>Liked Events</b> footer part
