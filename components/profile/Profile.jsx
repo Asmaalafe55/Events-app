@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Layout, theme } from 'antd';
-
 import { useRouter } from 'next/router';
-
 import ProfileCard from './profileCard/ProfileCard';
 import LikedEvents from './events/liked/LikedEvents';
 import ProfileMenu from './profileMenu/ProfileMenu';
@@ -27,9 +25,8 @@ const Profile = ({ data }) => {
   const [description, setDescription] = useState('Hello! This is me 👋🏼');
   const [selectedAvatar, setSelectedAvatar] = useState(
     'https://xsgames.co/randomusers/avatar.php?g=pixel'
-  ); 
-
-  console.log('profile',data); // tha data contains tha PASSWORD !!!! i should remove it 
+  );
+  const [selectedKey, setSelectedKey] = useState('1');
 
   const toggleEditMode = () => {
     setIsEditing(!isEditing);
@@ -64,12 +61,36 @@ const Profile = ({ data }) => {
     }
   }, [router]);
 
+  const renderContent = () => {
+    switch (selectedKey) {
+      case '1':
+        return (
+          <ProfileCard
+            isEditing={isEditing}
+            title={title}
+            description={description}
+            handleSaveChanges={handleSaveChanges}
+            handleTitleChange={handleTitleChange}
+            handleDescriptionChange={handleDescriptionChange}
+            toggleEditMode={toggleEditMode}
+            avatars={avatars}
+            selectedAvatar={selectedAvatar}
+            handleAvatarSelect={handleAvatarSelect}
+          />
+        );
+      case '3':
+        return <LikedEvents data={data} />;
+      // Add cases for other keys and corresponding components here
+      default:
+        return <ProfileCard />;
+    }
+  };
+
   return (
     <div className={style.profile_page}>
       <Layout className={style.layout}>
-        {/* Sider and Menu components go here */}
         <Sider width={200} style={{ background: colorBgContainer }}>
-          <ProfileMenu />
+          <ProfileMenu onMenuSelect={setSelectedKey} />
         </Sider>
 
         <Layout style={{ padding: '24px' }}>
@@ -82,19 +103,7 @@ const Profile = ({ data }) => {
             }}
           >
             <div className={style.content}>
-              {/* <ProfileCard
-                isEditing={isEditing}
-                title={title}
-                description={description}
-                handleSaveChanges={handleSaveChanges}
-                handlseTitleChange={handleTitleChange}
-                handleDescriptionChange={handleDescriptionChange}
-                toggleEditMode={toggleEditMode}
-                avatars={avatars}
-                selectedAvatar={selectedAvatar}
-                handleAvatarSelect={handleAvatarSelect}
-              /> */}
-              <LikedEvents data={data} />
+              {renderContent()}
             </div>
           </Content>
         </Layout>
