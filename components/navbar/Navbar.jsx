@@ -27,12 +27,12 @@ const Navbar = () => {
     localStorage.removeItem('accessToken');
     setIsLoggedIn(false); // Update login status after logout
 
+    console.log('Current route:', router.pathname);
     // Redirect to home or any other desired page
-    router.push('/');
-  };
-
-  const handleSignIn = () => {
-    console.log('Sign In button clicked!');
+    if (router.pathname === '/profile') {
+      console.log('Redirecting to home');
+      router.push('/');
+    }
   };
 
   const links = isLoggedIn
@@ -66,7 +66,7 @@ const Navbar = () => {
             <Link
               key={item.title}
               href={item.link}
-              // onClick={item.onClick ? item.onClick : () => setToggle(false)}
+              onClick={item.onClick ? item.onClick : () => setToggle(false)}
             >
               {item.title}
             </Link>
@@ -91,7 +91,12 @@ const Navbar = () => {
               <ul className={styles.app__navbar_links}>
                 {links.map((item) => (
                   <li key={item.title}>
-                    <Link href={item.link} onClick={() => setToggle(false)}>
+                    <Link
+                      href={item.link}
+                      onClick={
+                        item.onClick ? item.onClick : () => setToggle(false)
+                      }
+                    >
                       {item.title}
                     </Link>
                   </li>
