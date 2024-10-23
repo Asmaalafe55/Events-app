@@ -1,14 +1,12 @@
 import React from 'react';
-import { Layout, Menu } from 'antd';
+import { Menu } from 'antd';
 import {
   UserOutlined,
   PieChartOutlined,
   SettingOutlined,
 } from '@ant-design/icons';
 
-const { Sider } = Layout;
-
-const ProfileMenu = () => {
+const ProfileMenu = ({ onMenuSelect }) => {
   const items = [
     {
       key: '1',
@@ -35,18 +33,14 @@ const ProfileMenu = () => {
   ];
 
   return (
-    <Sider width={200}>
-      <Menu
-        mode="inline"
-        defaultSelectedKeys={['1']}
-        defaultOpenKeys={['sub1']}
-        style={{
-          height: '100%',
-          borderRight: 0,
-        }}
-        items={items}
-      />
-    </Sider>
+    <Menu
+      mode="inline"
+      defaultSelectedKeys={['1']}
+      defaultOpenKeys={['sub1']}
+      style={{ height: '100%', borderRight: 0 }}
+      items={items}
+      onClick={(e) => onMenuSelect(e.key)}
+    />
   );
 };
 

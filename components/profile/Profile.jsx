@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Layout, theme } from 'antd';
-
 import { useRouter } from 'next/router';
-
 import ProfileCard from './profileCard/ProfileCard';
 import LikedEvents from './events/liked/LikedEvents';
 import ProfileMenu from './profileMenu/ProfileMenu';
@@ -28,6 +26,9 @@ const Profile = ({ data }) => {
   const [selectedAvatar, setSelectedAvatar] = useState(
     'https://xsgames.co/randomusers/avatar.php?g=pixel'
   );
+  const [selectedKey, setSelectedKey] = useState('1');
+
+  console.log("aloo",data);
 
   const toggleEditMode = () => {
     setIsEditing(!isEditing);
@@ -62,12 +63,37 @@ const Profile = ({ data }) => {
     }
   }, [router]);
 
+  const renderContent = () => {
+    switch (selectedKey) {
+      case '1':
+        return (
+          <ProfileCard
+          // userId={data} 
+          isEditing={isEditing}
+          title={title}
+          description={description}
+          handleSaveChanges={handleSaveChanges}
+          handleTitleChange={handleTitleChange}
+          handleDescriptionChange={handleDescriptionChange}
+          toggleEditMode={toggleEditMode}
+          avatars={avatars}
+          selectedAvatar={selectedAvatar}
+          handleAvatarSelect={handleAvatarSelect}
+        />
+        );
+      case '3':
+        return <LikedEvents data={data} />;
+      // Add cases for other keys and corresponding components here
+      default:
+        return <ProfileCard />;
+    }
+  };
+
   return (
     <div className={style.profile_page}>
       <Layout className={style.layout}>
-        {/* Sider and Menu components go here */}
         <Sider width={200} style={{ background: colorBgContainer }}>
-          <ProfileMenu />
+          <ProfileMenu onMenuSelect={setSelectedKey} />
         </Sider>
 
         <Layout style={{ padding: '24px' }}>
@@ -80,19 +106,7 @@ const Profile = ({ data }) => {
             }}
           >
             <div className={style.content}>
-              {/* <ProfileCard
-                isEditing={isEditing}
-                title={title}
-                description={description}
-                handleSaveChanges={handleSaveChanges}
-                handleTitleChange={handleTitleChange}
-                handleDescriptionChange={handleDescriptionChange}
-                toggleEditMode={toggleEditMode}
-                avatars={avatars}
-                selectedAvatar={selectedAvatar}
-                handleAvatarSelect={handleAvatarSelect}
-              /> */}
-              <LikedEvents />
+              {renderContent()}
             </div>
           </Content>
         </Layout>
