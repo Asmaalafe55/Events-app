@@ -28,8 +28,6 @@ const Profile = ({ data }) => {
   );
   const [selectedKey, setSelectedKey] = useState('1');
 
-  console.log("aloo",data);
-
   const toggleEditMode = () => {
     setIsEditing(!isEditing);
   };
@@ -68,18 +66,18 @@ const Profile = ({ data }) => {
       case '1':
         return (
           <ProfileCard
-          // userId={data} 
-          isEditing={isEditing}
-          title={title}
-          description={description}
-          handleSaveChanges={handleSaveChanges}
-          handleTitleChange={handleTitleChange}
-          handleDescriptionChange={handleDescriptionChange}
-          toggleEditMode={toggleEditMode}
-          avatars={avatars}
-          selectedAvatar={selectedAvatar}
-          handleAvatarSelect={handleAvatarSelect}
-        />
+            // userId={data}
+            isEditing={isEditing}
+            title={title}
+            description={description}
+            handleSaveChanges={handleSaveChanges}
+            handleTitleChange={handleTitleChange}
+            handleDescriptionChange={handleDescriptionChange}
+            toggleEditMode={toggleEditMode}
+            avatars={avatars}
+            selectedAvatar={selectedAvatar}
+            handleAvatarSelect={handleAvatarSelect}
+          />
         );
       case '3':
         return <LikedEvents data={data} />;
@@ -105,9 +103,7 @@ const Profile = ({ data }) => {
               background: colorBgContainer,
             }}
           >
-            <div className={style.content}>
-              {renderContent()}
-            </div>
+            <div className={style.content}>{renderContent()}</div>
           </Content>
         </Layout>
       </Layout>

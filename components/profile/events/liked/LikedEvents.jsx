@@ -7,17 +7,18 @@ import { List, Space } from 'antd';
 const LikedEvents = ({ data }) => {
   const [userData, setUserData] = useState([]);
 
+  console.log('111', userData);
+
   useEffect(() => {
     const fetchLikedEvents = async () => {
-
-      if (!data || !data._id) {
+      if (!data) {
         console.error('Invalid user data:', data);
         return;
       }
       try {
         const userId = data._id;
         const res = await axios.get(`/likes/${userId}`);
-        setUserData(res.data); 
+        setUserData(res.data);
       } catch (error) {
         console.error('Error fetching liked events:', error);
       }
@@ -51,22 +52,29 @@ const LikedEvents = ({ data }) => {
       }
       renderItem={(item) => (
         <List.Item
-          key={item.eventId._id}
+          key={item._id}
           actions={[
-            <IconText icon={StarOutlined} text="156" key="list-vertical-star-o" />,
-            <IconText icon={LikeOutlined} text={item.eventId.likes} key="list-vertical-like-o" />,
-            <IconText icon={MessageOutlined} text="2" key="list-vertical-message" />,
+            <IconText
+              icon={StarOutlined}
+              text="156"
+              key="list-vertical-star-o"
+            />,
+            <IconText
+              icon={LikeOutlined}
+              text={item.eventId}
+              key="list-vertical-like-o"
+            />,
+            <IconText
+              icon={MessageOutlined}
+              text="2"
+              key="list-vertical-message"
+            />,
           ]}
-          extra={
-            <img
-              width={272}
-              alt="logo"
-              src={item.eventId.image || 'https://via.placeholder.com/272'}
-            />
-          }
         >
           <List.Item.Meta
-            title={<a href={`/events/${item.eventId._id}`}>{item.eventId.title}</a>}
+            title={
+              <a href={`/events/${item.eventId._id}`}>{item.eventId.title}</a>
+            }
             description={item.eventId.description}
           />
           {item.eventId.content}
