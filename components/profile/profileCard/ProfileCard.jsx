@@ -3,7 +3,7 @@ import axios from '../../../utils/axios';
 
 const ProfileCard = ({ name, description }) => {
   return (
-    <div style={{ width: 300 }}>
+    <div>
       {name}
       {description}
     </div>

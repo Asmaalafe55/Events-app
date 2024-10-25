@@ -21,10 +21,19 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps() {
-  const res = await axios.get('/categories');
-  return {
-    props: {
-      data: res.data,
-    },
-  };
+  try {
+    const res = await axios.get('/categories', { timeout: 5000 }); // 5-second timeout
+    return {
+      props: {
+        data: res.data,
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return {
+      props: {
+        data: null,
+      },
+    };
+  }
 }

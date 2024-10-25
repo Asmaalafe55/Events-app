@@ -21,8 +21,6 @@ const ProfileMenu = ({ onMenuSelect }) => {
         { key: '3', label: 'Liked' },
         { key: '4', label: 'Registered' },
         { key: '5', label: 'Expired' },
-        // { key: '6', label: 'Canceled' },
-        // { key: '7', label: 'Deleted' },
       ],
     },
     {
