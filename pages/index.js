@@ -3,9 +3,19 @@ import Head from 'next/head';
 import Trending from '../components/trending/Trending';
 import Header from '../components/header/Header';
 import Contact from '../components/contact/Contact';
+import { useEffect, useState } from 'react';
 
-export default function Home(props) {
-  const data = props.data;
+export default function Home() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    axios
+      .get('/categories')
+      .then((res) => setData(res.data))
+      .catch((error) => console.error('Error fetching data:', error));
+  }, []);
+
+  console.log(data);
   return (
     <>
       <Head>
@@ -18,13 +28,4 @@ export default function Home(props) {
       <Contact />
     </>
   );
-}
-
-export async function getServerSideProps() {
-  const res = await axios.get('/categories');
-  return {
-    props: {
-      data: res.data,
-    },
-  };
 }

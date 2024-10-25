@@ -5,6 +5,9 @@ import Image from 'next/image';
 import styles from './Trending.module.scss';
 
 const Trending = ({ data }) => {
+  if (!data || data.length === 0) {
+    return <p>No trending categories available</p>;
+  }
   return (
     <div className={styles.app_top}>
       <div className={styles.title}>Top Categories</div>
