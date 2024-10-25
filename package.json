@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "antd": "^5.6.3",
-    "axios": "^1.2.3",
+    "axios": "^1.7.4",
     "framer-motion": "^8.0.2",
     "googleapis": "^112.0.0",
     "joi": "^17.9.2",
